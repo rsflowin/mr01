@@ -1,0 +1,53 @@
+{
+  "introSequence": {
+    "id": "main_intro",
+    "title": "Maze Reigns",
+    "music": "intro_ambient.mp3",
+    "scenes": [
+      {
+        "id": "scene_01",
+        "type": "narrative",
+        "background": "dark_corridor.jpg",
+        "text": "당신은 어둠 속에서 눈을 뜹니다...",
+        "textStyle": {
+          "color": "white",
+          "size": "large",
+          "animation": "fadeIn"
+        }
+      },
+      {
+        "id": "scene_02", 
+        "type": "narrative",
+        "background": "maze_entrance.jpg",
+        "text": "앞에는 거대한 미로가 펼쳐져 있고, 뒤돌아볼 길은 이미 사라져버렸습니다.",
+        "textStyle": {
+          "color": "white",
+          "size": "large", 
+          "animation": "fadeIn"
+        }
+      },
+      {
+        "id": "scene_03",
+        "type": "character_stats",
+        "background": "status_display.jpg",
+        "text": "왜 이곳에 있는지는 기억이 나지 않지만, 하나만은 알 수 있었다. 살아야 한다. 그리고 살려면 저 미로의 끝까지 가야한다.",
+        "textStyle": {
+          "color": "yellow",
+          "size": "large",
+          "animation": "typewriter"
+        }
+      },
+      {
+        "id": "scene_04",
+        "type": "call_to_action",
+        "background": "maze_start.jpg", 
+        "text": "생존하여 이 미로에서 탈출하세요!",
+        "textStyle": {
+          "color": "white",
+          "size": "large", 
+          "animation": "fadeIn"
+        }
+      }
+    ]
+  }
+}

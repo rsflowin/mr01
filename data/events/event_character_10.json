@@ -1,0 +1,288 @@
+{
+  "events": {
+    "character_adekunle_welcoming_ritual_01": {
+      "id": "character_adekunle_welcoming_ritual_01",
+      "npcId": "adekunle",
+      "name": "환영 의식을 치르는 아데쿤레",
+      "description": "부족의 주술사 아데쿤레 아데바요가 당신을 보고 엄숙하게 말한다. \"또 다른 영혼이 시험장에 당도했군. 환영하오, 방랑자여. 그대의 영혼은 어떤 색을 띠고 있는가?\"",
+      "image": "character_adekunle_welcoming.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "존경심을 표한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신의 태도에 그가 만족스럽게 고개를 끄덕인다. \"겸손은 지혜의 첫걸음이지.\" 그는 당신의 이마에 하얀 가루를 발라주며, 당신의 정신을 맑게 하는 축복을 내린다.",
+            "statChanges": { "SAN": 15 },
+            "removeStatus": ["dizziness"]
+          }
+        },
+        {
+          "text": "그를 무시하고 지나간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"시험을 거부하는 영혼은 길을 잃게 될지니...\" 그의 나지막한 목소리가 등 뒤에 울린다.",
+            "statChanges": { "SAN": -8 }
+          }
+        }
+      ]
+    },
+    "character_adekunle_interpreting_omen_01": {
+      "id": "character_adekunle_interpreting_omen_01",
+      "npcId": "adekunle",
+      "name": "징조를 해석하는 아데쿤레",
+      "description": "아데쿤레가 바닥에 뼈 몇 개를 던져 그 배열을 읽고 있다. \"흠... 영혼들이 속삭이는군. 곧 큰 시련이 닥칠 것이나, 그 끝에는 보상이 있으리라.\"",
+      "image": "character_adekunle_omen.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "자세히 알려달라고 부탁한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "\"미래는 정해진 것이 아니라, 만들어가는 것.\" 그는 더 이상 말해주지 않았지만, 그의 조언 덕분에 앞으로 닥칠 일에 대비할 마음의 준비가 되었다.",
+            "statChanges": { "SAN": 10 },
+            "applyStatus": ["determination"]
+          },
+          "failureEffects": {
+            "description": "\"그대의 영혼이 흐려, 미래를 볼 자격이 없구나.\" 그는 당신의 부탁을 거절한다.",
+            "statChanges": { "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_adekunle_offering_potion_01": {
+      "id": "character_adekunle_offering_potion_01",
+      "npcId": "adekunle",
+      "name": "영약을 건네는 아데쿤레",
+      "description": "아데쿤레가 작은 호리병을 내민다. 안에는 검고 걸쭉한 액체가 들어있다. \"그대의 영혼이 지쳐 보이는군. 조상들의 지혜가 담긴 이 영약을 마시게.\"",
+      "image": "character_adekunle_potion.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "마신다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "끔찍한 맛이었지만, 마시자마자 온몸에 활력이 넘치고 상처가 아물기 시작한다. 영적인 에너지가 당신을 채운다.",
+            "statChanges": { "HP": 20, "FITNESS": 10, "SAN": 5 },
+            "removeStatus": ["fatigue", "stomach_ache"]
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"의심하는 영혼은 축복을 받을 수 없지.\" 그는 조용히 영약을 다시 거둔다."
+          }
+        }
+      ]
+    },
+    "character_adekunle_test_of_courage_01": {
+      "id": "character_adekunle_test_of_courage_01",
+      "npcId": "adekunle",
+      "name": "용기를 시험하는 아데쿤레",
+      "description": "아데쿤레가 몬스터가 으르렁거리는 어두운 통로를 가리킨다. \"두려움은 영혼을 좀먹는 독. 저 어둠 속으로 들어가 그대의 용기를 증명하게.\"",
+      "image": "character_adekunle_test.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "시험에 응한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 용감하게 어둠 속으로 들어가 몬스터를 물리치고 나오자, 그가 만족스럽게 웃는다. \"훌륭하군. 그대의 영혼은 강철과 같아.\" 그는 당신에게 잘린 손 부적을 건넨다.",
+            "statChanges": { "HP": -15, "SAN": 15, "FITNESS": 10 },
+            "itemsGained": ["severed_hand_talisman"]
+          }
+        },
+        {
+          "text": "거부한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"아직 때가 되지 않았군.\" 그는 실망한 기색 없이, 당신의 영혼이 더 성장하기를 기다리겠다는 듯 말한다.",
+            "statChanges": { "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "character_adekunle_cleansing_ritual_01": {
+      "id": "character_adekunle_cleansing_ritual_01",
+      "npcId": "adekunle",
+      "name": "정화 의식을 행하는 아데쿤레",
+      "description": "당신이 환각이나 중독 상태에 시달리는 것을 본 아데쿤레가 다가온다. \"악한 기운이 그대의 영혼을 더럽혔군. 정화가 필요하다.\"",
+      "image": "character_adekunle_cleansing.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "의식을 받는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그가 향을 피우고 주문을 외자, 당신을 괴롭히던 악몽과 환각이 씻은 듯 사라진다. 머리가 맑아진다.",
+            "statChanges": { "SAN": 25 },
+            "removeStatus": ["hallucination", "claustrophobia"]
+          }
+        },
+        {
+          "text": "미신이라고 무시한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"어리석은 자여, 영혼의 병을 육체의 약으로 고칠 수 있을 거라 생각하는가?\" 그는 당신을 내버려 두고 떠난다."
+          }
+        }
+      ]
+    },
+    "character_adekunle_bartering_spirits_01": {
+      "id": "character_adekunle_bartering_spirits_01",
+      "npcId": "adekunle",
+      "name": "영혼과 거래하는 아데쿤레",
+      "description": "아데쿤레가 당신의 아이템을 가리키며 말한다. \"그대의 물건에 깃든 기억의 영혼을 원하네. 그 대가로, 나는 조상들의 힘을 빌려 그대에게 활력을 주지.\"",
+      "image": "character_adekunle_barter.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "가족사진을 건넨다.",
+          "requirements": { "items": ["family_photo"], "stats": null },
+          "successEffects": {
+            "description": "\"강한 기억이군...\" 그는 사진을 받아들고, 당신의 어깨에 손을 얹는다. 따뜻한 기운이 퍼지며 허기가 사라진다.",
+            "statChanges": { "HUNGER": 50, "SAN": -5 },
+            "itemsLost": ["family_photo"]
+          }
+        },
+        {
+          "text": "섬뜩한 인형을 건넨다.",
+          "requirements": { "items": ["creepy_doll"], "stats": null },
+          "successEffects": {
+            "description": "\"...이 사악한 영혼은 정화가 필요하겠군.\" 그는 인형을 받아들고, 당신의 정신을 어지럽히던 기운을 거두어간다.",
+            "statChanges": { "SAN": 15 },
+            "itemsLost": ["creepy_doll"]
+          }
+        }
+      ]
+    },
+    "character_adekunle_guiding_spirit_01": {
+      "id": "character_adekunle_guiding_spirit_01",
+      "npcId": "adekunle",
+      "name": "길잡이 영혼을 부르는 아데쿤레",
+      "description": "아데쿤레가 눈을 감고 주문을 외자, 작은 빛의 구체가 나타나 그의 주위를 맴돈다. \"길잡이 영혼이네. 그대를 안전한 길로 인도할 것이야.\"",
+      "image": "character_adekunle_spirit.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "영혼을 따라간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "빛의 구체는 당신을 함정이 없는 안전한 방으로 이끌어주고는 사라졌다. 그곳에는 누군가 두고 간 듯한 수면제가 있었다.",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["sleeping_pills"]
+          }
+        },
+        {
+          "text": "믿지 않는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 불신을 보이자, 빛의 구체는 스르르 사라진다. 아데쿤레는 아무 말도 하지 않는다."
+          }
+        }
+      ]
+    },
+    "character_adekunle_facing_fear_01": {
+      "id": "character_adekunle_facing_fear_01",
+      "npcId": "adekunle",
+      "name": "두려움과 마주하게 하는 아데쿤레",
+      "description": "아데쿤레가 당신의 눈을 똑바로 쳐다본다. \"그대의 눈 속에... 깊은 공포가 보이는군. 이 시험장에서 가장 강한 적은 외부에 있는 것이 아니라, 그대 안에 있네.\"",
+      "image": "character_adekunle_stare.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그의 말에 동의한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "자신의 약점을 인정하자, 오히려 마음이 편안해진다. 그는 당신의 성장을 지켜보며 고개를 끄덕인다.",
+            "statChanges": { "SAN": 20 },
+            "removeStatus": ["claustrophobia"]
+          }
+        },
+        {
+          "text": "강한 척한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"부정은 영혼을 약하게 만들 뿐.\" 그는 당신의 허세를 간파하고는 실망한 듯 떠나버린다.",
+            "statChanges": { "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_adekunle_blessing_item_01": {
+      "id": "character_adekunle_blessing_item_01",
+      "npcId": "adekunle",
+      "name": "아이템을 축복하는 아데쿤레",
+      "description": "아데쿤레가 당신의 물건 하나를 가리키며 말한다. \"그 물건... 조상들의 축복을 내릴 만한 그릇이군. 내게 주게. 더 큰 힘을 담아 돌려주지.\"",
+      "image": "character_adekunle_blessing.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "나침반을 건넨다.",
+          "requirements": { "items": ["compass"], "stats": null },
+          "successEffects": {
+            "description": "그가 나침반에 주문을 외자, 나침반이 환하게 빛나기 시작한다. 이제 나침반은 올바른 길뿐만 아니라, 위험도 알려주는 듯하다.",
+            "statChanges": { "SAN": 15 }
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 거절하자, 그는 조용히 손을 거둔다. \"모든 인연에는 때가 있는 법이지.\""
+          }
+        }
+      ]
+    },
+    "character_adekunle_ascension_01": {
+      "id": "character_adekunle_ascension_01",
+      "npcId": "adekunle",
+      "name": "승천하는 아데쿤레",
+      "description": "아데쿤레의 몸이 서서히 빛나기 시작한다. \"나의 시험은 끝났네, 방랑자여. 이제 나는 조상들의 곁으로 돌아간다.\" 그의 몸이 반투명해진다.",
+      "image": "character_adekunle_ascension.png",
+      "category": "character",
+      "weight": 3,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "경의를 표하며 지켜본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 만족스러운 미소를 지으며 빛 속으로 사라졌다. 그가 사라진 자리에는 그가 쓰던 지팡이가 남아있다. 지팡이에서는 강한 영적인 힘이 느껴진다.",
+            "statChanges": { "SAN": 25 },
+            "itemsGained": ["herbal_tea", "antidote"]
+          }
+        },
+        {
+          "text": "그를 붙잡으려 한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 손을 뻗자, 강렬한 빛이 당신을 밀어냈다. 그는 이미 이 세상의 존재가 아니었다. 그의 마지막 모습을 본 충격에 정신이 혼미하다.",
+            "statChanges": { "SAN": -15 },
+            "applyStatus": ["dizziness"]
+          }
+        }
+      ]
+    }
+  }
+}

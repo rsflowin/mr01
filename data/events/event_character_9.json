@@ -1,0 +1,292 @@
+{
+  "events": {
+    "character_chloe_interviewing_01": {
+      "id": "character_chloe_interviewing_01",
+      "npcId": "chloe",
+      "name": "인터뷰하는 클로에",
+      "description": "카메라를 든 저널리스트 클로에 뒤부아가 당신에게 마이크를 들이댄다. \"클로에 뒤부아입니다. 지금 전대미문의 미로 감금 사건 현장에 나와 있습니다. 선생님, 이곳에 오게 된 경위를 말씀해주시겠습니까?\"",
+      "image": "character_chloe_interviewing.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "아는 대로 대답한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"흥미롭군요! 아주 좋은 정보원입니다.\" 그녀는 만족스럽게 고개를 끄덕이며, 보답으로 에너지 드링크를 건넨다. \"취재에는 체력이 필수죠.\"",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["energy_drink"]
+          }
+        },
+        {
+          "text": "카메라를 치우라고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"이런, 비협조적이시군요. 하지만 그 공포에 질린 표정 자체도 좋은 그림입니다.\" 그녀는 아랑곳하지 않고 당신의 얼굴을 촬영한다.",
+            "statChanges": { "SAN": -8 }
+          }
+        }
+      ]
+    },
+    "character_chloe_investigating_trap_01": {
+      "id": "character_chloe_investigating_trap_01",
+      "npcId": "chloe",
+      "name": "함정을 조사하는 클로에",
+      "description": "클로에가 작동이 멈춘 함정 앞에서 부품들을 살피고 있다. \"보세요, 이 부품들... 일련번호가 있어요. 이건 누군가 '제조'했다는 뜻이죠. 이 미로는 자연 발생한 게 아니에요!\"",
+      "image": "character_chloe_investigating.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "함께 조사한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "당신의 도움으로 그녀는 함정의 제어판에서 작은 지도 조각을 발견했다. \"이건... 특종감이야!\" 그녀는 흥분하며 당신에게 다른 취재 자료인 해독제를 준다.",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["antidote"]
+          },
+          "failureEffects": {
+            "description": "당신이 함부로 만지다 남은 전기에 감전되었다. 그녀가 혀를 차며 말한다. \"아마추어는 빠져주시죠.\"",
+            "statChanges": { "HP": -10, "SAN": -5 }
+          }
+        },
+        {
+          "text": "관심 없다고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"진실에 관심이 없다니, 안타깝군요.\" 그녀는 당신을 한심하게 쳐다본다."
+          }
+        }
+      ]
+    },
+    "character_chloe_asking_for_help_01": {
+      "id": "character_chloe_asking_for_help_01",
+      "npcId": "chloe",
+      "name": "도움을 요청하는 클로에",
+      "description": "클로에가 높은 선반 위에 있는 서류 가방을 가리킨다. \"저것 좀 내려주시겠어요? 제 모든 취재 자료가 저 안에 있어요. 전 키가 안 닿아서...\"",
+      "image": "character_chloe_asking.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "내려준다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 40 } } },
+          "successEffects": {
+            "description": "당신이 가방을 내려주자, 그녀가 고맙다며 가방 안에서 오래된 일기장 하나를 건네준다. \"이건 사본이니 당신께 드리죠. 아주 중요한 단서가 될 겁니다.\"",
+            "statChanges": { "FITNESS": -2 },
+            "itemsGained": ["old_diary"]
+          },
+          "failureEffects": {
+            "description": "가방을 내리려다 떨어뜨렸다. 가방이 열리며 내용물이 쏟아진다. 그녀가 당신을 맹렬하게 비난한다.",
+            "statChanges": { "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_chloe_conspiracy_theory_01": {
+      "id": "character_chloe_conspiracy_theory_01",
+      "npcId": "chloe",
+      "name": "음모론을 펼치는 클로에",
+      "description": "클로에가 당신을 붙잡고 열변을 토한다. \"이 모든 건 거대 기업 '옴니코프'의 짓이에요! 그들이 비밀리에 불법적인 인간 실험을 하고 있는 거라고요!\"",
+      "image": "character_chloe_conspiracy.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그녀의 말을 믿는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀의 말에 분노가 치민다. 이 부당한 현실에 맞서 싸워야겠다는 의지가 생긴다.",
+            "statChanges": { "SAN": 5 },
+            "applyStatus": ["determination"]
+          }
+        },
+        {
+          "text": "망상이라고 일축한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"아직도 진실을 보지 못하다니... 한심하군요.\" 그녀는 당신을 포기하고 다른 정보원을 찾아 떠난다.",
+            "statChanges": { "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "character_chloe_needs_distraction_01": {
+      "id": "character_chloe_needs_distraction_01",
+      "npcId": "chloe",
+      "name": "미끼가 필요한 클로에",
+      "description": "클로에가 몬스터가 지키고 있는 문을 가리킨다. \"저 너머에 분명히 뭔가 있어요. 제가 잠입해서 촬영하는 동안, 당신이 저 몬스터의 주의를 끌어주시겠어요? 목숨을 건 특종입니다!\"",
+      "image": "character_chloe_distraction.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "미끼가 된다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 몬스터와 사투를 벌이는 동안, 그녀는 임무를 완수하고 돌아왔다. \"훌륭해요! 덕분에 결정적 증거를 잡았어요!\" 그녀는 보상으로 구급상자를 건넨다.",
+            "statChanges": { "HP": -20, "FITNESS": -5 },
+            "itemsGained": ["first_aid_kit"]
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"특종보다 중요한 건 내 목숨이죠.\" 당신이 거절하자, 그녀는 당신을 겁쟁이라 비난하며 다른 방법을 찾아보겠다고 투덜거린다."
+          }
+        }
+      ]
+    },
+    "character_chloe_offering_info_01": {
+      "id": "character_chloe_offering_info_01",
+      "npcId": "chloe",
+      "name": "정보를 파는 클로에",
+      "description": "클로에가 수첩을 보여준다. \"이 미로의 식수원에 대한 정보입니다. 아주 귀한 정보죠. 당신의 식량과 교환하고 싶군요.\"",
+      "image": "character_chloe_info.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "전투식량과 교환한다.",
+          "requirements": { "items": ["combat_ration"], "stats": null },
+          "successEffects": {
+            "description": "그녀는 만족스럽게 식량을 받아들고, 안전한 샘물의 위치가 표시된 지도 조각을 건네준다.",
+            "itemsLost": ["combat_ration"],
+            "itemsGained": ["maze_map_fragment"]
+          }
+        },
+        {
+          "text": "정보는 공짜여야 한다고 주장한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"여긴 자선 단체가 아닙니다, 선생.\" 그녀는 차갑게 말하며 수첩을 닫아버린다."
+          }
+        }
+      ]
+    },
+    "character_chloe_recording_last_words_01": {
+      "id": "character_chloe_recording_last_words_01",
+      "npcId": "chloe",
+      "name": "유언을 녹음하는 클로에",
+      "description": "클로에가 카메라를 향해 담담하게 말하고 있다. \"만약 제가 돌아가지 못한다면... 이 영상을 세상에 공개해주십시오. 진실은 침몰하지 않는다는 것을...\"",
+      "image": "character_chloe_last_words.png",
+      "category": "character",
+      "weight": 5,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "죽지 않을 거라고 격려한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"고마워요. 하지만 저널리스트는 항상 최악을 대비해야 하죠.\" 그녀의 결연한 모습에 당신도 용기를 얻는다.",
+            "statChanges": { "SAN": 10 },
+            "applyStatus": ["determination"]
+          }
+        },
+        {
+          "text": "카메라를 달라고 한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"아직은 안됩니다. 제 심장이 멎기 전까지는요.\" 그녀는 단호하게 거절한다."
+          }
+        }
+      ]
+    },
+    "character_chloe_panicked_01": {
+      "id": "character_chloe_panicked_01",
+      "npcId": "chloe",
+      "name": "공황에 빠진 클로에",
+      "description": "클로에가 주저앉아 가쁘게 숨을 몰아쉰다. \"카메라가... 카메라가 없어졌어요! 내 모든 증거가! 내 목숨보다 소중한 건데!\"",
+      "image": "character_chloe_panicked.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "함께 찾아준다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신과 함께 주변을 뒤진 끝에, 구석에 떨어진 카메라를 발견했다. 그녀는 당신에게 진심으로 고마워하며, 자신의 비상용 진통제를 건넨다.",
+            "statChanges": { "HUNGER": -3 },
+            "itemsGained": ["painkillers"]
+          }
+        },
+        {
+          "text": "진정하라고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"당신이 뭘 안다고!\" 그녀는 당신의 말을 들으려 하지 않고, 미친 듯이 주변을 뒤지기 시작한다. 그녀의 공황이 당신에게도 전염되는 것 같다.",
+            "statChanges": { "SAN": -10 },
+            "applyStatus": ["dizziness"]
+          }
+        }
+      ]
+    },
+    "character_chloe_analyzing_creature_01": {
+      "id": "character_chloe_analyzing_creature_01",
+      "npcId": "chloe",
+      "name": "몬스터를 분석하는 클로에",
+      "description": "클로에가 죽은 몬스터의 사체를 해부하고 있다. \"믿을 수 없어... 이 생명체의 조직은 지구의 어떤 것과도 일치하지 않아. 이건 외계 기술일지도 몰라!\"",
+      "image": "character_chloe_autopsy.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "징그럽다고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"진실을 마주할 용기가 없는 자는 눈을 감는 법이죠.\" 그녀는 당신을 무시하고 계속해서 분석에 집중한다."
+          }
+        },
+        {
+          "text": "표본 채취를 돕는다.",
+          "requirements": { "items": ["multitool"], "stats": null },
+          "successEffects": {
+            "description": "당신이 멀티툴로 표본 채취를 돕자, 그녀가 기뻐하며 외친다. \"이거면 퓰리처상 감이야! 고마워요!\" 그녀는 보답으로 아드레날린 주사기를 준다.",
+            "statChanges": { "SAN": -5 },
+            "itemsGained": ["adrenaline_shot"]
+          }
+        }
+      ]
+    },
+    "character_chloe_final_revelation_01": {
+      "id": "character_chloe_final_revelation_01",
+      "npcId": "chloe",
+      "name": "최후의 진실을 깨달은 클로에",
+      "description": "클로에가 넋이 나간 표정으로 벽에 기댄 채 웃고 있다. \"...알았어. 드디어... 이 미로는 실험장이 아니었어. 이건... 방송 프로그램이었던 거야. 우린 그냥 리얼리티 쇼의 참가자고.\"",
+      "image": "character_chloe_revelation.png",
+      "category": "character",
+      "weight": 3,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그녀의 말을 믿는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀의 말을 듣는 순간, 천장의 구석에서 희미하게 반짝이는 카메라 렌즈를 발견했다. 그녀의 말이 사실이었다. 이 끔찍한 진실에 정신이 붕괴될 것 같다.",
+            "statChanges": { "SAN": -35 },
+            "applyStatus": ["hallucination"]
+          }
+        },
+        {
+          "text": "미쳤다고 생각한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 그녀를 미친 사람 취급하자, 그녀가 웃음을 터뜨린다. \"곧 알게 될 거야. 우리 모두가 광대라는 걸.\" 그녀는 더 이상 정상적으로 보이지 않는다.",
+            "statChanges": { "SAN": -10 }
+          }
+        }
+      ]
+    }
+  }
+}

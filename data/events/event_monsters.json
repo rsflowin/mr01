@@ -1,0 +1,444 @@
+{
+  "events": {
+    "monster_spider_sleeping_01": {
+      "id": "monster_spider_sleeping_01",
+      "name": "잠자는 동굴 거미",
+      "description": "거대한 동굴 거미가 거미줄 위에서 잠들어 있다. 주변에는 먹이의 잔해로 보이는 꾸러미들이 널려 있다.",
+      "image": "monster_spider.png",
+      "category": "monster",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "조용히 지나간다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 30 } } },
+          "successEffects": {
+            "description": "숨을 죽이고 발소리를 내지 않은 채 무사히 통과했다.",
+            "statChanges": { "SAN": 5, "HUNGER": -1 }
+          },
+          "failureEffects": {
+            "description": "발을 헛디뎌 거미를 깨우고 말았다! 분노한 거미에게 다리를 물렸다.",
+            "statChanges": { "HP": -10, "SAN": -5 },
+            "applyStatus": ["dizziness"]
+          }
+        },
+        {
+          "text": "먹이 꾸러미를 훔친다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "재빠르게 움직여 꾸러미 하나를 훔치는 데 성공했다! 안에는 정체불명의 육포가 들어있었다.",
+            "statChanges": { "SAN": 3 },
+            "itemsGained": ["mystery_jerky"]
+          },
+          "failureEffects": {
+            "description": "꾸러미를 건드리자 거미가 깨어나 맹독을 뱉었다.",
+            "statChanges": { "HP": -15 },
+            "applyStatus": ["hallucination"]
+          }
+        }
+      ]
+    },
+    "monster_spider_weaving_01": {
+      "id": "monster_spider_weaving_01",
+      "name": "거미줄 치는 동굴 거미",
+      "description": "동굴 거미가 끈적한 거미줄로 통로를 막고 있다. 당신을 발견하고 위협적으로 다가온다.",
+      "image": "monster_spider.png",
+      "category": "monster",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "싸운다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 40 } } },
+          "successEffects": {
+            "description": "거미를 물리쳤지만, 싸우는 동안 끈적한 점액이 묻어 기분이 나쁘다.",
+            "statChanges": { "HP": -10, "SAN": -5, "FITNESS": 5 }
+          },
+          "failureEffects": {
+            "description": "거미에게 붙잡혀 독니에 물렸다. 온몸에 힘이 빠진다.",
+            "statChanges": { "HP": -20, "SAN": -10 },
+            "applyStatus": ["fatigue"]
+          }
+        },
+        {
+          "text": "손전등으로 눈을 지진다.",
+          "requirements": { "items": ["flashlight"], "stats": null },
+          "successEffects": {
+            "description": "강한 빛에 거미가 괴로워하는 틈을 타 빠져나왔다.",
+            "statChanges": { "SAN": 5 }
+          }
+        }
+      ]
+    },
+    "monster_spider_hatching_01": {
+      "id": "monster_spider_hatching_01",
+      "name": "알을 지키는 동굴 거미",
+      "description": "동굴 거미가 수많은 알이 담긴 알주머니 옆에서 경계하고 있다. 평소보다 훨씬 예민해 보인다.",
+      "image": "monster_spider.png",
+      "category": "monster",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "알주머니를 공격한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "알주머니를 터뜨리자 거미가 비명을 지르며 당신에게 달려들었다. 격렬한 싸움 끝에 겨우 이겼다.",
+            "statChanges": { "HP": -25, "SAN": -10, "FITNESS": 10 }
+          }
+        },
+        {
+          "text": "멀리 돌아간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "어미의 본능은 위험하다. 조용히 다른 길을 찾아 돌아갔다.",
+            "statChanges": { "HUNGER": -3 }
+          }
+        }
+      ]
+    },
+
+    "monster_goblin_counting_01": {
+      "id": "monster_goblin_counting_01",
+      "name": "전리품 세는 고블린",
+      "description": "고블린이 반짝이는 물건들을 바닥에 늘어놓고 히죽거리며 세고 있다. 당신을 아직 눈치채지 못했다.",
+      "image": "monster_goblin.png",
+      "category": "monster",
+      "weight": 12,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "기습한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 35 } } },
+          "successEffects": {
+            "description": "방심한 고블린을 쉽게 제압하고 전리품을 빼앗았다. 행운의 동전이다.",
+            "statChanges": { "SAN": 5, "FITNESS": 2 },
+            "itemsGained": ["lucky_coin"]
+          },
+          "failureEffects": {
+            "description": "기습을 눈치챈 고블린이 재빨리 반격했다. 단검에 팔을 베였다.",
+            "statChanges": { "HP": -15, "SAN": -5 }
+          }
+        },
+        {
+          "text": "소리를 내서 쫓아낸다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "갑작스러운 소리에 겁먹은 고블린이 물건을 내팽개치고 도망갔다. 바닥에는 에너지바가 남아있다.",
+            "statChanges": { "SAN": 3 },
+            "itemsGained": ["energy_bar"]
+          }
+        }
+      ]
+    },
+    "monster_goblin_patrolling_01": {
+      "id": "monster_goblin_patrolling_01",
+      "name": "순찰 중인 고블린",
+      "description": "녹슨 칼을 든 고블린이 주변을 살피며 순찰하고 있다. 당신을 발견하고 킬킬거리며 달려든다.",
+      "image": "monster_goblin.png",
+      "category": "monster",
+      "weight": 12,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "싸운다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "고블린을 물리쳤지만, 그의 칼에 긁혀 상처를 입었다.",
+            "statChanges": { "HP": -10, "FITNESS": 3 }
+          }
+        },
+        {
+          "text": "위스키를 던져준다.",
+          "requirements": { "items": ["flask_of_whiskey"], "stats": null },
+          "successEffects": {
+            "description": "고블린은 술병을 보자 눈이 뒤집혀 싸움도 잊고 술을 마시기 시작했다. 그 틈에 도망쳤다.",
+            "statChanges": { "SAN": 5 },
+            "itemsLost": ["flask_of_whiskey"]
+          }
+        }
+      ]
+    },
+    "monster_goblin_trapped_01": {
+      "id": "monster_goblin_trapped_01",
+      "name": "덫에 걸린 고블린",
+      "description": "고블린이 곰 덫에 다리가 걸린 채 고통스럽게 신음하고 있다. 당신을 보고 도움을 구하는 눈빛을 보낸다.",
+      "image": "monster_goblin.png",
+      "category": "monster",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "구해준다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "덫을 풀어주자 고블린이 고맙다는 듯 꾸벅 인사하고 미로 지도 조각을 건넨 뒤 사라졌다.",
+            "statChanges": { "SAN": 10, "HUNGER": -2 },
+            "itemsGained": ["maze_map_fragment"]
+          }
+        },
+        {
+          "text": "물건을 빼앗고 버려둔다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "고블린의 주머니를 뒤져 더러운 붕대를 찾아냈다. 그의 저주하는 소리를 뒤로하고 떠났다.",
+            "statChanges": { "SAN": -10 },
+            "itemsGained": ["dirty_bandage"]
+          }
+        }
+      ]
+    },
+    
+    "monster_golem_inactive_01": {
+      "id": "monster_golem_inactive_01",
+      "name": "비활성화된 돌 골렘",
+      "description": "거대한 돌 골렘이 미동도 없이 서 있다. 마치 단순한 석상처럼 보인다.",
+      "image": "monster_golem.png",
+      "category": "monster",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "조용히 지나간다.",
+          "requirements": null,
+          "successEffects": { "description": "움직이지 않는 것을 확인하고 조심스럽게 지나갔다." }
+        },
+        {
+          "text": "빛나는 수정을 심장에 꽂는다.",
+          "requirements": { "items": ["glowing_crystal"], "stats": null },
+          "successEffects": {
+            "description": "수정을 꽂자 골렘이 깨어나 당신을 주인으로 인식하는 듯 고개를 숙인다. 이제부터 든든한 아군이다.",
+            "statChanges": { "SAN": 20, "FITNESS": 10 },
+            "itemsLost": ["glowing_crystal"],
+            "applyStatus": ["determination"]
+          }
+        }
+      ]
+    },
+    "monster_golem_guarding_01": {
+      "id": "monster_golem_guarding_01",
+      "name": "길을 막는 돌 골렘",
+      "description": "돌 골렘이 좁은 통로를 가로막고 있다. 눈에서 붉은빛이 깜빡이며 당신을 적으로 인식했다.",
+      "image": "monster_golem.png",
+      "category": "monster",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "싸워서 부순다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 85 } } },
+          "successEffects": {
+            "description": "엄청난 사투 끝에 골렘을 파괴했다. 온몸이 부서질 것 같다.",
+            "statChanges": { "HP": -40, "FITNESS": 15 },
+            "applyStatus": ["fatigue"]
+          },
+          "failureEffects": {
+            "description": "골렘의 주먹에 맞아 벽에 처박혔다. 죽지 않은 게 다행이다.",
+            "statChanges": { "HP": -60, "SAN": -20 },
+            "applyStatus": ["sprain", "bleeding"]
+          }
+        },
+        {
+          "text": "다른 길을 찾는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "저걸 상대하는 건 미친 짓이다. 멀리 돌아가는 길을 택했다.",
+            "statChanges": { "HUNGER": -5 }
+          }
+        }
+      ]
+    },
+    "monster_golem_crumbled_01": {
+      "id": "monster_golem_crumbled_01",
+      "name": "부서진 돌 골렘",
+      "description": "돌 골렘이 산산조각나 있다. 누군가와 격렬하게 싸운 흔적 같다. 그 잔해 속에서 무언가 반짝인다.",
+      "image": "monster_golem.png",
+      "category": "monster",
+      "weight": 5,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "잔해를 뒤진다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "골렘의 핵으로 쓰였던 것으로 보이는 빛나는 수정을 발견했다.",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["glowing_crystal"]
+          }
+        }
+      ]
+    },
+
+    "monster_mimic_chest_01": {
+      "id": "monster_mimic_chest_01",
+      "name": "상자로 위장한 미믹",
+      "description": "방구석에 낡은 보물상자가 놓여 있다. 왠지 모르게 불길한 기운이 느껴진다.",
+      "image": "item_chest.png",
+      "category": "monster",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "열어본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "상자를 여는 순간, 그것이 날카로운 이빨을 드러내며 손을 물었다! 미믹이다!",
+            "statChanges": { "HP": -20, "SAN": -15 },
+            "applyStatus": ["bleeding"]
+          }
+        },
+        {
+          "text": "공격한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "의심을 떨치지 못하고 상자를 공격하자, 고통스러운 비명을 지르며 정체를 드러냈다. 미믹을 처치하고 나니 진통제가 떨어졌다.",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["painkillers"]
+          }
+        }
+      ]
+    },
+    "monster_mimic_door_01": {
+      "id": "monster_mimic_door_01",
+      "name": "문으로 위장한 미믹",
+      "description": "평범해 보이는 문이다. 하지만 손잡이를 잡는 순간, 끈적하고 차가운 감촉이 느껴진다.",
+      "image": "item_door.png",
+      "category": "monster",
+      "weight": 5,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "문을 연다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "문이 거대한 아가리로 변해 당신을 삼키려 한다! 간신히 피했지만 정신 나갈 것 같다.",
+            "statChanges": { "SAN": -25 },
+            "applyStatus": ["hallucination"]
+          }
+        }
+      ]
+    },
+    "monster_mimic_dead_01": {
+      "id": "monster_mimic_dead_01",
+      "name": "죽은 척하는 미믹",
+      "description": "미믹이 죽은 듯 입을 벌리고 쓰러져 있다. 그 안에는 반짝이는 동전이 보인다.",
+      "image": "monster_mimic.png",
+      "category": "monster",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "동전을 꺼낸다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "손을 넣는 순간, 미믹이 입을 닫아버렸다! 팔이 잘릴 뻔했다.",
+            "statChanges": { "HP": -30, "SAN": -10 },
+            "applyStatus": ["sprain"]
+          }
+        },
+        {
+          "text": "확인사살한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "역시나 죽은 척이었다. 미믹을 완전히 끝장내자, 그 입에서 커피가 담긴 보온병이 굴러 나왔다.",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["flask_of_coffee"]
+          }
+        }
+      ]
+    },
+
+    "monster_spirit_crying_01": {
+      "id": "monster_spirit_crying_01",
+      "name": "우는 영혼",
+      "description": "반투명한 영혼이 구석에서 흐느끼고 있다. 슬픔이 방 전체에 퍼져나간다.",
+      "image": "monster_spirit.png",
+      "category": "monster",
+      "weight": 4,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "위로한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 60 } } },
+          "successEffects": {
+            "description": "당신의 위로에 영혼이 감사를 표하며 성불했다. 방의 분위기가 밝아졌다.",
+            "statChanges": { "SAN": 15 },
+            "applyStatus": ["well_rested"]
+          },
+          "failureEffects": {
+            "description": "당신의 말이 오히려 영혼의 슬픔을 자극했다. 절망적인 기운에 정신력이 소모된다.",
+            "statChanges": { "SAN": -15 }
+          }
+        },
+        {
+          "text": "아이의 그림을 보여준다.",
+          "requirements": { "items": ["a_childs_drawing"], "stats": null },
+          "successEffects": {
+            "description": "그림을 본 영혼이 희미하게 미소 짓더니, 빛이 되어 사라졌다. 바닥에 오래된 일기장이 남았다.",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["old_diary"]
+          }
+        }
+      ]
+    },
+    "monster_spirit_angry_01": {
+      "id": "monster_spirit_angry_01",
+      "name": "분노한 영혼",
+      "description": "붉은빛을 띤 영혼이 분노에 차 물건들을 집어 던지고 있다. 방의 온도가 급격히 올라간다.",
+      "image": "monster_spirit.png",
+      "category": "monster",
+      "weight": 4,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "진정시킨다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "섣부른 접근은 영혼의 분노를 키웠다. 날아온 물건에 맞아 부상을 입었다.",
+            "statChanges": { "HP": -15, "SAN": -10 }
+          }
+        },
+        {
+          "text": "도망친다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "엮이지 않는 게 상책이다. 재빨리 방을 빠져나왔다."
+          }
+        }
+      ]
+    },
+    "monster_spirit_guiding_01": {
+      "id": "monster_spirit_guiding_01",
+      "name": "길잡이 영혼",
+      "description": "푸른빛의 영혼이 당신을 보더니, 한쪽 벽을 가리키고는 스르르 사라진다.",
+      "image": "monster_spirit.png",
+      "category": "monster",
+      "weight": 3,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "벽을 조사한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "영혼이 가리킨 벽을 밀어보니 숨겨진 통로가 나타났다! 안에는 전투식량이 있었다.",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["combat_ration"]
+          }
+        },
+        {
+          "text": "무시한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "영혼의 장난일지도 모른다. 그냥 지나쳤다."
+          }
+        }
+      ]
+    }
+  }
+}

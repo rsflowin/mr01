@@ -1,0 +1,125 @@
+{
+  "status_effects": {
+    "well_rested": {
+      "id": "well_rested",
+      "name": "상쾌함",
+      "type": "BUFF",
+      "icon": "well_rested_icon.png",
+      "description": "안전한 곳에서 휴식을 취해 몸과 마음이 가뿐하다.",
+      "duration": 5,
+      "effectsPerTurn": {
+        "statChanges": { "HP": 3, "SAN": 5, "FITNESS": 0, "HUNGER": -2 }
+      }
+    },
+    "caffeine_boost": {
+      "id": "caffeine_boost",
+      "name": "카페인 부스트",
+      "type": "BUFF",
+      "icon": "caffeine_boost_icon.png",
+      "description": "각성 효과로 정신이 맑아지고 몸에 활력이 넘친다. 하지만 허기가 빨리 찾아온다.",
+      "duration": 3,
+      "effectsPerTurn": {
+        "statChanges": { "HP": 0, "SAN": 8, "FITNESS": 10, "HUNGER": -5 }
+      }
+    },
+    "sugar_high": {
+      "id": "sugar_high",
+      "name": "슈가 하이",
+      "type": "BUFF",
+      "icon": "sugar_high_icon.png",
+      "description": "단순 당 섭취로 일시적인 행복감과 에너지를 얻었다.",
+      "duration": 2,
+      "effectsPerTurn": {
+        "statChanges": { "HP": 0, "SAN": 10, "FITNESS": 5, "HUNGER": -3 }
+      }
+    },
+    "determination": {
+      "id": "determination",
+      "name": "불굴의 의지",
+      "type": "BUFF",
+      "icon": "determination_icon.png",
+      "description": "강력한 동기 부여로 어떤 고난도 헤쳐나갈 수 있을 것 같다.",
+      "duration": 4,
+      "effectsPerTurn": {
+        "statChanges": { "HP": 0, "SAN": 10, "FITNESS": 8, "HUNGER": 0 }
+      }
+    },
+    "stomach_ache": {
+      "id": "stomach_ache",
+      "name": "배탈",
+      "type": "DEBUFF",
+      "icon": "stomach_ache_icon.png",
+      "description": "상한 음식을 먹었는지 속이 좋지 않다. 힘이 빠지고 허기가 느껴진다.",
+      "duration": 5,
+      "effectsPerTurn": {
+        "statChanges": { "HP": -3, "SAN": -3, "FITNESS": -5, "HUNGER": -4 }
+      }
+    },
+    "bleeding": {
+      "id": "bleeding",
+      "name": "출혈",
+      "type": "DEBUFF",
+      "icon": "bleeding_icon.png",
+      "description": "깊은 상처에서 피가 계속 흐르고 있다. 치료하지 않으면 위험하다.",
+      "duration": -1,
+      "effectsPerTurn": {
+        "statChanges": { "HP": -8, "SAN": -2, "FITNESS": -3, "HUNGER": 0 }
+      }
+    },
+    "fatigue": {
+      "id": "fatigue",
+      "name": "피로",
+      "type": "DEBUFF",
+      "icon": "fatigue_icon.png",
+      "description": "몸이 천근만근 무겁다. 신체 활동에 큰 제약이 생긴다.",
+      "duration": 6,
+      "effectsPerTurn": {
+        "statChanges": { "HP": 0, "SAN": -2, "FITNESS": -15, "HUNGER": 0 }
+      }
+    },
+    "hallucination": {
+      "id": "hallucination",
+      "name": "환각",
+      "type": "DEBUFF",
+      "icon": "hallucination_icon.png",
+      "description": "현실과 환상이 뒤섞이기 시작한다. 정신을 붙잡기 힘들다.",
+      "duration": 4,
+      "effectsPerTurn": {
+        "statChanges": { "HP": -1, "SAN": -8, "FITNESS": -2, "HUNGER": 0 }
+      }
+    },
+    "sprain": {
+      "id": "sprain",
+      "name": "발목 삠",
+      "type": "DEBUFF",
+      "icon": "sprain_icon.png",
+      "description": "발목을 심하게 접질렸다. 움직이는 것이 고통스럽다.",
+      "duration": -1,
+      "effectsPerTurn": {
+        "statChanges": { "HP": -2, "SAN": -3, "FITNESS": -20, "HUNGER": -1 }
+      }
+    },
+    "dizziness": {
+      "id": "dizziness",
+      "name": "어지러움",
+      "type": "DEBUFF",
+      "icon": "dizziness_icon.png",
+      "description": "머리가 핑 돌고 속이 메스껍다. 집중력이 떨어진다.",
+      "duration": 3,
+      "effectsPerTurn": {
+        "statChanges": { "HP": -1, "SAN": -5, "FITNESS": -5, "HUNGER": 0 }
+      }
+    },
+    "claustrophobia": {
+      "id": "claustrophobia",
+      "name": "폐소공포증",
+      "type": "DEBUFF",
+      "icon": "claustrophobia_icon.png",
+      "description": "좁고 어두운 공간이 숨 막히게 다가온다. 이성이 마비될 것 같다.",
+      "duration": 5,
+      "effectsPerTurn": {
+        "statChanges": { "HP": 0, "SAN": -10, "FITNESS": -3, "HUNGER": 0 }
+      }
+    }
+  }
+}

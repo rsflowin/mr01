@@ -1,0 +1,304 @@
+{
+  "events": {
+    "character_liam_mental_training_01": {
+      "id": "character_liam_mental_training_01",
+      "npcId": "liam",
+      "name": "멘탈 트레이닝 중인 리암",
+      "description": "리암 오설리반이 다리를 절뚝이면서도 벽에 기대 눈을 감고 있다. \"괜찮아, 리암. 이건 그냥 재활 훈련이야. 신기록을 세우는 거야...\" 그는 고통을 이겨내려 자기 최면을 걸고 있다.",
+      "image": "character_liam_training.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그의 코치인 척 격려한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"그래, 코치님! 할 수 있습니다!\" 그가 당신의 장단에 맞춰 소리친다. 긍정적인 에너지가 솟구친 그는 답례로 자신의 에너지 드링크를 던져준다. \"이건 챔피언의 음료죠!\"",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["energy_drink"]
+          }
+        },
+        {
+          "text": "다리는 어떠냐고 묻는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"다리? 아, 이건 그냥 근육통입니다!\" 그는 아무렇지 않은 척 웃지만, 그의 거짓말이 당신의 마음을 불편하게 한다.",
+            "statChanges": { "SAN": -8 }
+          }
+        }
+      ]
+    },
+    "character_liam_betting_01": {
+      "id": "character_liam_betting_01",
+      "npcId": "liam",
+      "name": "내기를 제안하는 리암",
+      "description": "리암이 당신을 보더니 경쟁심에 불타는 눈으로 말한다. \"이봐, 친구! 저기 보이는 통로까지 누가 더 빨리 가는지 내기 어때? 내가 이기면 자네의 식량을 받고, 자네가 이기면 내 비밀 병기, 이 진통제를 주지!\"",
+      "image": "character_liam_betting.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "내기에 응한다.",
+          "requirements": { "items": ["energy_bar"], "stats": null },
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 70 } } },
+          "successEffects": {
+            "description": "당신이 그를 가뿐하게 이겼다. 그는 혀를 차며 약속대로 진통제를 건넨다. \"젠장, 오늘은 컨디션이 안 좋았어.\"",
+            "statChanges": { "FITNESS": 5, "HUNGER": -3 },
+            "itemsGained": ["painkillers"]
+          },
+          "failureEffects": {
+            "description": "그는 절뚝거리면서도 당신보다 빨랐다! \"내가 이겼군!\" 그는 당신의 에너지바를 낚아채며 승리를 만끽한다.",
+            "statChanges": { "FITNESS": -5, "HUNGER": -3 },
+            "itemsLost": ["energy_bar"]
+          }
+        },
+        {
+          "text": "부상당한 사람과 경쟁하지 않는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"동정은 필요 없어!\" 그는 당신의 배려를 모욕으로 받아들였다. 그의 자존심을 건드린 것 같다.",
+            "statChanges": { "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_liam_reckless_challenge_01": {
+      "id": "character_liam_reckless_challenge_01",
+      "npcId": "liam",
+      "name": "무모한 도전을 하는 리암",
+      "description": "리암이 함정 구덩이 반대편을 바라보고 있다. \"좋아, 멀리뛰기 신기록 도전이다!\" 그는 당신을 보며 윙크한다. \"내가 성공하는지 지켜보라고!\"",
+      "image": "character_liam_challenge.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "응원한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 당신의 응원을 받으며 도약했지만, 결국 구덩이 아래로 떨어졌다. 잠시 후, 아래에서 그의 목소리가 들려온다. \"이런! 신기록 실패! 근데 여기 푹신한 게 많네! 구급상자도 있고!\"",
+            "itemsGained": ["first_aid_kit"]
+          }
+        },
+        {
+          "text": "말린다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"날 믿지 못하는 건가?\" 그는 당신의 만류에 기분이 상한 듯, 도전을 포기하고 다른 길로 가버린다."
+          }
+        }
+      ]
+    },
+    "character_liam_sharing_protein_bar_01": {
+      "id": "character_liam_sharing_protein_bar_01",
+      "npcId": "liam",
+      "name": "단백질 바를 나누는 리암",
+      "description": "리암이 단백질 바를 먹고 있다. 그는 당신을 보더니 반을 뚝 잘라 건넨다. \"이거 먹고 힘내라고, 파트너. 우린 한 팀이잖아?\"",
+      "image": "character_liam_sharing.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "고맙게 받는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "퍽퍽한 맛이지만 근육에 힘이 붙는 기분이다. 그의 긍정적인 태도가 당신에게도 좋은 영향을 준다.",
+            "statChanges": { "HUNGER": 25, "FITNESS": 8, "SAN": 5 }
+          }
+        },
+        {
+          "text": "그의 다리를 치료해주겠다며 음식을 훔친다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 그의 다리를 보는 척하며 단백질 바 전체를 훔쳐 달아났다! 뒤에서 그의 욕설이 들려온다. \"이 배신자 자식!\"",
+            "statChanges": { "SAN": -15 },
+            "itemsGained": ["protein_bar"]
+          }
+        }
+      ]
+    },
+    "character_liam_bad_joke_01": {
+      "id": "character_liam_bad_joke_01",
+      "npcId": "liam",
+      "name": "아재 개그를 하는 리암",
+      "description": "리암이 당신을 보고 심각한 표정으로 말한다. \"이 미로, 너무 추워. 핫팩이라도 있었으면... 아, 핫팩은 '뜨거워서' 못 가져왔지! 하하하!\"",
+      "image": "character_liam_joking.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "웃어준다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 억지로 웃자, 그는 만족하며 말한다. \"역시 내 유머는 월드 클래스야.\" 그의 썰렁한 농담이 오히려 긴장을 풀어주었다.",
+            "statChanges": { "SAN": 10 }
+          }
+        },
+        {
+          "text": "정색한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신의 싸늘한 반응에 그가 머쓱해한다. \"...아일랜드식 유머는 잘 안 통하는군.\" 어색한 침묵이 흐른다.",
+            "statChanges": { "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "character_liam_asking_for_massage_01": {
+      "id": "character_liam_asking_for_massage_01",
+      "npcId": "liam",
+      "name": "마사지를 부탁하는 리암",
+      "description": "리암이 다친 다리를 주무르며 인상을 쓴다. \"이봐, 친구. 미안하지만 다리 근육 좀 풀어줄 수 있겠나? 스포츠 마사지 자격증 같은 거 없어도 돼.\"",
+      "image": "character_liam_massage.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "주물러준다.",
+          "requirements": null,
+          "successConditions": { "stats": { "HP": { "operator": ">", "value": 60 } } },
+          "successEffects": {
+            "description": "당신의 마사지에 그가 감탄한다. \"오, 소질 있는데!\" 그의 다리 상태가 호전된 것 같다. 그는 고맙다며 위스키 플라스크를 건넨다. \"이건 근육 이완제지!\"",
+            "statChanges": { "HUNGER": -2 },
+            "itemsGained": ["flask_of_whiskey"]
+          },
+          "failureEffects": {
+            "description": "당신이 다리를 잘못 건드려 그가 비명을 지른다. \"악! 거긴 아니야!\" 그의 부상이 악화된 것 같다.",
+            "statChanges": { "SAN": -10 }
+          }
+        },
+        {
+          "text": "그의 물건을 훔친다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그가 고통에 정신이 팔린 사이, 당신은 그의 가방에서 아드레날린 주사기를 훔쳤다. 그는 그것도 모르고 계속 신음하고 있다.",
+            "statChanges": { "SAN": -5 },
+            "itemsGained": ["adrenaline_shot"]
+          }
+        }
+      ]
+    },
+    "character_liam_imaginary_race_01": {
+      "id": "character_liam_imaginary_race_01",
+      "npcId": "liam",
+      "name": "상상 속의 경주를 하는 리암",
+      "description": "리암이 눈을 감고 숨을 몰아쉰다. \"마지막 바퀴다... 제임스를 제쳐야 해... 라스트 스퍼트!\" 그는 상상 속에서 치열한 경주를 하고 있다.",
+      "image": "character_liam_imaginary_race.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그가 이겼다고 말해준다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"내가... 해냈어!\" 그는 환호하며 땀을 닦는다. 상상 속의 승리가 그의 정신력을 북돋아 주었다.",
+            "statChanges": { "SAN": 15 },
+            "applyStatus": ["determination"]
+          }
+        },
+        {
+          "text": "물을 뿌려 정신 차리게 한다.",
+          "requirements": { "items": ["pure_water_bottle"], "stats": null },
+          "successEffects": {
+            "description": "찬물에 그가 정신을 차린다. \"...고맙다. 너무 몰입했군.\" 그는 텅 빈 물병을 보고는, 답례로 자신의 나침반을 준다.",
+            "statChanges": { "SAN": 5 },
+            "itemsLost": ["pure_water_bottle"],
+            "itemsGained": ["compass"]
+          }
+        }
+      ]
+    },
+    "character_liam_bluffing_monster_01": {
+      "id": "character_liam_bluffing_monster_01",
+      "npcId": "liam",
+      "name": "몬스터에게 허세 부리는 리암",
+      "description": "작은 몬스터 앞에서 리암이 가슴을 쫙 펴고 소리친다. \"나는 리암 오설리반이다! 네놈 따위는 내 워밍업 상대도 안 돼!\" 몬스터는 그의 기세에 눌려 주춤하고 있다.",
+      "image": "character_liam_bluffing.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "함께 허세를 부린다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신까지 합세하자 몬스터는 겁을 먹고 도망쳐버렸다. \"봤나? 이게 바로 챔피언의 방식이지!\" 그와 함께 승리를 만끽한다.",
+            "statChanges": { "SAN": 15, "FITNESS": 5 }
+          }
+        },
+        {
+          "text": "그를 버리고 도망간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 도망치자 몬스터는 허세가 통하지 않음을 깨닫고 리암에게 달려들었다. 그의 비명소리가 들렸지만, 당신은 뒤돌아보지 않았다.",
+            "statChanges": { "SAN": -15 }
+          }
+        }
+      ]
+    },
+    "character_liam_giving_autograph_01": {
+      "id": "character_liam_giving_autograph_01",
+      "npcId": "liam",
+      "name": "사인을 해주는 리암",
+      "description": "리암이 낡은 종이 조각에 무언가를 쓰고 있다. 그는 당신에게 그것을 건넨다. \"내 팬을 여기서 만나다니 영광이군. 내 사인이니 잘 간직하게.\"",
+      "image": "character_liam_autograph.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "받는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "종이를 받아보니, 뒷면에 미로의 일부가 그려져 있다! 그가 길을 잃지 않기 위해 그린 지도였다. 그의 뻔뻔함에 헛웃음이 나온다.",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["maze_map_fragment"]
+          }
+        },
+        {
+          "text": "필요 없다고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"이런, 내 가치를 모르는군.\" 그는 어깨를 으쓱하며 종이를 다시 주머니에 넣는다."
+          }
+        }
+      ]
+    },
+    "character_liam_final_sprint_01": {
+      "id": "character_liam_final_sprint_01",
+      "npcId": "liam",
+      "name": "마지막 질주를 준비하는 리암",
+      "description": "리암이 출구로 보이는 문 앞에 서서 출발 자세를 잡고 있다. \"좋아, 모든 준비는 끝났다. 내 마지막 레이스다.\" 그의 눈에는 부상에 대한 고통도, 미로에 대한 공포도 없다. 오직 결승선만 보일 뿐이다.",
+      "image": "character_liam_final_sprint.png",
+      "category": "character",
+      "weight": 3,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "함께 뛴다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 그의 옆에 서자, 그가 웃는다. \"그래, 페이스메이커가 필요했어!\" 당신과 그는 함께 문을 향해 달렸다. 문 너머가 진짜 출구인지는 알 수 없지만, 그의 질주는 당신에게 강한 용기를 주었다.",
+            "statChanges": { "SAN": 25 },
+            "applyStatus": ["determination"]
+          }
+        },
+        {
+          "text": "그를 보내고 그의 짐을 챙긴다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그가 출발하는 순간, 당신은 그가 남겨둔 가방을 챙겼다. 안에는 튼튼한 등산화가 들어있었다. 그의 레이스가 성공했기를 빌어줄 뿐이다.",
+            "statChanges": { "SAN": -5 },
+            "itemsGained": ["sturdy_boots"]
+          }
+        }
+      ]
+    }
+  }
+}

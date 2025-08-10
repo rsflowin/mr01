@@ -1,0 +1,291 @@
+{
+  "events": {
+    "character_hans_measuring_01": {
+      "id": "character_hans_measuring_01",
+      "npcId": "hans",
+      "name": "치수를 재는 한스",
+      "description": "한스 슈미트가 줄자를 이용해 벽돌 사이의 간격을 정밀하게 측정하고 있다. \"오차율 0.01%... 이건 인간의 솜씨가 아니야. 완벽해. 너무 완벽해서 불쾌해.\"",
+      "image": "character_hans_measuring.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그가 뭘 하는지 묻는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"결함을 찾는 중이네. 모든 완벽한 것에는 반드시 결함이 존재하기 마련이지.\" 그는 당신을 쳐다보지도 않고 말한다. 그의 집착에 소름이 돋는다.",
+            "statChanges": { "SAN": -5 }
+          }
+        },
+        {
+          "text": "그에게 멀티툴을 건넨다.",
+          "requirements": { "items": ["multitool"], "stats": null },
+          "successEffects": {
+            "description": "그는 멀티툴을 받아들고, 더 정밀한 도구가 있다며 만족스러워한다. \"좋은 도구군. 장인의 기본이지.\" 그는 답례로 자신이 찾은 나침반을 건넨다. \"이것도 꽤 정확하더군.\"",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["compass"]
+          }
+        }
+      ]
+    },
+    "character_hans_timing_trap_01": {
+      "id": "character_hans_timing_trap_01",
+      "npcId": "hans",
+      "name": "함정의 주기를 계산하는 한스",
+      "description": "한스가 진자 도끼 함정 앞에서 회중시계를 보며 주기를 계산하고 있다. \"12.7초... 12.68초... 좋아, 오차 범위 내야. 1.3초의 빈틈이 있군.\"",
+      "image": "character_hans_timing.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그의 계산을 믿고 건넌다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "그의 계산은 정확했다! 당신은 완벽한 타이밍에 함정을 통과했다. 그는 당연하다는 듯 고개를 끄덕인다.",
+            "statChanges": { "SAN": 10, "FITNESS": 5 }
+          },
+          "failureEffects": {
+            "description": "그의 계산은 정확했지만, 당신의 몸이 따라주지 못했다. 도끼날에 스쳐 상처를 입었다.",
+            "statChanges": { "HP": -15, "SAN": -5 }
+          }
+        },
+        {
+          "text": "그를 밀어서 먼저 보내본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 그를 밀자, 그는 비명을 지르는 대신 정확한 스텝으로 함정을 통과했다! \"이런 무례한! 내 계산이 틀릴 리가 없잖나!\" 그는 분노하며 당신에게 숫돌을 던진다. \"네 머리나 갈아버려!\"",
+            "statChanges": { "SAN": -10 },
+            "itemsGained": ["sharpening_stone"]
+          }
+        }
+      ]
+    },
+    "character_hans_complaining_01": {
+      "id": "character_hans_complaining_01",
+      "npcId": "hans",
+      "name": "불평하는 한스",
+      "description": "한스가 당신의 너덜너덜한 신발을 보고 혀를 찬다. \"쯧쯧, 저런 걸 신고 다니니 발목이나 삐는 거지. 기본이 안 되어 있어. 모든 건 장비에서 시작하는 법인데.\"",
+      "image": "character_hans_complaining.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그의 말에 동의하며 한탄한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신의 한탄에 그가 고개를 끄덕인다. \"그래도 뭘 좀 아는군.\" 그는 자신이 수선해서 쓰던 튼튼한 등산화를 당신에게 던져준다. \"난 어차피 더 좋은 걸 찾을 거니까, 자네나 신게.\"",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["sturdy_boots"]
+          }
+        },
+        {
+          "text": "상관 말라고 쏘아붙인다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"그래, 그렇게 계속 아마추어처럼 굴어보게.\" 그는 당신을 무시하고 제 갈 길을 간다."
+          }
+        }
+      ]
+    },
+    "character_hans_perfect_plan_01": {
+      "id": "character_hans_perfect_plan_01",
+      "npcId": "hans",
+      "name": "완벽한 계획을 세우는 한스",
+      "description": "한스가 바닥에 복잡한 설계도를 그리고 있다. \"이 통로의 몬스터들을 저쪽 함정으로 유인한 다음, 이 레버를 당기면... 완벽해. 한 치의 오차도 없는 계획이야.\"",
+      "image": "character_hans_plan.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그의 계획에 동참한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "계획은 성공했지만, 그 과정에서 몬스터 하나가 그의 계산을 벗어나 당신을 공격했다! 그는 투덜거린다. \"변수는 항상 존재하기 마련이지. 내 잘못이 아니야.\"",
+            "statChanges": { "HP": -15, "SAN": 5 }
+          }
+        },
+        {
+          "text": "그의 계획에 결함이 있다고 지적한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 70 } } },
+          "successEffects": {
+            "description": "당신의 지적에 그가 다시 계산을 하더니 얼굴이 하얗게 질린다. \"...맙소사, 치명적인 오류였군.\" 그는 당신의 통찰력에 감탄하며, 보상으로 아드레날린 주사기를 준다. \"자네, 내 조수가 되게.\"",
+            "statChanges": { "SAN": 15 },
+            "itemsGained": ["adrenaline_shot"]
+          },
+          "failureEffects": {
+            "description": "\"네놈이 뭘 안다고!\" 그는 당신의 말을 무시하고 계획을 실행했지만, 결과는 처참했다. 당신도 그 여파에 휘말렸다.",
+            "statChanges": { "HP": -20, "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_hans_fixing_item_01": {
+      "id": "character_hans_fixing_item_01",
+      "npcId": "hans",
+      "name": "물건을 수리하는 한스",
+      "description": "한스가 당신의 망가진 아이템을 보고 말한다. \"이리 줘 보게. 제대로 된 물건이라면, 고쳐서 쓸 수 있어야 하는 법이지.\" 그의 눈이 장인처럼 빛난다.",
+      "image": "character_hans_fixing.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "더러운 붕대를 건넨다.",
+          "requirements": { "items": ["dirty_bandage"], "stats": null },
+          "successEffects": {
+            "description": "그는 붕대를 보더니, 끓는 물에 소독하고 햇볕에 말려 깨끗한 붕대로 만들어 돌려준다. \"이게 기본이야, 기본.\"",
+            "statChanges": { "SAN": 10 }
+          }
+        },
+        {
+          "text": "곰팡이 핀 빵을 건넨다.",
+          "requirements": { "items": ["moldy_bread"], "stats": null },
+          "successEffects": {
+            "description": "그는 빵을 보더니, 곰팡이 핀 부분을 완벽하게 도려내고 불에 구워준다. \"먹을 수는 있겠군. 맛은 보장 못 해.\"",
+            "statChanges": { "HUNGER": 15, "SAN": 5 },
+            "itemsLost": ["moldy_bread"]
+          }
+        }
+      ]
+    },
+    "character_hans_deathtrap_analysis_01": {
+      "id": "character_hans_deathtrap_analysis_01",
+      "npcId": "hans",
+      "name": "죽음의 함정을 분석하는 한스",
+      "description": "한스가 복잡한 기계 함정 앞에서 감탄하고 있다. \"아름다워... 완벽한 죽음의 메커니즘이야. 이 설계자는 천재야. 만나보고 싶군.\"",
+      "image": "character_hans_analysis.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그의 의견에 동의한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"그렇지? 자네도 볼 줄 아는군.\" 그는 신이 나서 함정의 구조에 대해 설명하기 시작한다. 그의 설명을 듣다 보니 함정을 피할 방법이 보이는 것 같다.",
+            "statChanges": { "SAN": 10 }
+          }
+        },
+        {
+          "text": "함정을 파괴한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 함정을 부수자, 그가 절규한다. \"이 야만인! 예술 작품을 망가뜨리다니!\" 그는 당신을 증오스러운 눈으로 쳐다본다.",
+            "statChanges": { "SAN": -15 }
+          }
+        }
+      ]
+    },
+    "character_hans_failed_calculation_01": {
+      "id": "character_hans_failed_calculation_01",
+      "npcId": "hans",
+      "name": "계산에 실패한 한스",
+      "description": "한스가 자신이 설치한 함정에 스스로 걸려있다. \"...이럴 리가. 변수가... 내 계산에 없던 변수가 작용했어...\" 그는 자신의 실수를 인정하지 못하고 있다.",
+      "image": "character_hans_failed.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "구해준다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 그를 구해주자, 그는 얼굴을 붉히며 헛기침을 한다. \"...고맙다는 말은 안 하겠네. 어차피 혼자 나올 수 있었으니까.\" 그는 츤데레처럼 굴며 구급상자를 던져준다.",
+            "itemsGained": ["first_aid_kit"]
+          }
+        },
+        {
+          "text": "그의 계산이 틀렸다고 놀린다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"틀린 게 아니야! 오차 범위 밖의 변수였을 뿐!\" 그는 필사적으로 변명한다. 그의 자존심에 큰 상처를 입힌 것 같다.",
+            "statChanges": { "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_hans_finding_the_maker_01": {
+      "id": "character_hans_finding_the_maker_01",
+      "npcId": "hans",
+      "name": "제작자를 찾는 한스",
+      "description": "한스가 벽에 새겨진 작은 로고를 발견했다. \"찾았다... 이 미로의 제작자 마크를. 이제 이 자의 작업실만 찾으면 돼. 가서 따져야겠어. 왜 부품 마감을 이따위로 했는지!\"",
+      "image": "character_hans_maker.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "탈출이 먼저 아니냐고 묻는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"탈출? 이런 엉망진창인 설계를 두고 떠나라고? 장인으로서 용납할 수 없네!\" 그의 우선순위는 일반인과 다르다.",
+            "statChanges": { "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "character_hans_offering_upgrade_01": {
+      "id": "character_hans_offering_upgrade_01",
+      "npcId": "hans",
+      "name": "업그레이드를 제안하는 한스",
+      "description": "한스가 당신의 방독면을 보고 말한다. \"필터 효율이 엉망이군. 이리 줘 보게. 내가 개조해주지. 물론, 공짜는 아닐세. 자네의 그 위스키, 그게 필요해. 부품 세척용으로.\"",
+      "image": "character_hans_upgrade.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "거래한다.",
+          "requirements": { "items": ["gas_mask", "flask_of_whiskey"], "stats": null },
+          "successEffects": {
+            "description": "그는 위스키로 부품을 세척하고, 방독면의 성능을 놀라울 정도로 향상시켰다. 그는 만족스럽게 남은 위스키를 마신다. \"...세척용으론 아까운 맛이군.\"",
+            "statChanges": { "SAN": 10 },
+            "itemsLost": ["flask_of_whiskey"]
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"흥. 그럼 계속 그 고물이나 쓰고 다니게.\" 그는 당신의 선택을 존중하지만, 이해하지는 못한다."
+          }
+        }
+      ]
+    },
+    "character_hans_final_flaw_01": {
+      "id": "character_hans_final_flaw_01",
+      "npcId": "hans",
+      "name": "최후의 결함을 발견한 한스",
+      "description": "한스가 미로의 중심부로 보이는 거대한 톱니바퀴 앞에서 서 있다. \"...찾았다. 이 미로의 심장. 그리고... 치명적인 결함.\" 그는 당신을 돌아본다. \"이 톱니바퀴 하나만 빼내면, 이 미로 전체가 붕괴할 걸세.\"",
+      "image": "character_hans_final_flaw.png",
+      "category": "character",
+      "weight": 3,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "함께 붕괴시킨다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"내가 만든 것도 아닌데, 내 손으로 끝내게 되는군. 아이러니해.\" 그와 당신이 힘을 합쳐 톱니바퀴를 빼내자, 미로가 무너지기 시작한다. 탈출할 수 있을지는 미지수지만, 그의 집념이 결국 길을 열었다.",
+            "statChanges": { "SAN": 15 },
+            "applyStatus": ["determination"]
+          }
+        },
+        {
+          "text": "그를 말린다. 너무 위험하다고.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그가 당신을 본다. \"위험? 내 인생 최고의 작품을 완성할 기회인데?\" 그는 당신을 밀치고 혼자 톱니바퀴를 빼낸다. 미로가 무너지며, 그는 잔해 속에서 만족스러운 미소를 짓고 있었다.",
+            "statChanges": { "SAN": -15 }
+          }
+        }
+      ]
+    }
+  }
+}

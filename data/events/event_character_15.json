@@ -1,0 +1,294 @@
+{
+  "events": {
+    "character_ingrid_scornful_glance_01": {
+      "id": "character_ingrid_scornful_glance_01",
+      "npcId": "ingrid",
+      "name": "경멸하며 쳐다보는 잉그리드",
+      "description": "잉그리드 요한센이 당신의 행색을 위아래로 훑어본다. \"흥. 도시에서 온 애송이로군. 네놈의 그 깨끗한 신발이 얼마나 갈지 궁금하군.\"",
+      "image": "character_ingrid_scornful.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "당신은 누구냐고 묻는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"나는 살아남는 사람이다.\" 그녀는 짧게 대답하고는, 당신에게서 등을 돌린다. 그녀의 기에 눌려 자신감이 하락한다.",
+            "statChanges": { "SAN": -10 }
+          }
+        },
+        {
+          "text": "그녀의 튼튼한 등산화를 칭찬한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀의 눈이 약간 부드러워진다. \"물건 볼 줄은 아는군. 이건 '스발바르'에서도 내 발을 지켜줬지.\" 그녀는 기분이 좋아졌는지, 자신이 쓰던 밧줄을 던져준다. \"이거나 써라. 발 헛디뎌서 내 앞에서 죽지 말고.\"",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["rope"]
+          }
+        }
+      ]
+    },
+    "character_ingrid_harsh_lesson_01": {
+      "id": "character_ingrid_harsh_lesson_01",
+      "npcId": "ingrid",
+      "name": "혹독한 가르침을 주는 잉그리드",
+      "description": "당신이 작은 상처에 쩔쩔매는 것을 본 잉그리드가 다가와, 당신의 상처에 정체불명의 액체를 붓는다! 불에 타는 듯한 고통이 느껴진다.",
+      "image": "character_ingrid_lesson.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "고통을 참는다.",
+          "requirements": null,
+          "successConditions": { "stats": { "HP": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "당신이 비명 한번 지르지 않고 버티자, 그녀가 만족스럽게 말한다. \"고통은 살아있다는 증거다. 잊지 마라.\" 놀랍게도 상처가 빠르게 회복되고, 피가 멎었다. 그것은 독한 위스키였다.",
+            "statChanges": { "HP": 15, "SAN": 10 },
+            "removeStatus": ["bleeding"]
+          },
+          "failureEffects": {
+            "description": "고통을 참지 못하고 비명을 지르자, 그녀가 경멸하며 말한다. \"그 정도 고통도 못 참나? 넌 여기서 죽을 거다.\"",
+            "statChanges": { "HP": -5, "SAN": -15 }
+          }
+        },
+        {
+          "text": "그녀를 밀친다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 그녀를 밀치자, 그녀는 놀라울 정도로 쉽게 넘어진다. 그녀는 당신을 노려보며, 다시는 당신을 돕지 않을 거라고 말한다."
+          }
+        }
+      ]
+    },
+    "character_ingrid_climbing_wall_01": {
+      "id": "character_ingrid_climbing_wall_01",
+      "npcId": "ingrid",
+      "name": "벽을 오르는 잉그리드",
+      "description": "잉그리드가 맨손으로 아찔한 높이의 벽을 오르고 있다. 그녀의 움직임은 마치 산양처럼 민첩하고 정확하다. 그녀는 위에서 당신을 내려다본다.",
+      "image": "character_ingrid_climbing.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "올라가는 것을 돕겠다고 제안한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀가 당신을 비웃는다. \"네가? 날? 웃기는군.\" 그녀는 가뿐하게 정상에 도달한 후, 반대편으로 사라져버린다."
+          }
+        },
+        {
+          "text": "그녀가 떨어뜨린 물건을 줍는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀가 오르는 동안, 주머니에서 아드레날린 주사기가 떨어졌다. 그녀는 그것도 모르고 계속 올라간다. 당신은 귀중한 아이템을 얻었다.",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["adrenaline_shot"]
+          }
+        }
+      ]
+    },
+    "character_ingrid_cold_resistance_01": {
+      "id": "character_ingrid_cold_resistance_01",
+      "npcId": "ingrid",
+      "name": "추위를 견디는 잉그리드",
+      "description": "냉기가 가득한 방에서, 잉그리드는 아무렇지 않은 듯 팔짱을 끼고 서 있다. \"이 정도 추위는 노르웨이의 여름 날씨와 같군.\"",
+      "image": "character_ingrid_cold.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "존경스럽다고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"존경이 아니라 생존이다.\" 그녀는 퉁명스럽게 말하지만, 싫지는 않은 눈치다. 그녀는 자신의 전투식량 일부를 던져준다. \"열량을 보충해. 체온 유지의 기본이다.\"",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["combat_ration"]
+          }
+        },
+        {
+          "text": "불을 피워 몸을 녹인다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 불을 피우자, 그녀가 혀를 찬다. \"인공적인 온기에 의존하는 자는, 그 불이 꺼졌을 때 가장 먼저 얼어 죽지.\" 그녀의 말이 뼈아프게 다가온다.",
+            "statChanges": { "HP": 5, "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_ingrid_deal_01": {
+      "id": "character_ingrid_deal_01",
+      "npcId": "ingrid",
+      "name": "거래를 제안하는 잉그리드",
+      "description": "잉그리드가 당신의 구급상자를 보고 말한다. \"그 상자, 나에게 넘겨라. 대신 이 몬스터를 처리해주지. 넌 손가락 하나 까딱할 필요 없어. 공평한 거래다.\"",
+      "image": "character_ingrid_deal.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "거래한다.",
+          "requirements": { "items": ["first_aid_kit"], "stats": null },
+          "successEffects": {
+            "description": "그녀는 약속대로 눈 깜짝할 사이에 몬스터를 처리하고, 당신의 구급상자를 가져간다. 당신은 안전해졌지만, 가장 중요한 치료 아이템을 잃었다.",
+            "itemsLost": ["first_aid_kit"]
+          }
+        },
+        {
+          "text": "내가 직접 처리하겠다고 말한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 60 } } },
+          "successEffects": {
+            "description": "당신이 몬스터를 성공적으로 물리치자, 그녀가 처음으로 당신을 인정하는 눈빛으로 본다. \"...제법이군.\" 그녀는 아무것도 가져가지 않고 떠난다.",
+            "statChanges": { "HP": -10, "SAN": 15, "FITNESS": 5 }
+          },
+          "failureEffects": {
+            "description": "당신이 몬스터에게 고전하자, 그녀가 한심하다는 듯 혀를 차며 몬스터를 마무리한다. 그리고는 당신의 구급상자를 빼앗아간다. \"네놈에겐 과분한 물건이다.\"",
+            "statChanges": { "HP": -20, "SAN": -10 },
+            "itemsLost": ["first_aid_kit"]
+          }
+        }
+      ]
+    },
+    "character_ingrid_mercy_is_weakness_01": {
+      "id": "character_ingrid_mercy_is_weakness_01",
+      "npcId": "ingrid",
+      "name": "자비는 나약함이라고 말하는 잉그리드",
+      "description": "덫에 걸린 작은 동물을 당신이 풀어주자, 잉그리드가 말한다. \"쓸데없는 짓. 저건 오늘 밤 내 저녁 식사가 될 수도 있었다. 동정심은 굶주림 앞에서 가장 먼저 사라지는 감정이지.\"",
+      "image": "character_ingrid_mercy.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그녀의 말에 반박한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"네놈의 철학 강의는 듣고 싶지 않다.\" 그녀는 당신의 말을 잘라버린다."
+          }
+        },
+        {
+          "text": "그녀에게 식량을 준다.",
+          "requirements": { "items": ["canned_tuna"], "stats": null },
+          "successEffects": {
+            "description": "당신이 참치 통조림을 던져주자, 그녀는 잠시 놀라더니 말없이 받는다. 그녀는 답례로 자신이 쓰던 가스 마스크를 던져준다. 빚지는 것을 싫어하는 성격인 듯하다.",
+            "itemsLost": ["canned_tuna"],
+            "itemsGained": ["gas_mask"]
+          }
+        }
+      ]
+    },
+    "character_ingrid_avalanche_story_01": {
+      "id": "character_ingrid_avalanche_story_01",
+      "npcId": "ingrid",
+      "name": "눈사태 이야기를 하는 잉그리드",
+      "description": "잉그리드가 잠시 먼 곳을 보며 말한다. \"K2에서 눈사태를 만난 적이 있다. 내 파트너는... 나를 살리기 위해 자신의 밧줄을 끊었지. 이 미로는 그에 비하면 산책 수준이야.\"",
+      "image": "character_ingrid_story.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "유감이라고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"유감? 아니, 그건 영광이었다.\" 그녀는 당신의 동정을 이해하지 못한다. 그녀의 강인함이 당신을 압도한다.",
+            "statChanges": { "SAN": -10 }
+          }
+        },
+        {
+          "text": "그녀의 파트너는 위대한 사람이었다고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀의 눈빛이 흔들린다. \"...그래, 그랬지.\" 그녀는 자신의 과거를 이해해준 당신에게, 파트너의 유품이라며 낡은 나침반을 건넨다.",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["compass"]
+          }
+        }
+      ]
+    },
+    "character_ingrid_leaving_you_behind_01": {
+      "id": "character_ingrid_leaving_you_behind_01",
+      "npcId": "ingrid",
+      "name": "당신을 버려두고 가는 잉그리드",
+      "description": "당신이 피로에 지쳐 잠시 주저앉자, 잉그리드는 뒤도 돌아보지 않고 말한다. \"뒤처지는 자는 기다려주지 않는다. 그게 산의 규칙이고, 이곳의 규칙이다.\"",
+      "image": "character_ingrid_leaving.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "가지 말라고 애원한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀는 당신의 애원을 무시하고 그대로 떠나버렸다. 그녀의 냉혹함에 절망감이 밀려온다.",
+            "statChanges": { "SAN": -15 }
+          }
+        },
+        {
+          "text": "그녀의 뒷모습에 욕설을 퍼붓는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신의 욕설에 그녀가 잠시 멈춰 서서 돌아본다. \"...그래, 그 정도의 분노는 있어야지.\" 그녀는 당신에게 진통제를 던져주고는 다시 길을 떠난다. \"그거 먹고 빨리 따라와라. 느림보는 질색이니까.\"",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["painkillers"]
+          }
+        }
+      ]
+    },
+    "character_ingrid_respect_01": {
+      "id": "character_ingrid_respect_01",
+      "npcId": "ingrid",
+      "name": "경의를 표하는 잉그리드",
+      "description": "당신이 여러 역경을 헤치고 살아남은 모습을 본 잉그리드가 말한다. \"...생각보다 끈질기군, 애송이. 넌 네가 생각하는 것보다 강해.\"",
+      "image": "character_ingrid_respect.png",
+      "category": "character",
+      "weight": 4,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "당신도 마찬가지라고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀는 희미하게 미소 짓는다. 그녀에게 인정받았다는 사실이 당신의 영혼을 강하게 만든다.",
+            "statChanges": { "SAN": 20 },
+            "applyStatus": ["determination"]
+          }
+        }
+      ]
+    },
+    "character_ingrid_final_climb_01": {
+      "id": "character_ingrid_final_climb_01",
+      "npcId": "ingrid",
+      "name": "마지막 등반을 하는 잉그리드",
+      "description": "잉그리드가 하늘로 통하는 듯한 거대한 수직 통로 앞에 서 있다. \"내 마지막 에베레스트로군.\" 그녀는 당신을 돌아보며 말한다. \"내 방식대로 정상에 오르겠다. 넌 네 방식대로 살아남아라.\"",
+      "image": "character_ingrid_final_climb.png",
+      "category": "character",
+      "weight": 3,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그녀의 안전을 빈다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"행운은 약한 자들이나 바라는 거다.\" 그녀는 그렇게 말하고는, 망설임 없이 암벽을 오르기 시작했다. 그녀가 남기고 간 배낭에는 그녀가 아끼던 튼튼한 등산화가 들어있었다.",
+            "statChanges": { "SAN": 15 },
+            "itemsGained": ["sturdy_boots"]
+          }
+        },
+        {
+          "text": "밧줄을 건넨다.",
+          "requirements": { "items": ["rope"], "stats": null },
+          "successEffects": {
+            "description": "그녀는 당신의 밧줄을 보더니, 고개를 젓는다. \"이 등반은... 온전히 나 혼자만의 힘으로 해야 한다.\" 그녀는 당신의 마음에 대한 보답으로, 자신의 구급상자를 남겨두고 떠난다.",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["first_aid_kit"]
+          }
+        }
+      ]
+    }
+  }
+}

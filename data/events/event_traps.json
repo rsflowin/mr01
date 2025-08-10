@@ -1,0 +1,880 @@
+{
+  "events": {
+    "trap_pitfall_01": {
+      "id": "trap_pitfall_01",
+      "name": "숨겨진 함정 구덩이",
+      "description": "발 밑의 바닥이 갑자기 푹 꺼진다! 아슬아슬하게 가장자리에 매달렸다.",
+      "image": "trap_pitfall.png",
+      "category": "trap",
+      "weight": 20,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "힘으로 기어오른다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "강한 팔 힘으로 간신히 기어올랐다.",
+            "statChanges": { "FITNESS": 5, "HUNGER": -5 }
+          },
+          "failureEffects": {
+            "description": "힘이 부족해 구덩이 아래로 떨어지며 발목을 접질렸다.",
+            "statChanges": { "HP": -15, "SAN": -10 },
+            "applyStatus": ["sprain"]
+          }
+        },
+        {
+          "text": "밧줄을 사용한다.",
+          "requirements": { "items": ["rope"], "stats": null },
+          "successEffects": {
+            "description": "밧줄을 단단히 고정하고 안전하게 빠져나왔다.",
+            "statChanges": { "HUNGER": -2 }
+          }
+        }
+      ]
+    },
+    "trap_poison_dart_01": {
+      "id": "trap_poison_dart_01",
+      "name": "독침 함정",
+      "description": "벽의 작은 구멍에서 '쉭' 소리와 함께 무언가 날아온다!",
+      "image": "trap_poison_dart.png",
+      "category": "trap",
+      "weight": 15,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "몸을 날려 피한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 60 } } },
+          "successEffects": {
+            "description": "영화처럼 아슬아슬하게 피했다. 스스로가 자랑스럽다.",
+            "statChanges": { "SAN": 5, "FITNESS": 2, "HUNGER": -3 }
+          },
+          "failureEffects": {
+            "description": "독침이 팔에 스쳤다. 시야가 흐려지고 환각이 보이기 시작한다.",
+            "statChanges": { "HP": -5, "SAN": -15 },
+            "applyStatus": ["hallucination"]
+          }
+        },
+        {
+          "text": "방독면을 쓴다.",
+          "requirements": { "items": ["gas_mask"], "stats": null },
+          "successEffects": {
+            "description": "독침은 피하지 못했지만, 방독면 덕분에 독의 효과는 막았다.",
+            "statChanges": { "HP": -5 }
+          }
+        },
+        {
+          "text": "해독제를 미리 마신다.",
+          "requirements": { "items": ["antidote"], "stats": null },
+          "successEffects": {
+            "description": "독침에 맞았지만 미리 마신 해독제 덕분에 아무렇지도 않다. 대신 약병을 떨어뜨렸다.",
+            "statChanges": { "HP": -5 },
+            "itemsLost": ["antidote"]
+          }
+        }
+      ]
+    },
+    "trap_swinging_axe_01": {
+      "id": "trap_swinging_axe_01",
+      "name": "진자 도끼 함정",
+      "description": "복도 저편에서 거대한 도끼가 좌우로 흔들리며 다가온다.",
+      "image": "trap_swinging_axe.png",
+      "category": "trap",
+      "weight": 12,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "타이밍 맞춰 달린다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 70 } } },
+          "successEffects": {
+            "description": "도끼의 움직임을 완벽하게 파악하고 통과했다. 온몸에 소름이 돋았다.",
+            "statChanges": { "SAN": 10, "FITNESS": 5, "HUNGER": -4 }
+          },
+          "failureEffects": {
+            "description": "타이밍을 잘못 맞췄다. 도끼날에 깊은 상처를 입었다!",
+            "statChanges": { "HP": -30, "SAN": -10 },
+            "applyStatus": ["bleeding"]
+          }
+        }
+      ]
+    },
+    "trap_pressure_plate_01": {
+      "id": "trap_pressure_plate_01",
+      "name": "압력 발판",
+      "description": "바닥의 돌 하나를 밟자 '딸깍' 소리가 나며 천장에서 돌이 쏟아져 내린다!",
+      "image": "trap_pressure_plate.png",
+      "category": "trap",
+      "weight": 18,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "재빨리 뒤로 구른다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 40 } } },
+          "successEffects": {
+            "description": "반사적으로 몸을 굴려 돌무더기를 피했다.",
+            "statChanges": { "FITNESS": 3, "HUNGER": -2 }
+          },
+          "failureEffects": {
+            "description": "쏟아지는 돌에 깔려 온몸에 타박상을 입었다. 피로가 몰려온다.",
+            "statChanges": { "HP": -20, "FITNESS": -10 },
+            "applyStatus": ["fatigue"]
+          }
+        },
+        {
+          "text": "멀티툴로 해제한다.",
+          "requirements": { "items": ["multitool"], "stats": null },
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "침착하게 발판의 기계장치를 망가뜨려 함정을 무력화했다.",
+            "statChanges": { "SAN": 15 }
+          },
+          "failureEffects": {
+            "description": "서두르다 손을 다쳤고, 결국 함정은 그대로 발동했다.",
+            "statChanges": { "HP": -25, "SAN": -5 },
+            "applyStatus": ["fatigue"]
+          }
+        }
+      ]
+    },
+    "trap_illusion_wall_01": {
+      "id": "trap_illusion_wall_01",
+      "name": "환영의 벽",
+      "description": "벽 너머로 출구가 보이는 것 같다. 하지만 다가갈수록 머리가 어지럽다.",
+      "image": "trap_illusion_wall.png",
+      "category": "trap",
+      "weight": 10,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "그대로 돌진한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "벽에 세게 부딪혔다. 정신을 차려보니 출구는 사라져 있었다. 머리가 띵하다.",
+            "statChanges": { "HP": -5, "SAN": -10 },
+            "applyStatus": ["dizziness"]
+          }
+        },
+        {
+          "text": "나침반을 확인한다.",
+          "requirements": { "items": ["compass"], "stats": null },
+          "successEffects": {
+            "description": "나침반은 전혀 다른 방향을 가리키고 있다. 환영임을 깨닫고 정신을 다잡는다.",
+            "statChanges": { "SAN": 10 }
+          }
+        },
+        {
+          "text": "행운의 동전을 던져본다.",
+          "requirements": { "items": ["lucky_coin"], "stats": null },
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 30 } } },
+          "successEffects": {
+            "description": "동전이 벽을 통과하는 것을 보고 환영임을 간파했다. 동전은 그대로 사라졌다.",
+            "statChanges": { "SAN": 5 },
+            "itemsLost": ["lucky_coin"]
+          },
+          "failureEffects": {
+            "description": "동전이 벽에 튕겨 나온다. 진짜 벽인가? 혼란스러움에 정신력이 소모된다.",
+            "statChanges": { "SAN": -15 }
+          }
+        }
+      ]
+    },
+    "trap_net_01": {
+      "id": "trap_net_01",
+      "name": "그물 함정",
+      "description": "바닥의 밧줄을 건드리자 천장에서 그물이 떨어져 몸을 덮친다!",
+      "image": "trap_net.png",
+      "category": "trap",
+      "weight": 16,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "그물을 찢는다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 65 } } },
+          "successEffects": {
+            "description": "필사적으로 그물을 찢고 탈출했다.",
+            "statChanges": { "FITNESS": 5, "HUNGER": -6 }
+          },
+          "failureEffects": {
+            "description": "그물은 생각보다 질겼다. 발버둥 치다 완전히 지쳐버렸다.",
+            "statChanges": { "SAN": -5 },
+            "applyStatus": ["fatigue"]
+          }
+        },
+        {
+          "text": "멀티툴로 밧줄을 자른다.",
+          "requirements": { "items": ["multitool"], "stats": null },
+          "successEffects": {
+            "description": "멀티툴의 작은 칼로 침착하게 그물을 잘라내고 빠져나왔다.",
+            "statChanges": { "SAN": 5 }
+          }
+        }
+      ]
+    },
+    "trap_freezing_mist_01": {
+      "id": "trap_freezing_mist_01",
+      "name": "냉기 안개",
+      "description": "방에 들어서자 뼛속까지 시린 냉기가 가득하다. 몸이 제대로 움직이지 않는다.",
+      "image": "trap_freezing_mist.png",
+      "category": "trap",
+      "weight": 14,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "의지로 버티며 통과한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "HP": { "operator": ">", "value": 80 } } },
+          "successEffects": {
+            "description": "이를 악물고 냉기 지대를 통과했다. 온몸의 체온을 빼앗긴 기분이다.",
+            "statChanges": { "HP": -15, "HUNGER": -5 }
+          },
+          "failureEffects": {
+            "description": "추위를 견디지 못하고 쓰러질 뻔했다. 심한 피로감을 느낀다.",
+            "statChanges": { "HP": -10 },
+            "applyStatus": ["fatigue"]
+          }
+        },
+        {
+          "text": "위스키를 마셔 몸을 덥힌다.",
+          "requirements": { "items": ["flask_of_whiskey"], "stats": null },
+          "successEffects": {
+            "description": "독한 술기운이 온몸에 퍼져 추위를 이겨낼 수 있었다. 하지만 머리가 어지럽다.",
+            "statChanges": { "HP": -5 },
+            "itemsLost": ["flask_of_whiskey"],
+            "applyStatus": ["dizziness"]
+          }
+        }
+      ]
+    },
+    "trap_bear_trap_01": {
+      "id": "trap_bear_trap_01",
+      "name": "곰 덫",
+      "description": "낙엽 더미 아래에 숨겨진 곰 덫을 밟았다. 날카로운 쇠 이빨이 발목을 파고든다!",
+      "image": "trap_bear_trap.png",
+      "category": "trap",
+      "weight": 11,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "강제로 벌려서 뺀다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 80 } } },
+          "successEffects": {
+            "description": "고통을 참으며 덫을 벌려 발을 뺐다. 끔찍한 상처가 남았다.",
+            "statChanges": { "HP": -25, "SAN": -10 },
+            "applyStatus": ["bleeding"]
+          },
+          "failureEffects": {
+            "description": "덫은 꿈쩍도 하지 않는다. 발버둥 칠수록 상처만 깊어진다.",
+            "statChanges": { "HP": -35, "SAN": -15 },
+            "applyStatus": ["bleeding", "sprain"]
+          }
+        },
+        {
+          "text": "튼튼한 등산화 덕분에 살았다.",
+          "requirements": { "items": ["sturdy_boots"], "stats": null },
+          "successEffects": {
+            "description": "등산화의 두꺼운 밑창이 덫의 이빨을 막아주었다. 신발은 망가졌지만 다치진 않았다.",
+            "statChanges": { "SAN": 10 },
+            "itemsLost": ["sturdy_boots"]
+          }
+        }
+      ]
+    },
+    "trap_loud_noise_01": {
+      "id": "trap_loud_noise_01",
+      "name": "귀를 찢는 소음",
+      "description": "방 전체가 갑자기 귀를 찢는 듯한 소음으로 가득 찬다. 머리가 깨질 것 같다.",
+      "image": "trap_loud_noise.png",
+      "category": "trap",
+      "weight": 13,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "귀를 막고 버틴다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "소음이 멎었지만, 한동안 머리가 멍하고 어지럽다.",
+            "statChanges": { "SAN": -10 },
+            "applyStatus": ["dizziness"]
+          }
+        }
+      ]
+    },
+    "trap_sticky_floor_01": {
+      "id": "trap_sticky_floor_01",
+      "name": "끈끈한 바닥",
+      "description": "바닥이 이상한 액체로 뒤덮여 있다. 발이 달라붙어 움직이기 힘들다.",
+      "image": "trap_sticky_floor.png",
+      "category": "trap",
+      "weight": 17,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "힘으로 떼어내며 걷는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "겨우 방을 통과했지만, 온몸의 힘이 다 빠져나갔다.",
+            "statChanges": { "HUNGER": -8 },
+            "applyStatus": ["fatigue"]
+          }
+        }
+      ]
+    },
+    "trap_sleeping_gas_01": {
+      "id": "trap_sleeping_gas_01",
+      "name": "수면 가스",
+      "description": "달콤한 냄새가 나는 연기가 뿜어져 나온다. 눈꺼풀이 무거워진다.",
+      "image": "trap_sleeping_gas.png",
+      "category": "trap",
+      "weight": 9,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "저항한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 75 } } },
+          "successEffects": {
+            "description": "정신력으로 버텨내고 가스가 흩어지길 기다렸다.",
+            "statChanges": { "SAN": -10, "FITNESS": -5 }
+          },
+          "failureEffects": {
+            "description": "저항하지 못하고 잠들었다. 깨어나 보니 누군가 식량을 훔쳐간 것 같다.",
+            "statChanges": { "HP": 10, "SAN": 5 },
+            "itemsLost": ["energy_bar", "canned_tuna"]
+          }
+        },
+        {
+          "text": "방독면을 착용한다.",
+          "requirements": { "items": ["gas_mask"], "stats": null },
+          "successEffects": {
+            "description": "방독면 덕분에 아무 영향 없이 방을 통과했다.",
+            "statChanges": { "SAN": 5 }
+          }
+        }
+      ]
+    },
+    "trap_mirror_maze_01": {
+      "id": "trap_mirror_maze_01",
+      "name": "거울 미로",
+      "description": "사방이 거울로 된 방이다. 어디가 길이고 어디가 내 모습인지 혼란스럽다.",
+      "image": "trap_mirror_maze.png",
+      "category": "trap",
+      "weight": 8,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "손으로 더듬으며 길을 찾는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "한참을 헤맨 끝에 간신히 출구를 찾았다. 정신적으로 완전히 지쳤다.",
+            "statChanges": { "SAN": -20, "HUNGER": -5 },
+            "applyStatus": ["claustrophobia"]
+          }
+        },
+        {
+          "text": "섬뜩한 인형의 눈을 따라간다.",
+          "requirements": { "items": ["creepy_doll"], "stats": null },
+          "successEffects": {
+            "description": "인형의 눈이 기묘하게 진짜 길을 향하는 것 같다. 인형 덕분에 쉽게 빠져나왔지만, 기분은 더 나빠졌다.",
+            "statChanges": { "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "trap_rolling_boulder_01": {
+      "id": "trap_rolling_boulder_01",
+      "name": "굴러오는 바위",
+      "description": "통로 저편에서 거대한 바위가 굉음과 함께 굴러오기 시작한다!",
+      "image": "trap_rolling_boulder.png",
+      "category": "trap",
+      "weight": 7,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "죽을 힘을 다해 뛴다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 85 } } },
+          "successEffects": {
+            "description": "간발의 차로 바위를 피했다. 심장이 터질 것 같다.",
+            "statChanges": { "SAN": 5, "HUNGER": -10 },
+            "applyStatus": ["fatigue"]
+          },
+          "failureEffects": {
+            "description": "바위에 휩쓸려 온몸에 골절상을 입었다. 거의 죽을 뻔했다.",
+            "statChanges": { "HP": -50, "SAN": -20 },
+            "applyStatus": ["sprain", "bleeding"]
+          }
+        },
+        {
+          "text": "아드레날린을 주사한다.",
+          "requirements": { "items": ["adrenaline_shot"], "stats": null },
+          "successEffects": {
+            "description": "아드레날린의 힘으로 초인적인 속도를 내어 바위보다 먼저 안전지대에 도착했다.",
+            "statChanges": { "HUNGER": -8 },
+            "itemsLost": ["adrenaline_shot"]
+          }
+        }
+      ]
+    },
+    "trap_false_treasure_01": {
+      "id": "trap_false_treasure_01",
+      "name": "가짜 보물상자",
+      "description": "방 중앙에 화려한 보물상자가 놓여 있다. 너무 수상해 보인다.",
+      "image": "trap_false_treasure.png",
+      "category": "trap",
+      "weight": 10,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "열어본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "상자를 열자, 안에서 독침이 튀어나와 손등에 박혔다!",
+            "statChanges": { "HP": -10, "SAN": -5 },
+            "applyStatus": ["hallucination"]
+          }
+        },
+        {
+          "text": "무시하고 지나간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "뻔한 함정이다. 현명하게 무시하고 지나쳤다.",
+            "statChanges": { "SAN": 5 }
+          }
+        }
+      ]
+    },
+    "trap_rust_flakes_01": {
+      "id": "trap_rust_flakes_01",
+      "name": "녹 가루 함정",
+      "description": "천장에서 붉은 녹 가루가 비처럼 쏟아진다. 숨을 쉴 때마다 쇠 맛이 난다.",
+      "image": "trap_rust_flakes.png",
+      "category": "trap",
+      "weight": 14,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "숨을 참고 통과한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "녹 가루를 마시지 않으려 애썼지만, 결국 기침이 터져 나왔다. 속이 좋지 않다.",
+            "statChanges": { "HP": -5, "SAN": -5 },
+            "applyStatus": ["stomach_ache"]
+          }
+        },
+        {
+          "text": "방독면을 착용한다.",
+          "requirements": { "items": ["gas_mask"], "stats": null },
+          "successEffects": {
+            "description": "방독면이 녹 가루를 완벽하게 걸러주었다.",
+            "statChanges": { "SAN": 5 }
+          }
+        }
+      ]
+    },
+    "trap_haunted_echo_01": {
+      "id": "trap_haunted_echo_01",
+      "name": "유령의 메아리",
+      "description": "방에 들어서자 누군가 비명을 지르는 소리가 사방에서 들려온다. 하지만 아무도 보이지 않는다.",
+      "image": "trap_haunted_echo.png",
+      "category": "trap",
+      "weight": 9,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "무시하고 나아간다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 60 } } },
+          "successEffects": {
+            "description": "환청일 뿐이라고 스스로를 다독이며 방을 빠져나왔다.",
+            "statChanges": { "SAN": -5 }
+          },
+          "failureEffects": {
+            "description": "비명소리가 머릿속을 헤집어 놓는다. 공포에 질려 정신력이 크게 소모되었다.",
+            "statChanges": { "SAN": -25 },
+            "applyStatus": ["claustrophobia"]
+          }
+        },
+        {
+          "text": "가족사진을 보며 마음을 다잡는다.",
+          "requirements": { "items": ["family_photo"], "stats": null },
+          "successEffects": {
+            "description": "사진을 보며 돌아가야 할 이유를 되새기자, 헛된 소리들이 들리지 않게 되었다.",
+            "statChanges": { "SAN": 10 },
+            "applyStatus": ["determination"]
+          }
+        }
+      ]
+    },
+    "trap_slippery_oil_01": {
+      "id": "trap_slippery_oil_01",
+      "name": "기름 함정",
+      "description": "바닥에 미끄러운 기름이 흥건하다. 조심스럽게 발을 내디뎠지만, 균형을 잃고 만다.",
+      "image": "trap_slippery_oil.png",
+      "category": "trap",
+      "weight": 16,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "넘어진다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "가볍게 넘어지고 바로 일어났다. 옷이 더러워졌지만 다치진 않았다.",
+            "statChanges": { "HP": -2, "SAN": -3 }
+          },
+          "failureEffects": {
+            "description": "크게 넘어지면서 머리를 부딪혔다. 눈앞이 핑 돈다.",
+            "statChanges": { "HP": -10, "SAN": -5 },
+            "applyStatus": ["dizziness"]
+          }
+        },
+        {
+          "text": "등산화 덕분에 버텼다.",
+          "requirements": { "items": ["sturdy_boots"], "stats": null },
+          "successEffects": {
+            "description": "등산화의 뛰어난 접지력 덕분에 미끄러지지 않고 무사히 통과했다.",
+            "statChanges": { "SAN": 5, "FITNESS": 2 }
+          }
+        }
+      ]
+    },
+    "trap_weak_floor_01": {
+      "id": "trap_weak_floor_01",
+      "name": "약한 바닥",
+      "description": "바닥 일부가 쩍 갈라져 있다. 무너질 것처럼 위태로워 보인다.",
+      "image": "trap_weak_floor.png",
+      "category": "trap",
+      "weight": 15,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "점프해서 건넌다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 55 } } },
+          "successEffects": {
+            "description": "성공적으로 건너편에 착지했다.",
+            "statChanges": { "FITNESS": 3, "HUNGER": -3 }
+          },
+          "failureEffects": {
+            "description": "점프 거리가 모자라 바닥과 함께 아래층으로 떨어졌다!",
+            "statChanges": { "HP": -25, "SAN": -10 },
+            "applyStatus": ["sprain"]
+          }
+        },
+        {
+          "text": "밧줄로 반대편에 고리를 건다.",
+          "requirements": { "items": ["rope"], "stats": null },
+          "successEffects": {
+            "description": "밧줄을 이용해 안전하게 건넜다.",
+            "statChanges": { "HUNGER": -1 }
+          }
+        }
+      ]
+    },
+    "trap_blinding_light_01": {
+      "id": "trap_blinding_light_01",
+      "name": "섬광 함정",
+      "description": "방에 들어서는 순간, 눈앞에서 터지는 섬광에 시야가 하얗게 변한다!",
+      "image": "trap_blinding_light.png",
+      "category": "trap",
+      "weight": 12,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "눈을 감고 버틴다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "한동안 눈이 보이지 않아 공포스러웠다. 시야가 돌아왔지만 여전히 어지럽다.",
+            "statChanges": { "SAN": -10 },
+            "applyStatus": ["dizziness"]
+          }
+        }
+      ]
+    },
+    "trap_magnetic_field_01": {
+      "id": "trap_magnetic_field_01",
+      "name": "강력한 자기장",
+      "description": "방 전체에 강력한 자기장이 흐르고 있다. 금속으로 된 물건들이 멋대로 움직인다!",
+      "image": "trap_magnetic_field.png",
+      "category": "trap",
+      "weight": 6,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "조심해서 통과한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "자기장 때문에 멀티툴과 나침반이 망가져 버렸다.",
+            "statChanges": { "SAN": -5 },
+            "itemsLost": ["multitool", "compass"]
+          }
+        }
+      ]
+    },
+    "trap_fools_gold_01": {
+      "id": "trap_fools_gold_01",
+      "name": "바보의 금",
+      "description": "바닥에 금화가 몇 개 떨어져 있다. 하지만 자세히 보니 행운의 동전과 똑같이 생겼다.",
+      "image": "trap_fools_gold.png",
+      "category": "trap",
+      "weight": 10,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "줍는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "동전을 줍는 순간 손에서 녹아내리며 피부를 태운다. 끔찍한 고통이 느껴진다.",
+            "statChanges": { "HP": -10, "SAN": -8 }
+          }
+        },
+        {
+          "text": "행운의 동전을 던져본다.",
+          "requirements": { "items": ["lucky_coin"], "stats": null },
+          "successEffects": {
+            "description": "내 동전을 던지자 바닥의 동전들이 연기처럼 사라졌다. 함정이었군.",
+            "statChanges": { "SAN": 5 }
+          }
+        }
+      ]
+    },
+    "trap_acid_drip_01": {
+      "id": "trap_acid_drip_01",
+      "name": "산성 액체",
+      "description": "천장의 균열에서 녹색 액체가 '뚝... 뚝...' 떨어지고 있다. 바닥에 닿자 '치이익' 소리를 내며 녹아내린다.",
+      "image": "trap_acid_drip.png",
+      "category": "trap",
+      "weight": 11,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "타이밍 맞춰 피하며 지나간다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 60 } } },
+          "successEffects": {
+            "description": "빠르게 움직여 한 방울도 맞지 않고 통과했다.",
+            "statChanges": { "FITNESS": 3, "HUNGER": -2 }
+          },
+          "failureEffects": {
+            "description": "액체 한 방울이 팔에 떨어져 옷과 피부를 태웠다. 심한 상처를 입었다.",
+            "statChanges": { "HP": -20, "SAN": -5 },
+            "applyStatus": ["bleeding"]
+          }
+        }
+      ]
+    },
+    "trap_false_exit_01": {
+      "id": "trap_false_exit_01",
+      "name": "가짜 출구",
+      "description": "저 앞에 환한 빛과 함께 출구가 보인다! 드디어 탈출이다!",
+      "image": "trap_false_exit.png",
+      "category": "trap",
+      "weight": 5,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "빛을 향해 달려간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "출구에 다다르자, 문은 돌벽으로 변하고 빛은 사라졌다. 절망감에 정신력이 크게 깎였다.",
+            "statChanges": { "SAN": -30 },
+            "applyStatus": ["claustrophobia"]
+          }
+        }
+      ]
+    },
+    "trap_chilling_whisper_01": {
+      "id": "trap_chilling_whisper_01",
+      "name": "오싹한 속삭임",
+      "description": "귓가에 알아들을 수 없는 언어로 누군가 속삭인다. '포기해... 넌 여기서 죽는 거야...'",
+      "image": "trap_chilling_whisper.png",
+      "category": "trap",
+      "weight": 9,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "정신력으로 버틴다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 70 } } },
+          "successEffects": {
+            "description": "헛소리! 나는 나갈 수 있어! 강한 의지로 속삭임을 떨쳐냈다.",
+            "statChanges": { "SAN": 5 },
+            "applyStatus": ["determination"]
+          },
+          "failureEffects": {
+            "description": "속삭임이 현실처럼 느껴지며 이성이 마비될 것 같다.",
+            "statChanges": { "SAN": -20 },
+            "applyStatus": ["hallucination"]
+          }
+        },
+        {
+          "text": "아이의 그림을 본다.",
+          "requirements": { "items": ["a_childs_drawing"], "stats": null },
+          "successEffects": {
+            "description": "순수한 그림을 보자, 사악한 속삭임이 힘을 잃고 사라졌다.",
+            "statChanges": { "SAN": 15 }
+          }
+        }
+      ]
+    },
+    "trap_caltrops_01": {
+      "id": "trap_caltrops_01",
+      "name": "마름쇠 함정",
+      "description": "어두운 바닥에 뾰족한 마름쇠들이 흩뿌려져 있다.",
+      "image": "trap_caltrops.png",
+      "category": "trap",
+      "weight": 15,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "조심스럽게 지나간다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 45 } } },
+          "successEffects": {
+            "description": "집중해서 발 디딜 곳을 찾아 무사히 통과했다.",
+            "statChanges": { "SAN": 5, "HUNGER": -2 }
+          },
+          "failureEffects": {
+            "description": "마름쇠를 밟아 발바닥에 깊은 상처를 입었다. 피가 멈추지 않는다.",
+            "statChanges": { "HP": -15 },
+            "applyStatus": ["bleeding"]
+          }
+        },
+        {
+          "text": "튼튼한 등산화가 막아준다.",
+          "requirements": { "items": ["sturdy_boots"], "stats": null },
+          "successEffects": {
+            "description": "등산화의 두꺼운 밑창 덕분에 마름쇠를 그냥 밟고 지나갈 수 있었다.",
+            "statChanges": { "SAN": 5, "FITNESS": 2 }
+          }
+        }
+      ]
+    },
+    "trap_sudden_darkness_01": {
+      "id": "trap_sudden_darkness_01",
+      "name": "갑작스러운 어둠",
+      "description": "방의 모든 불빛이 갑자기 꺼지며 한 치 앞도 보이지 않는 암흑에 휩싸였다.",
+      "image": "trap_sudden_darkness.png",
+      "category": "trap",
+      "weight": 13,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "손전등을 켠다.",
+          "requirements": { "items": ["flashlight"], "stats": null },
+          "successEffects": {
+            "description": "손전등으로 앞을 밝히자, 어둠이 걷히는 듯한 안도감이 든다.",
+            "statChanges": { "SAN": 10 }
+          }
+        },
+        {
+          "text": "빛이 돌아올 때까지 기다린다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "얼마나 지났을까, 희미하게 빛이 돌아왔다. 어둠 속에서의 기다림은 정신을 갉아먹었다.",
+            "statChanges": { "SAN": -15 },
+            "applyStatus": ["claustrophobia"]
+          }
+        }
+      ]
+    },
+    "trap_disorienting_symbols_01": {
+      "id": "trap_disorienting_symbols_01",
+      "name": "혼란스러운 문양",
+      "description": "벽과 바닥이 현기증 나는 기하학적 문양으로 가득하다. 보고만 있어도 머리가 아프다.",
+      "image": "trap_disorienting_symbols.png",
+      "category": "trap",
+      "weight": 11,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "눈을 감고 감각에 의지해 걷는다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "문양을 보지 않으려 애쓰며 겨우 통과했다. 약간의 두통이 남았다.",
+            "statChanges": { "SAN": -8 }
+          },
+          "failureEffects": {
+            "description": "균형감각을 잃고 넘어졌다. 문양들이 뇌 속으로 파고드는 것 같다.",
+            "statChanges": { "HP": -5, "SAN": -15 },
+            "applyStatus": ["hallucination"]
+          }
+        }
+      ]
+    },
+    "trap_time_warp_01": {
+      "id": "trap_time_warp_01",
+      "name": "시간 왜곡",
+      "description": "방을 통과하는 순간, 갑자기 엄청난 허기가 몰려온다. 마치 며칠은 굶은 것 같다.",
+      "image": "trap_time_warp.png",
+      "category": "trap",
+      "weight": 4,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "통과한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "이 방에서는 시간이 다르게 흐르는 것 같다. 허기와 피로가 동시에 몰려온다.",
+            "statChanges": { "HUNGER": -40 },
+            "applyStatus": ["fatigue"]
+          }
+        }
+      ]
+    },
+    "trap_mimic_chest_01": {
+      "id": "trap_mimic_chest_01",
+      "name": "미믹",
+      "description": "평범해 보이는 상자를 열자, 상자가 이빨을 드러내며 손을 물어뜯는다!",
+      "image": "trap_mimic_chest.png",
+      "category": "trap",
+      "weight": 7,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "공격당한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "미믹에게 심하게 물어뜯겼다. 간신히 손을 빼냈지만 피가 멈추지 않는다.",
+            "statChanges": { "HP": -25, "SAN": -10 },
+            "applyStatus": ["bleeding"]
+          }
+        }
+      ]
+    },
+    "trap_siren_song_01": {
+      "id": "trap_siren_song_01",
+      "name": "세이렌의 노래",
+      "description": "어디선가 아름답고 매혹적인 노랫소리가 들려온다. 그곳으로 가고 싶다는 충동을 느낀다.",
+      "image": "trap_siren_song.png",
+      "category": "trap",
+      "weight": 8,
+      "persistence": "persistent",
+      "choices": [
+        {
+          "text": "소리를 따라간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "소리에 이끌려 간 곳은 막다른 길이었다. 노래는 환청처럼 사라지고, 허탈함과 피로만 남았다.",
+            "statChanges": { "SAN": -15, "HUNGER": -5 },
+            "applyStatus": ["fatigue"]
+          }
+        },
+        {
+          "text": "진통제로 귀를 막는다.",
+          "requirements": { "items": ["painkillers"], "stats": null },
+          "successEffects": {
+            "description": "진통제 통의 솜으로 귀를 막아 유혹을 이겨냈다. 기발한 생각이었다.",
+            "statChanges": { "SAN": 10 }
+          }
+        }
+      ]
+    }
+  }
+}

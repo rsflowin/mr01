@@ -1,0 +1,303 @@
+{
+  "events": {
+    "character_samira_deciphering_runes_01": {
+      "id": "character_samira_deciphering_runes_01",
+      "npcId": "samira",
+      "name": "룬 문자를 해독하는 사미라",
+      "description": "사미라 알-자밀이 벽에 새겨진 룬 문자를 손가락으로 짚어가며 수첩에 무언가를 맹렬히 받아 적고 있다. \"놀라워... 이 문자는 선왕조 시대의 것과 유사하지만, 분명히 달라...\"",
+      "image": "character_samira_deciphering.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "무슨 의미인지 묻는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀는 당신을 흘끗 보더니, \"이건 경고문이에요. '거짓된 희망을 좇는 자, 영원히 헤맬 것이다.' 아마 가짜 출구 함정을 말하는 거겠죠.\"라며 경멸하듯 웃는다. 유용한 정보를 얻었다.",
+            "statChanges": { "SAN": 10 }
+          }
+        },
+        {
+          "text": "오래된 일기장을 보여준다.",
+          "requirements": { "items": ["old_diary"], "stats": null },
+          "successEffects": {
+            "description": "그녀는 일기장을 보자 눈을 빛낸다. \"이것은!\" 그녀는 일기장과 교환하자며, 자신이 해석한 지도가 그려진 양피지 조각을 건넨다.",
+            "itemsLost": ["old_diary"],
+            "itemsGained": ["maze_map_fragment"]
+          }
+        }
+      ]
+    },
+    "character_samira_excavating_01": {
+      "id": "character_samira_excavating_01",
+      "npcId": "samira",
+      "name": "유물을 발굴하는 사미라",
+      "description": "사미라가 작은 솔과 끌로 바닥의 타일 하나를 조심스럽게 파내고 있다. 그녀의 눈은 눈앞의 유물에 완전히 고정되어 있다.",
+      "image": "character_samira_excavating.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "돕는다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 40 } } },
+          "successEffects": {
+            "description": "당신의 도움으로 타일을 들어내자, 그 아래에서 섬뜩하게 생긴 부적이 나왔다. 그녀는 부적을 당신에게 건네며 말한다. \"난 이것의 '의미'가 궁금한 거지, '힘'이 필요한 게 아니니까요.\"",
+            "statChanges": { "HUNGER": -4 },
+            "itemsGained": ["severed_hand_talisman"]
+          },
+          "failureEffects": {
+            "description": "당신이 실수로 타일을 깨뜨리자 그녀가 날카롭게 소리친다. \"멍청하긴! 수천 년의 역사를 망쳤어!\" 그녀의 분노에 정신력이 소모된다.",
+            "statChanges": { "SAN": -10 }
+          }
+        },
+        {
+          "text": "무엇인지 묻는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"조용히 해요! 이 유물의 숨결을 느껴야 한단 말이에요!\" 그녀는 당신의 존재를 완전히 무시한다."
+          }
+        }
+      ]
+    },
+    "character_samira_lost_in_thought_01": {
+      "id": "character_samira_lost_in_thought_01",
+      "npcId": "samira",
+      "name": "명상에 잠긴 사미라",
+      "description": "사미라가 눈을 감고 가만히 서 있다. 마치 이 미로와 대화라도 하려는 듯, 깊은 명상에 빠져있다. 주변 공기가 무겁게 느껴진다.",
+      "image": "character_samira_meditating.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "기다린다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "한참 후 그녀가 눈을 뜬다. \"...들었어요. 이 미로는 살아있어요. 그리고 배고파하죠.\" 그녀의 알 수 없는 말에 오싹함을 느낀다.",
+            "statChanges": { "SAN": -15 },
+            "applyStatus": ["claustrophobia"]
+          }
+        },
+        {
+          "text": "커피를 권한다.",
+          "requirements": { "items": ["flask_of_coffee"], "stats": null },
+          "successEffects": {
+            "description": "커피 냄새에 그녀가 명상에서 깨어난다. \"고마워요. 집중력을 유지하는 데 도움이 되겠네요.\" 그녀는 답례로 자신이 찾은 나침반을 건넨다.",
+            "itemsLost": ["flask_of_coffee"],
+            "itemsGained": ["compass"]
+          }
+        }
+      ]
+    },
+    "character_samira_offering_riddle_01": {
+      "id": "character_samira_offering_riddle_01",
+      "npcId": "samira",
+      "name": "수수께끼를 내는 사미라",
+      "description": "사미라가 당신을 보며 흥미로운 미소를 짓는다. \"당신, 이 미로를 빠져나갈 자격이 있는지 시험해 보죠. 내가 내는 고대의 수수께끼를 맞혀보세요.\"",
+      "image": "character_samira_riddle.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "수수께끼에 도전한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 70 } } },
+          "successEffects": {
+            "description": "당신의 지혜로운 답변에 그녀가 만족스럽게 웃는다. \"아주 좋아요. 당신은 단순한 생존자가 아니군요.\" 그녀는 빛나는 수정을 선물로 준다.",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["glowing_crystal"]
+          },
+          "failureEffects": {
+            "description": "당신의 어리석은 답변에 그녀가 실망한 듯 혀를 찼다. \"쯧... 역시 육체만 발달했군요.\"",
+            "statChanges": { "SAN": -5, "FITNESS": -5 }
+          }
+        }
+      ]
+    },
+    "character_samira_needs_protection_01": {
+      "id": "character_samira_needs_protection_01",
+      "npcId": "samira",
+      "name": "보호를 요청하는 사미라",
+      "description": "사미라가 불안한 눈빛으로 당신에게 말한다. \"저 앞의 방에서 중요한 비문을 발견했어요. 하지만... 몬스터들이 있어요. 제가 비문을 탁본하는 동안 저를 지켜주실 수 있나요?\"",
+      "image": "character_samira_scared.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "보호한다. (FITNESS -15)",
+          "requirements": { "stats": { "FITNESS": { "operator": ">", "value": 15 } } },
+          "successEffects": {
+            "description": "당신이 몬스터들을 상대하는 동안 그녀는 무사히 탁본을 마쳤다. \"훌륭해요! 이 고대의 지식은 인류의 자산이 될 거예요!\" 그녀는 흥분하며 당신에게 해독제를 건넨다.",
+            "statChanges": { "FITNESS": -15, "HP": -10, "SAN": 5 },
+            "itemsGained": ["antidote"]
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"내 목숨보다 중요한 건 없지.\" 당신이 거절하자 그녀는 경멸의 눈빛을 보낸다. \"역사는 당신 같은 겁쟁이를 기억하지 않을 겁니다.\"",
+            "statChanges": { "SAN": -8 }
+          }
+        }
+      ]
+    },
+    "character_samira_misleading_info_01": {
+      "id": "character_samira_misleading_info_01",
+      "npcId": "samira",
+      "name": "잘못된 정보를 주는 사미라",
+      "description": "사미라가 당신에게 다가와 속삭인다. \"저쪽 길로 가면 안전한 휴식처가 있어요. 제가 직접 확인했죠.\" 하지만 그녀의 눈이 미세하게 떨리는 것이 보인다.",
+      "image": "character_samira_lying.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그녀의 말을 믿는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀가 말한 곳으로 가자, 그곳에는 휴식처 대신 굶주린 몬스터가 기다리고 있었다. 그녀가 당신을 미끼로 쓴 것이다!",
+            "statChanges": { "HP": -20, "SAN": -15 }
+          }
+        },
+        {
+          "text": "거짓말이라고 지적한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 60 } } },
+          "successEffects": {
+            "description": "당신이 그녀의 거짓말을 간파하자, 그녀가 놀라며 뒷걸음질 친다. \"...눈치가 빠르군요.\" 그녀는 서둘러 자리를 피한다.",
+            "statChanges": { "SAN": 5 }
+          },
+          "failureEffects": {
+            "description": "\"무슨 소리죠? 전 진실을 말했을 뿐인데.\" 그녀는 태연하게 대답한다. 그녀의 속셈을 알 수 없어 불안하다.",
+            "statChanges": { "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_samira_trading_artifact_01": {
+      "id": "character_samira_trading_artifact_01",
+      "npcId": "samira",
+      "name": "유물을 거래하는 사미라",
+      "description": "사미라가 섬뜩한 인형을 들고 있다. \"이 유물, 아주 흥미로워요. 하지만 제 연구 분야와는 다르죠. 혹시 당신, 진통제 같은 거 있나요? 연구에 집중하느라 두통이 심해서.\"",
+      "image": "character_samira_trading.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "진통제와 교환한다.",
+          "requirements": { "items": ["painkillers"], "stats": null },
+          "successEffects": {
+            "description": "그녀는 진통제를 받자마자 바로 먹는다. \"고마워요.\" 그녀는 인형을 당신에게 무심하게 던져준다.",
+            "itemsLost": ["painkillers"],
+            "itemsGained": ["creepy_doll"]
+          }
+        },
+        {
+          "text": "관심 없다고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀는 어깨를 으쓱하며 말한다. \"좋아요. 이 역사적 가치를 모르는 사람에겐 강요할 수 없죠.\""
+          }
+        }
+      ]
+    },
+    "character_samira_needs_tool_01": {
+      "id": "character_samira_needs_tool_01",
+      "npcId": "samira",
+      "name": "도구가 필요한 사미라",
+      "description": "사미라가 단단히 닫힌 석관 앞에서 곤란한 표정을 짓고 있다. \"이걸 열어야 하는데... 맨손으로는 무리군요.\"",
+      "image": "character_samira_stuck.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "멀티툴을 빌려준다.",
+          "requirements": { "items": ["multitool"], "stats": null },
+          "successEffects": {
+            "description": "멀티툴을 이용해 석관의 잠금장치를 해제하자, 안에서 낡은 가족사진이 나왔다. 그녀는 실망하며 사진을 당신에게 건넨다. \"유물인 줄 알았는데... 실망스럽군요.\"",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["family_photo"]
+          }
+        },
+        {
+          "text": "힘으로 열어본다. (HP -10)",
+          "requirements": { "stats": { "HP": { "operator": ">", "value": 10 } } },
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 75 } } },
+          "successEffects": {
+            "description": "당신이 어깨로 밀치자 석관 뚜껑이 열렸다. 안에는 낡은 가족사진이 있었다. 그녀는 실망한 표정이다.",
+            "statChanges": { "HP": -10, "FITNESS": -5 },
+            "itemsGained": ["family_photo"]
+          },
+          "failureEffects": {
+            "description": "석관은 꿈쩍도 하지 않았다. 괜한 힘만 뺐다.",
+            "statChanges": { "HP": -10, "FITNESS": -10 }
+          }
+        }
+      ]
+    },
+    "character_samira_lecture_01": {
+      "id": "character_samira_lecture_01",
+      "npcId": "samira",
+      "name": "강의하는 사미라",
+      "description": "사미라가 당신을 보자마자 신이 나서 이야기하기 시작한다. \"이 미로의 건축 양식은 고대 이집트 제4왕조의 피라미드 내부 구조와 놀랍도록 흡사해요. 특히 이 아치형 천장은... (이하 생략)\"",
+      "image": "character_samira_lecture.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "흥미롭게 듣는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀의 긴 강의를 듣는 동안 지루했지만, 미로에 대한 몇 가지 단서를 얻었다. 왠지 모르게 마음이 안정된다.",
+            "statChanges": { "SAN": 15, "HUNGER": -3 }
+          }
+        },
+        {
+          "text": "자리를 뜬다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 자리를 뜨자 그녀가 외친다. \"무지한 사람! 이 위대한 지식을 거부하다니!\" 그녀의 목소리가 복도에 울려 퍼진다."
+          }
+        }
+      ]
+    },
+    "character_samira_final_discovery_01": {
+      "id": "character_samira_final_discovery_01",
+      "npcId": "samira",
+      "name": "최후의 발견을 한 사미라",
+      "description": "사미라가 거대한 석판 앞에 서 있다. 석판에는 미로 전체의 지도가 그려져 있다. 그녀가 당신을 보며 웃는다. \"보세요! 드디어 찾아냈어요. 이 미로의 심장을!\"",
+      "image": "character_samira_discovery.png",
+      "category": "character",
+      "weight": 3,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "탈출하자고 설득한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"탈출? 왜죠? 여기가 바로 제 무덤이자 낙원인데.\" 그녀는 석판을 어루만지며 황홀한 표정을 짓는다. 그녀는 이 유적의 일부가 되기로 한 것 같다.",
+            "statChanges": { "SAN": -10 }
+          }
+        },
+        {
+          "text": "지도를 베낀다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀가 한눈파는 사이, 당신은 지도의 핵심 부분을 기억했다. 이제 이 미로를 빠져나갈 수 있다!",
+            "statChanges": { "SAN": 25 },
+            "applyStatus": ["determination"]
+          }
+        }
+      ]
+    }
+  }
+}

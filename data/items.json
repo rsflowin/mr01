@@ -1,0 +1,394 @@
+{
+  "items": {
+    "first_aid_kit": {
+      "id": "first_aid_kit",
+      "name": "구급상자",
+      "description": "응급 처치에 필요한 모든 것이 들어있는 키트. 심각한 부상을 치료할 수 있다.",
+      "image": "first_aid_kit.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "HP": 40, "SAN": 5 },
+        "removeStatus": ["bleeding", "sprain"],
+        "applyStatus": null
+      }
+    },
+    "dirty_bandage": {
+      "id": "dirty_bandage",
+      "name": "더러운 붕대",
+      "description": "깨끗해 보이진 않지만, 급한 대로 출혈을 막는 데는 쓸모 있을 것 같다.",
+      "image": "dirty_bandage.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "HP": 10 },
+        "removeStatus": ["bleeding"],
+        "applyStatus": null
+      }
+    },
+    "painkillers": {
+      "id": "painkillers",
+      "name": "진통제",
+      "description": "통증을 잠시 잊게 해준다. 몸의 피로와 어지러움이 가신다.",
+      "image": "painkillers.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "SAN": 10 },
+        "removeStatus": ["fatigue", "dizziness"],
+        "applyStatus": null
+      }
+    },
+    "adrenaline_shot": {
+      "id": "adrenaline_shot",
+      "name": "아드레날린 주사기",
+      "description": "극한의 상황을 버티게 해주는 주사기. 사용하면 심장이 미친 듯이 뛰기 시작한다.",
+      "image": "adrenaline_shot.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "HP": 20, "SAN": -15, "FITNESS": 30 },
+        "removeStatus": ["fatigue"],
+        "applyStatus": null
+      }
+    },
+    "herbal_tea": {
+      "id": "herbal_tea",
+      "name": "따뜻한 허브차",
+      "description": "마음이 안정되는 향긋한 차. 속을 편안하게 하고 공포를 덜어준다.",
+      "image": "herbal_tea.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "SAN": 15 },
+        "removeStatus": ["stomach_ache", "claustrophobia"],
+        "applyStatus": null
+      }
+    },
+    "combat_ration": {
+      "id": "combat_ration",
+      "name": "전투식량(MRE)",
+      "description": "맛은 없지만, 생존에 필요한 모든 영양소가 담겨있다. 허기를 크게 채워준다.",
+      "image": "combat_ration.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "HP": 10, "SAN": 5, "HUNGER": 60, "FITNESS": 5 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "energy_bar": {
+      "id": "energy_bar",
+      "name": "에너지바",
+      "description": "달콤한 초콜릿과 견과류. 즉각적인 에너지를 공급하지만, 금방 다시 배고파진다.",
+      "image": "energy_bar.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "HUNGER": 25, "FITNESS": 5 },
+        "removeStatus": null,
+        "applyStatus": ["sugar_high"]
+      }
+    },
+    "flask_of_coffee": {
+      "id": "flask_of_coffee",
+      "name": "커피가 담긴 보온병",
+      "description": "아직 온기가 남아있는 진한 커피. 정신을 번쩍 들게 한다.",
+      "image": "flask_of_coffee.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "HUNGER": 5, "SAN": 5 },
+        "removeStatus": ["fatigue"],
+        "applyStatus": ["caffeine_boost"]
+      }
+    },
+    "moldy_bread": {
+      "id": "moldy_bread",
+      "name": "곰팡이 핀 빵",
+      "description": "썩기 직전의 빵. 먹을 수는 있겠지만, 배탈이 날 위험이 있다.",
+      "image": "moldy_bread.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "HUNGER": 20 },
+        "removeStatus": null,
+        "applyStatus": ["stomach_ache"]
+      }
+    },
+    "flask_of_whiskey": {
+      "id": "flask_of_whiskey",
+      "name": "위스키가 담긴 플라스크",
+      "description": "독한 술이 목을 태운다. 두려움은 잊게 해주지만, 몸이 둔해진다.",
+      "image": "flask_of_whiskey.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "SAN": 20, "FITNESS": -10 },
+        "removeStatus": null,
+        "applyStatus": ["dizziness"]
+      }
+    },
+    "flashlight": {
+      "id": "flashlight",
+      "name": "손전등",
+      "description": "한 줄기 빛이 어둠에 대한 공포를 조금이나마 덜어준다. 약간 무겁다.",
+      "image": "flashlight.png",
+      "itemType": "PASSIVE",
+      "consumeOnUse": false,
+      "effects": {
+        "statChanges": { "SAN": 5, "FITNESS": -1 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "sturdy_boots": {
+      "id": "sturdy_boots",
+      "name": "튼튼한 등산화",
+      "description": "바닥이 두꺼운 등산화. 발을 보호해주어 더 안정적으로 움직일 수 있다.",
+      "image": "sturdy_boots.png",
+      "itemType": "PASSIVE",
+      "consumeOnUse": false,
+      "effects": {
+        "statChanges": { "FITNESS": 10 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "compass": {
+      "id": "compass",
+      "name": "낡은 나침반",
+      "description": "바늘이 계속 북쪽을 가리키고 있다. 방향을 알고 있다는 사실만으로도 위안이 된다.",
+      "image": "compass.png",
+      "itemType": "PASSIVE",
+      "consumeOnUse": false,
+      "effects": {
+        "statChanges": { "SAN": 8 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "rope": {
+      "id": "rope",
+      "name": "밧줄",
+      "description": "질기고 튼튼한 밧줄. 다양한 상황에서 유용하게 쓰일 것 같다.",
+      "image": "rope.png",
+      "itemType": "PASSIVE",
+      "consumeOnUse": false,
+      "effects": {
+        "statChanges": { "FITNESS": 2 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "gas_mask": {
+      "id": "gas_mask",
+      "name": "방독면",
+      "description": "정화통이 달린 낡은 방독면. 불쾌한 냄새와 유독 가스로부터 지켜준다.",
+      "image": "gas_mask.png",
+      "itemType": "PASSIVE",
+      "consumeOnUse": false,
+      "effects": {
+        "statChanges": { "SAN": 3, "FITNESS": -2 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "lucky_coin": {
+      "id": "lucky_coin",
+      "name": "행운의 동전",
+      "description": "주머니 속에서 희미하게 빛나는 동전. 행운을 가져다줄지도 모른다.",
+      "image": "lucky_coin.png",
+      "itemType": "PASSIVE",
+      "consumeOnUse": false,
+      "effects": {
+        "statChanges": { "SAN": 3 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "creepy_doll": {
+      "id": "creepy_doll",
+      "name": "섬뜩한 인형",
+      "description": "눈이 마주칠 때마다 등골이 오싹해진다. 왜 이걸 버리지 못하는 걸까?",
+      "image": "creepy_doll.png",
+      "itemType": "PASSIVE",
+      "consumeOnUse": false,
+      "effects": {
+        "statChanges": { "SAN": -5 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "old_diary": {
+      "id": "old_diary",
+      "name": "오래된 일기장",
+      "description": "먼저 온 누군가의 기록. 읽으면 미로의 비밀이나 생존의 지혜를 얻을 수 있을지도 모른다.",
+      "image": "old_diary.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "SAN": 25, "HUNGER": -2 },
+        "removeStatus": ["claustrophobia"],
+        "applyStatus": null
+      }
+    },
+    "maze_map_fragment": {
+      "id": "maze_map_fragment",
+      "name": "미로 지도 조각",
+      "description": "미로의 일부가 그려진 양피지 조각. 탈출의 희망을 보여준다.",
+      "image": "maze_map_fragment.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "SAN": 20 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "glowing_crystal": {
+      "id": "glowing_crystal",
+      "name": "빛나는 수정",
+      "description": "스스로 빛을 내는 신비한 수정. 만지면 이상한 기운이 느껴진다.",
+      "image": "glowing_crystal.png",
+      "itemType": "PASSIVE",
+      "consumeOnUse": false,
+      "effects": {
+        "statChanges": { "SAN": 10, "HP": -2 },
+        "removeStatus": ["hallucination"],
+        "applyStatus": null
+      }
+    },
+    "antidote": {
+      "id": "antidote",
+      "name": "해독제",
+      "description": "독으로 인한 증상을 완화시키는 약물. 환각 증세에 효과가 있다.",
+      "image": "antidote.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "HP": 5, "SAN": 5 },
+        "removeStatus": ["hallucination"],
+        "applyStatus": null
+      }
+    },
+    "family_photo": {
+      "id": "family_photo",
+      "name": "가족사진",
+      "description": "빛바랜 사진 속 행복한 얼굴들. 돌아가야 할 이유를 되새기게 한다.",
+      "image": "family_photo.png",
+      "itemType": "PASSIVE",
+      "consumeOnUse": false,
+      "effects": {
+        "statChanges": { "SAN": 0 },
+        "removeStatus": null,
+        "applyStatus": ["determination"]
+      }
+    },
+    "canned_tuna": {
+      "id": "canned_tuna",
+      "name": "참치 통조림",
+      "description": "오래 보관할 수 있는 훌륭한 단백질 공급원. 든든하다.",
+      "image": "canned_tuna.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "HUNGER": 40, "HP": 5, "FITNESS": 5 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "sharpening_stone": {
+      "id": "sharpening_stone",
+      "name": "숫돌",
+      "description": "무기를 날카롭게 유지해준다. 전투에서 더 나은 결과를 기대할 수 있다.",
+      "image": "sharpening_stone.png",
+      "itemType": "PASSIVE",
+      "consumeOnUse": false,
+      "effects": {
+        "statChanges": { "FITNESS": 5 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "severed_hand_talisman": {
+      "id": "severed_hand_talisman",
+      "name": "잘린 손 부적",
+      "description": "미라처럼 말라붙은 손. 불길한 기운이 느껴지지만, 동시에 강력한 힘이 깃든 것 같다.",
+      "image": "severed_hand_talisman.png",
+      "itemType": "PASSIVE",
+      "consumeOnUse": false,
+      "effects": {
+        "statChanges": { "SAN": -10, "FITNESS": 15 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "pure_water_bottle": {
+      "id": "pure_water_bottle",
+      "name": "깨끗한 물병",
+      "description": "시원하고 깨끗한 물. 갈증을 해소하고 몸에 활력을 준다.",
+      "image": "pure_water_bottle.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "HP": 5, "HUNGER": 10 },
+        "removeStatus": ["dizziness"],
+        "applyStatus": ["well_rested"]
+      }
+    },
+    "multitool": {
+      "id": "multitool",
+      "name": "멀티툴",
+      "description": "작지만 칼, 드라이버 등 다양한 도구가 달려있다. 어떤 상황이든 대비할 수 있다는 안정감을 준다.",
+      "image": "multitool.png",
+      "itemType": "PASSIVE",
+      "consumeOnUse": false,
+      "effects": {
+        "statChanges": { "SAN": 5 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "a_childs_drawing": {
+      "id": "a_childs_drawing",
+      "name": "아이의 그림",
+      "description": "해와 웃는 얼굴이 그려진 순수한 그림. 삭막한 미로 속에서 작은 위안이 된다.",
+      "image": "a_childs_drawing.png",
+      "itemType": "PASSIVE",
+      "consumeOnUse": false,
+      "effects": {
+        "statChanges": { "SAN": 12, "HP": 0, "FITNESS": 0, "HUNGER": 0 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    },
+    "sleeping_pills": {
+      "id": "sleeping_pills",
+      "name": "수면제",
+      "description": "강제로 잠들게 하는 약. 휴식을 취할 수 있지만, 무방비 상태가 된다.",
+      "image": "sleeping_pills.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "HP": 25, "SAN": 15, "HUNGER": -10 },
+        "removeStatus": ["fatigue", "claustrophobia", "dizziness"],
+        "applyStatus": null
+      }
+    },
+    "mystery_jerky": {
+      "id": "mystery_jerky",
+      "name": "정체불명의 육포",
+      "description": "무슨 고기인지는 알 수 없지만, 꽤 맛있는 냄새가 난다. 먹어도 괜찮을까?",
+      "image": "mystery_jerky.png",
+      "itemType": "ACTIVE",
+      "consumeOnUse": true,
+      "effects": {
+        "statChanges": { "HUNGER": 50, "HP": 10, "FITNESS": 10, "SAN": -5 },
+        "removeStatus": null,
+        "applyStatus": null
+      }
+    }
+  }
+}

@@ -1,0 +1,935 @@
+{
+  "id": "maze_7466",
+  "name": "사용자 제작 미로",
+  "size": [
+    8,
+    8
+  ],
+  "startPosition": [
+    0,
+    7
+  ],
+  "exitPosition": [
+    7,
+    0
+  ],
+  "rooms": [
+    {
+      "x": 0,
+      "y": 0,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "doors": {
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 2,
+      "y": 0,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 3,
+      "y": 0,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 4,
+      "y": 0,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 5,
+      "y": 0,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 6,
+      "y": 0,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 7,
+      "y": 0,
+      "doors": {
+        "north": false,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": true
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "doors": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 2,
+      "y": 1,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "doors": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "doors": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "doors": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 6,
+      "y": 1,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 7,
+      "y": 1,
+      "doors": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 0,
+      "y": 2,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 1,
+      "y": 2,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 2,
+      "y": 2,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 3,
+      "y": 2,
+      "doors": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "doors": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 5,
+      "y": 2,
+      "doors": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 6,
+      "y": 2,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 7,
+      "y": 2,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 0,
+      "y": 3,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 1,
+      "y": 3,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 2,
+      "y": 3,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 3,
+      "y": 3,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 4,
+      "y": 3,
+      "doors": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 5,
+      "y": 3,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 6,
+      "y": 3,
+      "doors": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 7,
+      "y": 3,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "doors": {
+        "north": true,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 1,
+      "y": 4,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 2,
+      "y": 4,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 4,
+      "y": 4,
+      "doors": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 7,
+      "y": 4,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 0,
+      "y": 5,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 2,
+      "y": 5,
+      "doors": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 3,
+      "y": 5,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "doors": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "doors": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 6,
+      "y": 5,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 7,
+      "y": 5,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 0,
+      "y": 6,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 1,
+      "y": 6,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 2,
+      "y": 6,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 3,
+      "y": 6,
+      "doors": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 4,
+      "y": 6,
+      "doors": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 5,
+      "y": 6,
+      "doors": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 6,
+      "y": 6,
+      "doors": {
+        "north": false,
+        "east": false,
+        "south": true,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 7,
+      "y": 6,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": true,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": false
+      },
+      "isStart": true,
+      "isExit": false
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "doors": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 3,
+      "y": 7,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 4,
+      "y": 7,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "doors": {
+        "north": false,
+        "east": true,
+        "south": false,
+        "west": false
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 6,
+      "y": 7,
+      "doors": {
+        "north": true,
+        "east": true,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    },
+    {
+      "x": 7,
+      "y": 7,
+      "doors": {
+        "north": true,
+        "east": false,
+        "south": false,
+        "west": true
+      },
+      "isStart": false,
+      "isExit": false
+    }
+  ],
+  "totalRooms": 64,
+  "validation": {
+    "is_valid": true,
+    "errors": [],
+    "warnings": [],
+    "path": [
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        6,
+        1
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        7,
+        0
+      ]
+    ],
+    "path_length": 35
+  }
+}

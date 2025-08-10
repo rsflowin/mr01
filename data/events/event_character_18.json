@@ -1,0 +1,291 @@
+{
+  "events": {
+    "character_zoe_selfie_01": {
+      "id": "character_zoe_selfie_01",
+      "npcId": "zoe",
+      "name": "셀카를 찍는 조이",
+      "description": "조이 윌리엄스가 거대한 지하 폭포 앞에서 포즈를 취하며 셀카를 찍고 있다. \"대박! 이거 인스타에 올리면 '좋아요' 폭발하겠는데? 제목은 '지옥에서 온 바이브' 어때?\"",
+      "image": "character_zoe_selfie.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "함께 사진을 찍는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"그래, 이 포즈! 완벽해!\" 그녀와 함께 사진을 찍고 나니, 이 상황이 조금은 덜 끔찍하게 느껴진다. 그녀는 답례로 에너지바를 건넨다. \"자, 모델료야!\"",
+            "statChanges": { "SAN": 15 },
+            "itemsGained": ["energy_bar"]
+          }
+        },
+        {
+          "text": "한심하게 쳐다본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"왜? 이것도 다 추억이지. 긍정적으로 생각하자고, 친구.\" 그녀는 당신의 반응에 아랑곳하지 않고 다른 각도를 찾아 떠난다."
+          }
+        }
+      ]
+    },
+    "character_zoe_extreme_sports_01": {
+      "id": "character_zoe_extreme_sports_01",
+      "npcId": "zoe",
+      "name": "익스트림 스포츠를 즐기는 조이",
+      "description": "조이가 밧줄 하나에 의지해 절벽 사이를 건너고 있다. \"우후! 이거 완전 집라인인데? 스릴 최고야!\" 그녀가 반대편에서 당신을 향해 손짓한다.",
+      "image": "character_zoe_extreme_sports.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "밧줄을 이용해 건넌다.",
+          "requirements": { "items": ["rope"], "stats": null },
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 60 } } },
+          "successEffects": {
+            "description": "당신도 성공적으로 건넜다! 짜릿한 경험에 아드레날린이 솟구친다. 그녀가 당신과 하이파이브를 한다.",
+            "statChanges": { "SAN": 10, "FITNESS": 5, "HUNGER": -4 }
+          },
+          "failureEffects": {
+            "description": "건너던 중 밧줄을 놓쳐 아래로 떨어졌다. 다행히 물 위로 떨어져 크게 다치진 않았지만, 온몸이 젖고 지쳤다.",
+            "statChanges": { "HP": -10, "FITNESS": -10 },
+            "applyStatus": ["fatigue"]
+          }
+        },
+        {
+          "text": "안전하게 돌아가라고 소리친다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"걱정 마! 나 이런 거 전문가라구!\" 그녀는 당신의 걱정을 모험에 대한 질투로 받아들이는 것 같다."
+          }
+        }
+      ]
+    },
+    "character_zoe_travel_story_01": {
+      "id": "character_zoe_travel_story_01",
+      "npcId": "zoe",
+      "name": "여행 썰을 푸는 조이",
+      "description": "조이가 신이 나서 자신의 여행 경험을 이야기한다. \"한번은 페루에서 라마한테 침을 맞았는데, 그 냄새가 일주일은 가더라! 근데 이 미로의 곰팡이 냄새보단 나았어.\"",
+      "image": "character_zoe_story.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "맞장구를 쳐준다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀의 재미있는 이야기를 듣다 보니 시간 가는 줄 몰랐다. 그녀는 당신이 좋은 리스너라며, 자신의 비상식량인 참치 통조림을 나눠준다.",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["canned_tuna"]
+          }
+        },
+        {
+          "text": "그녀의 배낭을 훔쳐 달아난다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 그녀의 배낭을 낚아채 달아나자, 그녀가 외친다. \"이런! 배낭여행객의 생명을! 좋아, 이것도 새로운 경험이 되겠네! 도둑맞은 배낭 없이 미로 탈출하기 챌린지!\"",
+            "statChanges": { "SAN": -10 },
+            "itemsGained": ["first_aid_kit", "energy_bar"]
+          }
+        }
+      ]
+    },
+    "character_zoe_tasting_weird_fruit_01": {
+      "id": "character_zoe_tasting_weird_fruit_01",
+      "npcId": "zoe",
+      "name": "이상한 열매를 맛보는 조이",
+      "description": "조이가 동굴 벽에 자란 빛나는 버섯을 따서 한입 베어 문다. \"음... 맛이... 아주 유니크한데? 약간 톡 쏘면서도 달콤한... 트러플 같기도 하고? 한번 먹어볼래?\"",
+      "image": "character_zoe_tasting.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "먹어본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "버섯을 먹자, 눈앞이 빙글빙글 돌며 환각이 보이기 시작한다. 하지만 기분 좋은 환각이다. \"와, 이거 완전 합법적 마약인데?\"",
+            "statChanges": { "SAN": 15 },
+            "applyStatus": ["hallucination"]
+          }
+        },
+        {
+          "text": "독버섯일 수 있다고 경고한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"인생은 모험이지!\" 그녀는 당신의 경고를 무시하고 버섯을 하나 더 먹는다. 그녀는 아무렇지도 않아 보인다.",
+            "statChanges": { "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "character_zoe_moment_of_weakness_01": {
+      "id": "character_zoe_moment_of_weakness_01",
+      "npcId": "zoe",
+      "name": "약한 모습을 보이는 조이",
+      "description": "조이가 빛바랜 가족사진을 보며 조용히 눈물을 훔치고 있다. \"...보고 싶다.\" 그녀는 당신을 발견하고는 황급히 눈물을 닦고 쾌활하게 말한다. \"어, 안녕! 그냥 눈에 먼지가 들어가서!\"",
+      "image": "character_zoe_weakness.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "괜찮다고 위로한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신의 위로에 그녀는 결국 참았던 울음을 터뜨린다. 한참을 운 뒤, 그녀는 후련한 표정으로 말한다. \"...고마워. 이제 괜찮아.\" 그녀는 당신에게 자신의 가족사진을 건넨다. \"이거, 네가 가지고 있어줘. 나보다 너한테 더 힘이 될 것 같아.\"",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["family_photo"]
+          }
+        },
+        {
+          "text": "그녀의 거짓말에 속아준다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"그래? 조심해.\" 당신이 모른 척해주자, 그녀는 안도하는 것 같다. 하지만 그녀의 억지 미소가 당신의 마음을 무겁게 한다.",
+            "statChanges": { "SAN": -8 }
+          }
+        }
+      ]
+    },
+    "character_zoe_making_friends_with_monster_01": {
+      "id": "character_zoe_making_friends_with_monster_01",
+      "npcId": "zoe",
+      "name": "몬스터와 친구가 되려는 조이",
+      "description": "조이가 작은 고블린에게 손을 내밀며 말한다. \"안녕, 작은 친구! 난 조이라고 해. 넌 이름이 뭐야? 혹시 이 근처 맛집 알아?\"",
+      "image": "character_zoe_friends.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그녀를 말린다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 그녀를 잡아끌자, 고블린이 그녀의 주머니에서 반짝이는 동전을 훔쳐 달아났다. \"어, 내 행운의 동전! 쟤도 안녕은 하고 가야지!\"",
+            "statChanges": { "SAN": -5 },
+            "itemsLost": ["lucky_coin"]
+          }
+        },
+        {
+          "text": "지켜본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "고블린은 그녀의 말에 어리둥절해하더니, 그녀가 하고 있던 팔찌가 마음에 들었는지 자신의 더러운 붕대와 교환하고 사라졌다.",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["dirty_bandage"]
+          }
+        }
+      ]
+    },
+    "character_zoe_souvenir_01": {
+      "id": "character_zoe_souvenir_01",
+      "npcId": "zoe",
+      "name": "기념품을 챙기는 조이",
+      "description": "조이가 죽은 몬스터의 이빨을 뽑고 있다. \"이거 완전 멋진 기념품인데? 목걸이로 만들면 딱이겠어.\"",
+      "image": "character_zoe_souvenir.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "징그럽다고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"에이, 뭘 몰라. 이런 게 바로 '유니크 아이템'이라고.\""
+          }
+        },
+        {
+          "text": "자신도 기념품을 챙긴다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 몬스터의 발톱을 챙기자, 그녀가 웃는다. \"그래, 동지! 우리 나중에 커플 목걸이 만들자!\" 그녀는 당신에게 아드레날린 주사기를 준다. \"이것도 전리품이야!\"",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["adrenaline_shot"]
+          }
+        }
+      ]
+    },
+    "character_zoe_careless_mistake_01": {
+      "id": "character_zoe_careless_mistake_01",
+      "npcId": "zoe",
+      "name": "부주의한 실수를 하는 조이",
+      "description": "조이가 배낭을 뒤지다가 발을 헛디뎌, 그녀의 모든 아이템이 낭떠러지 아래로 쏟아져버렸다! \"오, 이런. 내 배낭... 내 모든 여권과... 간식...\"",
+      "image": "character_zoe_mistake.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "자신의 아이템을 나눠준다.",
+          "requirements": { "items": ["canned_tuna"], "stats": null },
+          "successEffects": {
+            "description": "당신이 참치 통조림을 건네자, 그녀가 감동한다. \"...고마워. 넌 내 최고의 여행 동반자야.\" 그녀는 당신에게 자신이 마지막으로 남은 '빛나는 수정'을 건넨다.",
+            "statChanges": { "SAN": 10 },
+            "itemsLost": ["canned_tuna"],
+            "itemsGained": ["glowing_crystal"]
+          }
+        },
+        {
+          "text": "그녀를 비웃는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀는 잠시 슬퍼하더니, 이내 다시 웃는다. \"...좋아! 이제부터 '미니멀리즘 여행' 시작이다! 몸이 가벼워졌네!\" 그녀의 긍정 회로는 당신의 상상을 초월한다.",
+            "statChanges": { "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "character_zoe_guidebook_01": {
+      "id": "character_zoe_guidebook_01",
+      "npcId": "zoe",
+      "name": "가이드북을 쓰는 조이",
+      "description": "조이가 수첩에 무언가를 열심히 적고 있다. \"'죽음의 미로' 여행 가이드북. 1장: 몬스터와 친구 되는 법. 괜찮은 시작인데?\"",
+      "image": "character_zoe_guidebook.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "아이디어를 제공한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"오, 좋은 생각인데? '함정 피하는 101가지 꿀팁'! 공동 저자로 이름 올려줄게!\" 그녀는 당신에게 고맙다며 수면제를 준다. \"이건 '꿀잠 자는 법' 챕터의 필수품이지.\"",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["sleeping_pills"]
+          }
+        }
+      ]
+    },
+    "character_zoe_final_adventure_01": {
+      "id": "character_zoe_final_adventure_01",
+      "npcId": "zoe",
+      "name": "마지막 모험을 떠나는 조이",
+      "description": "조이가 출구가 아닌, 더 깊고 어두운 통로 앞에 서 있다. \"사람들은 보통 출구를 찾지만, 진짜 모험가는 미지의 세계를 탐험하는 법이지. 내 다음 여행지는 바로 저기야!\"",
+      "image": "character_zoe_final_adventure.png",
+      "category": "character",
+      "weight": 3,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "함께 가겠다고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀가 활짝 웃는다. \"그럴 줄 알았어! 가자, 최고의 파트너!\" 그녀는 당신에게 자신의 마지막 남은 전투식량을 나눠준다. \"최고의 모험에는 최고의 식량이 필요하니까!\"",
+            "statChanges": { "SAN": 20, "HUNGER": 50 },
+            "applyStatus": ["determination"]
+          }
+        },
+        {
+          "text": "행운을 빌어준다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"행운도 모험의 일부지! 잘 있어, 친구! 내 여행기에 네 이야기도 꼭 쓸게!\" 그녀는 당신에게 손을 흔들고, 망설임 없이 어둠 속으로 사라졌다. 그녀의 배낭에는 튼튼한 등산화가 삐져나와 있었다. ",
+            "statChanges": { "SAN": 10 }
+          }
+        }
+      ]
+    }
+  }
+}

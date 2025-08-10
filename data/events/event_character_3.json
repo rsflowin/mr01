@@ -1,0 +1,306 @@
+{
+  "events": {
+    "character_sujin_analyzing_wall_01": {
+      "id": "character_sujin_analyzing_wall_01",
+      "npcId": "sujin",
+      "name": "벽을 분석하는 수진",
+      "description": "이수진이 벽에 손을 짚고 중얼거리고 있다. \"패턴이 있어... 분명히 일정한 규칙이... 하지만 변수가 너무 많아.\" 그녀는 당신을 보지도 못한 채 분석에 몰두하고 있다.",
+      "image": "character_sujin_analyzing.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "무슨 규칙이냐고 묻는다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "그녀가 당신을 힐끗 보더니, \"이 미로는 완전한 무작위가 아니에요. 특정 조건 하에 구조가 바뀌는 것 같아요.\"라며 미로 지도 조각을 건넨다. \"이건 당신이 가지세요. 전 더 큰 그림이 필요하니.\"",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["maze_map_fragment"]
+          },
+          "failureEffects": {
+            "description": "그녀가 날카롭게 쳐다보며 \"쉿! 집중해야 하니 말 시키지 마세요!\"라고 쏘아붙인다. 불안한 기운이 당신에게도 전해진다.",
+            "statChanges": { "SAN": -10 }
+          }
+        },
+        {
+          "text": "조용히 지나간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀의 집중을 방해하지 않고 조용히 방을 빠져나왔다."
+          }
+        }
+      ]
+    },
+    "character_sujin_stressed_out_01": {
+      "id": "character_sujin_stressed_out_01",
+      "npcId": "sujin",
+      "name": "스트레스에 시달리는 수진",
+      "description": "수진이 머리를 쥐어뜯으며 앉아있다. 눈은 충혈되어 있고, 손톱은 온통 부러져 있다. \"말도 안 돼... 데이터가 부족해... 이대로는 미쳐버릴 거야...\"",
+      "image": "character_sujin_stressed.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "따뜻한 허브차를 건넨다.",
+          "requirements": { "items": ["herbal_tea"], "stats": null },
+          "successEffects": {
+            "description": "그녀는 잠시 망설이다 차를 받아 마신다. \"...고마워요.\" 그녀의 표정이 아주 약간 부드러워졌다. 감사의 의미로 진통제를 건넨다.",
+            "statChanges": { "SAN": 10 },
+            "itemsLost": ["herbal_tea"],
+            "itemsGained": ["painkillers"]
+          }
+        },
+        {
+          "text": "힘내라고 격려한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"당신이 뭘 안다고!\" 그녀가 소리친다. 당신의 섣부른 위로는 그녀의 신경을 더 날카롭게 만들었다.",
+            "statChanges": { "SAN": -8 }
+          }
+        }
+      ]
+    },
+    "character_sujin_barricade_01": {
+      "id": "character_sujin_barricade_01",
+      "npcId": "sujin",
+      "name": "바리케이드를 친 수진",
+      "description": "수진이 부서진 가구로 길을 막고 그 뒤에서 경계하고 있다. \"더 이상 오지 마세요! 당신이 '그것'들과 한패가 아니란 증거는 어디에도 없으니까!\"",
+      "image": "character_sujin_barricade.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "에너지바를 던져준다.",
+          "requirements": { "items": ["energy_bar"], "stats": null },
+          "successEffects": {
+            "description": "날아온 에너지바를 본 그녀의 경계심이 약간 누그러졌다. \"...일단 고맙군요.\" 그녀는 바리케이드 일부를 치워 당신이 지나갈 길을 만들어준다.",
+            "statChanges": { "SAN": 5 },
+            "itemsLost": ["energy_bar"]
+          }
+        },
+        {
+          "text": "힘으로 돌파한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "바리케이드를 밀치자 그녀가 비명을 지르며 뾰족한 막대기를 휘둘렀다. 팔에 상처를 입었다.",
+            "statChanges": { "HP": -15, "FITNESS": -5 }
+          }
+        }
+      ]
+    },
+    "character_sujin_calm_and_collected_01": {
+      "id": "character_sujin_calm_and_collected_01",
+      "npcId": "sujin",
+      "name": "침착함을 되찾은 수진",
+      "description": "이전에 만났던 것과 달리, 수진은 놀랍도록 침착해 보인다. 그녀는 벽에 복잡한 수식을 적고 있다. \"아, 당신이군요. 잠시 이 계산 좀 도와줄 수 있나요?\"",
+      "image": "character_sujin_calm.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "돕는다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 60 } } },
+          "successEffects": {
+            "description": "당신의 조언 덕분에 그녀는 계산을 마칠 수 있었다. \"됐어요! 이 방은 13턴 주기로 안전해져요. 감사의 표시로 이걸 드릴게요.\" 그녀가 멀티툴을 건넨다.",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["multitool"]
+          },
+          "failureEffects": {
+            "description": "당신의 엉뚱한 대답에 그녀가 한숨을 쉬었다. \"됐어요. 역시 혼자 하는 게 낫겠네요.\"",
+            "statChanges": { "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "character_sujin_offering_deal_01": {
+      "id": "character_sujin_offering_deal_01",
+      "npcId": "sujin",
+      "name": "거래를 제안하는 수진",
+      "description": "수진이 당신을 불러 세운다. \"잠깐만요. 당신, 쌩쌩해 보이는군요. 저와 거래하죠. 당신의 체력 일부와 제 지식을 교환하는 겁니다.\"",
+      "image": "character_sujin_deal.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "거래를 수락한다. (HP -20)",
+          "requirements": { "stats": { "HP": { "operator": ">", "value": 20 } } },
+          "successEffects": {
+            "description": "그녀가 당신의 피를 조금 뽑아가는 대신, 낡은 일기장 한 페이지를 건네준다. 미로의 함정에 대한 정보가 적혀있다.",
+            "statChanges": { "HP": -20, "SAN": 10 },
+            "itemsGained": ["old_diary"]
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"흥. 어리석군요.\" 그녀는 차갑게 돌아섰다."
+          }
+        }
+      ]
+    },
+    "character_sujin_trap_warning_01": {
+      "id": "character_sujin_trap_warning_01",
+      "npcId": "sujin",
+      "name": "함정을 경고하는 수진",
+      "description": "당신이 다음 방으로 가려 하자, 수진이 다급하게 외친다. \"잠깐! 그 방은 위험해요! 압력 발판 함정이 있어요!\"",
+      "image": "character_sujin_warning.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "고맙다고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀의 경고 덕분에 위험을 피할 수 있었다. 그녀와의 사이에 희미한 유대감이 생긴 것 같다.",
+            "statChanges": { "SAN": 15 }
+          }
+        },
+        {
+          "text": "무시하고 들어간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀의 말을 무시하고 들어간 순간, 발밑에서 '딸깍' 소리가 났다. 그녀의 말이 맞았다.",
+            "statChanges": { "HP": -20, "SAN": -5 },
+            "applyStatus": ["fatigue"]
+          }
+        }
+      ]
+    },
+    "character_sujin_needs_item_01": {
+      "id": "character_sujin_needs_item_01",
+      "npcId": "sujin",
+      "name": "손전등이 필요한 수진",
+      "description": "수진이 어두운 통로 앞에서 망설이고 있다. \"젠장, 배터리가 다 됐어... 어둠 속의 변수는 계산할 수가 없는데...\"",
+      "image": "character_sujin_dark.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "손전등을 빌려준다.",
+          "requirements": { "items": ["flashlight"], "stats": null },
+          "successEffects": {
+            "description": "\"이걸... 제게?\" 그녀는 놀란 듯하더니, 고맙다며 자신의 커피 보온병을 건네준다. \"전 이게 더 필요하겠군요.\"",
+            "statChanges": { "SAN": 10 },
+            "itemsLost": ["flashlight"],
+            "itemsGained": ["flask_of_coffee"]
+          }
+        },
+        {
+          "text": "그냥 둔다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀는 당신을 원망스럽게 쳐다볼 뿐, 아무 말도 하지 않았다."
+          }
+        }
+      ]
+    },
+    "character_sujin_hallucinating_01": {
+      "id": "character_sujin_hallucinating_01",
+      "npcId": "sujin",
+      "name": "환각을 보는 수진",
+      "description": "수진이 허공에 대고 소리치고 있다. \"거기 있는 거 다 알아! 이 방정식은 거짓이야! 넌 날 속일 수 없어!\" 그녀의 눈에 초점이 없다.",
+      "image": "character_sujin_hallucinating.png",
+      "category": "character",
+      "weight": 5,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "진정시킨다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 70 } } },
+          "successEffects": {
+            "description": "당신의 차분한 목소리에 그녀가 잠시 제정신을 차렸다. \"...미안해요. 잠시 혼란스러웠어요.\" 그녀는 부끄러운 듯 얼굴을 가린다.",
+            "statChanges": { "SAN": -5 }
+          },
+          "failureEffects": {
+            "description": "그녀가 당신을 환각의 일부로 여기고 공격했다! 그녀를 뿌리치느라 체력을 소모했다.",
+            "statChanges": { "HP": -10, "SAN": -10 }
+          }
+        },
+        {
+          "text": "해독제를 준다.",
+          "requirements": { "items": ["antidote"], "stats": null },
+          "successEffects": {
+            "description": "해독제를 먹은 그녀가 깊은 숨을 내쉬며 정신을 차렸다. \"당신이 절 구했군요... 이 빚은 언젠가 갚죠.\" 그녀의 눈빛이 달라졌다.",
+            "statChanges": { "SAN": 15 },
+            "itemsLost": ["antidote"],
+            "applyStatus": ["determination"]
+          }
+        }
+      ]
+    },
+    "character_sujin_hypothesis_01": {
+      "id": "character_sujin_hypothesis_01",
+      "npcId": "sujin",
+      "name": "가설을 세운 수진",
+      "description": "수진이 당신을 막아서며 말한다. \"가설을 하나 세웠어요. 이 벽, 아마 반대편에서 특정 행동을 하면 열릴 겁니다. 제가 여기서 신호를 보낼 테니, 저쪽 방에 가서 확인해주실 수 있나요?\"",
+      "image": "character_sujin_hypothesis.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "협력한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀의 말대로 하자 정말 비밀 통로가 열렸다! 안에는 낡은 등산화가 있었다. 돌아오니 그녀는 이미 사라지고 없었다.",
+            "statChanges": { "SAN": 10, "HUNGER": -4 },
+            "itemsGained": ["sturdy_boots"]
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"...알겠습니다. 다른 변수를 찾아보죠.\" 그녀는 실망한 기색으로 다시 분석에 몰두했다.",
+            "statChanges": { "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "character_sujin_final_theory_01": {
+      "id": "character_sujin_final_theory_01",
+      "npcId": "sujin",
+      "name": "최종 이론을 완성한 수진",
+      "description": "수진의 눈이 광적으로 빛나고 있다. 벽 전체가 그녀의 계산으로 가득하다. \"해냈어... 드디어... 이 미로의 탈출 로직을 완성했어!\"",
+      "image": "character_sujin_eureka.png",
+      "category": "character",
+      "weight": 3,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "탈출 방법을 묻는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀가 웃으며 당신을 본다. \"탈출? 아니. 난 남아서 이 미로를 '이해'할 거야.\" 그녀는 더 이상 당신에게 관심이 없다. 그녀의 광기 어린 모습에 소름이 돋았다.",
+            "statChanges": { "SAN": -15 }
+          }
+        },
+        {
+          "text": "그녀의 노트를 훔친다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 70 } } },
+          "successEffects": {
+            "description": "그녀가 한눈파는 사이, 계산이 적힌 노트 일부를 훔쳐 달아났다. 엄청난 정보가 담겨있다!",
+            "statChanges": { "SAN": 20, "FITNESS": -5 },
+            "itemsGained": ["maze_map_fragment", "maze_map_fragment"]
+          },
+          "failureEffects": {
+            "description": "그녀에게 발각되었다! \"내 데이터를 넘볼 생각 마!\" 그녀가 근처에 있던 뾰족한 돌로 당신을 공격했다.",
+            "statChanges": { "HP": -25, "SAN": -10 }
+          }
+        }
+      ]
+    }
+  }
+}

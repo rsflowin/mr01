@@ -1,0 +1,308 @@
+{
+  "events": {
+    "character_anya_dismantling_trap_01": {
+      "id": "character_anya_dismantling_trap_01",
+      "npcId": "anya",
+      "name": "함정을 해체하는 아냐",
+      "description": "아냐 페트로바가 압력 발판 함정을 해체하며 부품을 꺼내고 있다. \"아마추어 솜씨군. 이딴 걸로 날 막을 수 있을 거라 생각하다니.\" 그녀는 당신을 보고도 작업을 멈추지 않는다.",
+      "image": "character_anya_dismantling.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "돕겠다고 제안한다.",
+          "requirements": null,
+          "successConditions": { "items": ["multitool"], "stats": null },
+          "successEffects": {
+            "description": "\"당신이 뭘 할 수 있는데? ...어, 멀티툴?\" 그녀는 놀라더니, 당신의 멀티툴을 이용해 핵심 부품을 빼낸다. \"흥, 쓸모가 아주 없진 않군.\" 그녀는 답례로 자신이 개조한 손전등을 던져준다.",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["flashlight"]
+          },
+          "failureEffects": {
+            "description": "\"비켜. 방해돼.\" 그녀는 당신의 제안을 차갑게 묵살한다."
+          }
+        },
+        {
+          "text": "부품을 훔쳐 달아난다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 부품 하나를 낚아채 달아나자, 뒤에서 그녀의 차가운 목소리가 들린다. \"그거, 5분 뒤에 폭발해.\" 그 말을 듣는 순간, 손안의 부품이 뜨거워지기 시작한다!",
+            "statChanges": { "HP": -20, "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_anya_short_circuit_01": {
+      "id": "character_anya_short_circuit_01",
+      "npcId": "anya",
+      "name": "합선을 유도하는 아냐",
+      "description": "아냐가 물이 고인 바닥과 전선이 노출된 벽을 번갈아 본다. 그녀가 당신에게 묻는다. \"저 전선에 저 물을 끼얹으면 어떻게 될까? 재미있는 구경거리가 생길 것 같은데.\"",
+      "image": "character_anya_short_circuit.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "물이 담긴 병을 던진다.",
+          "requirements": { "items": ["pure_water_bottle"], "stats": null },
+          "successEffects": {
+            "description": "물이 닿자 격렬한 스파크와 함께 이 지역의 모든 기계 함정이 정지했다! \"봤지? 가끔은 무식한 방법이 최고야.\" 그녀는 만족스럽게 웃으며, 보상으로 아드레날린 주사기를 준다.",
+            "statChanges": { "SAN": 10 },
+            "itemsLost": ["pure_water_bottle"],
+            "itemsGained": ["adrenaline_shot"]
+          }
+        },
+        {
+          "text": "위험하다고 말린다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"위험하니까 재밌는 거지.\" 그녀는 당신의 말을 무시하고, 다른 방법을 찾아보겠다며 떠난다."
+          }
+        }
+      ]
+    },
+    "character_anya_cynical_advice_01": {
+      "id": "character_anya_cynical_advice_01",
+      "npcId": "anya",
+      "name": "냉소적인 조언을 하는 아냐",
+      "description": "아냐가 벽에 기댄 채 당신을 훑어본다. \"아직도 살아있다니 용하군. 조언 하나 해주지. 여기서 믿을 건 자기 자신과 물리 법칙뿐이야. '희망'이나 '신뢰' 같은 건 널 죽일 뿐이라고.\"",
+      "image": "character_anya_advice.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "동의한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신의 대답에 그녀가 처음으로 흥미로운 표정을 짓는다. \"...말이 통하는 상대는 오랜만이군.\" 그녀는 주머니에서 숫돌을 꺼내 당신에게 던져준다. \"이거나 써. 무기만큼 확실한 건 없으니까.\"",
+            "statChanges": { "SAN": -5 },
+            "itemsGained": ["sharpening_stone"]
+          }
+        },
+        {
+          "text": "사람을 믿어야 한다고 반박한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"애들 같은 소리.\" 그녀는 비웃으며 당신을 지나쳐 간다. \"그 믿음이 네 관뚜껑에 못질을 할 거다.\"",
+            "statChanges": { "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_anya_failed_hack_01": {
+      "id": "character_anya_failed_hack_01",
+      "npcId": "anya",
+      "name": "해킹에 실패한 아냐",
+      "description": "아냐가 전자 잠금장치가 달린 문 앞에서 욕설을 내뱉고 있다. \"젠장, 보안 등급이 생각보다 높아! 내 장비로는 어림도 없겠어.\" 그녀는 분한 듯 발로 문을 걷어찬다.",
+      "image": "character_anya_failed_hack.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "위로한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"동정은 필요 없어!\" 그녀가 날카롭게 쏘아붙인다. \"감정 낭비할 시간에 해결책이나 찾아.\""
+          }
+        },
+        {
+          "text": "강제로 문을 연다. (FITNESS -20)",
+          "requirements": { "stats": { "FITNESS": { "operator": ">", "value": 80 } } },
+          "successEffects": {
+            "description": "당신이 괴력으로 문을 뜯어내자, 그녀가 놀라서 당신을 쳐다본다. \"...이런 무식한 방법이 통할 줄이야.\" 문 안에는 전투식량이 있었다. 그녀는 아무 말 없이 당신에게 양보한다.",
+            "statChanges": { "FITNESS": -20 },
+            "itemsGained": ["combat_ration"]
+          }
+        }
+      ]
+    },
+    "character_anya_testing_you_01": {
+      "id": "character_anya_testing_you_01",
+      "npcId": "anya",
+      "name": "당신을 시험하는 아냐",
+      "description": "아냐가 당신에게 곰팡이 핀 빵을 내민다. \"자, 먹어. 내 성의야.\" 그녀의 눈은 당신이 어떻게 행동할지 지켜보고 있다.",
+      "image": "character_anya_testing.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "먹는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 빵을 먹자 그녀가 혀를 찬다. \"멍청하긴. 남이 주는 걸 함부로 먹다니. 넌 여기서 오래 못 살겠군.\" 당신은 배탈이 났다.",
+            "statChanges": { "SAN": -5 },
+            "applyStatus": ["stomach_ache"]
+          }
+        },
+        {
+          "text": "그녀에게 먼저 먹어보라고 건넨다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀가 피식 웃는다. \"...합격이야.\" 그녀는 빵을 버리고, 대신 자신의 가방에서 깨끗한 단백질 바를 꺼내 당신에게 준다. \"이건 믿고 먹어도 돼.\"",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["protein_bar"]
+          }
+        }
+      ]
+    },
+    "character_anya_needs_power_source_01": {
+      "id": "character_anya_needs_power_source_01",
+      "npcId": "anya",
+      "name": "동력원이 필요한 아냐",
+      "description": "아냐가 망가진 기계 앞에서 중얼거린다. \"이걸 고치면 쓸만할 텐데, 동력원이 없어. 손전등 배터리라도 있으면 어떻게든...\"",
+      "image": "character_anya_power_source.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "손전등을 준다.",
+          "requirements": { "items": ["flashlight"], "stats": null },
+          "successEffects": {
+            "description": "그녀는 손전등을 분해해 기계에 연결했다. 기계가 작동하며 작은 방어막을 생성한다! \"됐어. 이 안에서는 안전할 거야.\" 그녀는 보상으로 방독면을 던져준다.",
+            "statChanges": { "SAN": 10 },
+            "itemsLost": ["flashlight"],
+            "itemsGained": ["gas_mask"]
+          }
+        },
+        {
+          "text": "그녀를 비웃는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"흥, 공학의 '공'자도 모르는군.\" 그녀는 당신의 비웃음에 이를 갈지만, 아무 말도 하지 않는다."
+          }
+        }
+      ]
+    },
+    "character_anya_surprising_kindness_01": {
+      "id": "character_anya_surprising_kindness_01",
+      "npcId": "anya",
+      "name": "의외의 친절을 베푸는 아냐",
+      "description": "당신이 출혈 상태로 비틀거리자, 아냐가 당신 앞을 막아선다. 그녀는 말없이 당신의 팔을 붙잡고, 능숙한 솜씨로 더러운 붕대를 감아 지혈해준다.",
+      "image": "character_anya_kindness.png",
+      "category": "character",
+      "weight": 5,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "고맙다고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"...착각하지 마. 네가 죽으면 내 생존 확률도 줄어드니까. 순전히 계산적인 행동이야.\" 그녀는 퉁명스럽게 말하지만, 뺨은 약간 붉어져 있다.",
+            "statChanges": { "HP": 10, "SAN": 10 },
+            "removeStatus": ["bleeding"]
+          }
+        },
+        {
+          "text": "그녀의 손을 뿌리친다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"그래? 마음대로 해.\" 그녀는 즉시 당신에게서 손을 떼고 떠나버린다. 과다출혈로 어지럽다.",
+            "statChanges": { "HP": -10 },
+            "applyStatus": ["dizziness"]
+          }
+        }
+      ]
+    },
+    "character_anya_setting_a_trap_for_you_01": {
+      "id": "character_anya_setting_a_trap_for_you_01",
+      "npcId": "anya",
+      "name": "당신을 위한 함정을 설치하는 아냐",
+      "description": "아냐가 당신에게 말한다. \"저쪽 방에 내가 설치한 함정이 있어. 몬스터를 유인하기 위한 건데, 당신이 가서 미끼 역할을 좀 해줘야겠어. 물론 보상은 두둑하게 챙겨주지.\"",
+      "image": "character_anya_setting_trap.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그녀를 믿고 미끼가 된다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 방에 들어서자, 문이 닫히고 수면 가스가 뿜어져 나온다! 함정은 몬스터가 아니라 당신을 위한 것이었다. 잠에서 깨어나니, 당신의 아이템 몇 개가 사라져 있었다.",
+            "itemsLost": ["canned_tuna", "protein_bar"]
+          }
+        },
+        {
+          "text": "거절하고, 그녀를 방으로 밀어 넣는다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 60 } } },
+          "successEffects": {
+            "description": "당신은 그녀를 역으로 함정에 밀어 넣었다! 그녀의 욕설과 함께 가스가 분출된다. 잠시 후, 그녀가 남긴 멀티툴을 챙겼다.",
+            "statChanges": { "SAN": -5 },
+            "itemsGained": ["multitool"]
+          },
+          "failureEffects": {
+            "description": "그녀는 당신의 공격을 피하고, 전기 충격기로 당신을 지졌다. \"예상했던 반응이야.\"",
+            "statChanges": { "HP": -15, "FITNESS": -10 },
+            "applyStatus": ["dizziness"]
+          }
+        }
+      ]
+    },
+    "character_anya_revealing_past_01": {
+      "id": "character_anya_revealing_past_01",
+      "npcId": "anya",
+      "name": "과거를 언뜻 내비치는 아냐",
+      "description": "아냐가 망가진 로봇 강아지를 보며 잠시 생각에 잠겨있다. \"...나도 어릴 때 이런 걸 만든 적이 있었지. 아빠를 위해서.\"",
+      "image": "character_anya_past.png",
+      "category": "character",
+      "weight": 4,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "자세히 물어본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"...쓸데없는 소리를 했군.\" 그녀는 다시 냉정한 표정으로 돌아와, 화제를 바꾸려는 듯 오래된 일기장을 당신에게 던진다. \"이거나 읽어봐.\"",
+            "itemsGained": ["old_diary"]
+          }
+        },
+        {
+          "text": "조용히 지켜본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀는 잠시 과거를 회상하는 듯하다가, 이내 당신을 발견하고는 헛기침을 하며 자리를 뜬다."
+          }
+        }
+      ]
+    },
+    "character_anya_escape_pod_01": {
+      "id": "character_anya_escape_pod_01",
+      "npcId": "anya",
+      "name": "탈출 포드를 발견한 아냐",
+      "description": "아냐가 1인용 탈출 포드 앞에서 제어판을 조작하고 있다. \"해냈어... 드디어. 하지만... 좌석은 하나뿐이군.\" 그녀가 당신을 돌아본다.",
+      "image": "character_anya_escape_pod.png",
+      "category": "character",
+      "weight": 3,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그녀를 보내준다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 길을 비켜주자, 그녀는 놀란 눈으로 당신을 본다. \"...멍청한 건지, 착한 건지.\" 그녀는 포드에 타기 전, 자신의 모든 장비가 든 가방을 당신에게 던져준다. \"...행운을 빌지.\"",
+            "statChanges": { "SAN": 20 },
+            "itemsGained": ["multitool", "gas_mask", "first_aid_kit"]
+          }
+        },
+        {
+          "text": "포드를 빼앗는다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 75 } } },
+          "successEffects": {
+            "description": "당신은 그녀를 밀치고 포드를 차지했다. 그녀의 저주를 뒤로하고, 당신은 미로를 탈출한다... 하지만 이것이 정말 끝일까?",
+            "statChanges": { "FITNESS": -10 }
+          },
+          "failureEffects": {
+            "description": "그녀는 당신의 공격을 예상했다는 듯, 포드의 자폭 장치를 가동시킨다. \"나도 못 가지면, 너도 못 가져.\" 포드가 폭발하며 당신은 큰 부상을 입었다.",
+            "statChanges": { "HP": -40, "SAN": -15 }
+          }
+        }
+      ]
+    }
+  }
+}

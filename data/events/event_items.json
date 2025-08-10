@@ -1,0 +1,339 @@
+{
+  "events": {
+    "item_discovery_first_aid_kit": {
+      "id": "item_discovery_first_aid_kit",
+      "name": "구급상자 발견",
+      "description": "벽에 기대어 놓인, 붉은 십자가가 선명한 구급상자를 발견했다.",
+      "image": "discovery_first_aid_kit.png",
+      "category": "item", "weight": 20, "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "챙긴다", "successEffects": {
+            "description": "든든한 의료용품을 손에 넣었다.",
+            "statChanges": { "SAN": 5 }, "itemsGained": ["first_aid_kit"]
+          }
+        },
+        {"text": "그냥 둔다", "successEffects": {"description": "누군가 더 필요한 사람이 있을지도 모른다."}}
+      ]
+    },
+    "item_discovery_dirty_bandage": {
+      "id": "item_discovery_dirty_bandage",
+      "name": "더러운 붕대 발견",
+      "description": "선반 구석에서 낡고 더러운 붕대 뭉치를 발견했다.",
+      "image": "discovery_dirty_bandage.png",
+      "category": "item", "weight": 40, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "없는 것보단 낫겠지. 붕대를 챙겼다.", "itemsGained": ["dirty_bandage"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "감염될 위험이 있어 보인다. 그냥 뒀다."}}
+      ]
+    },
+    "item_discovery_painkillers": {
+      "id": "item_discovery_painkillers",
+      "name": "진통제 발견",
+      "description": "넘어진 의료 카트 아래에서 약병 하나가 굴러 나온다. 진통제인 것 같다.",
+      "image": "discovery_painkillers.png",
+      "category": "item", "weight": 30, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "유용한 약품을 얻었다.", "itemsGained": ["painkillers"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "필요 없어 보여 그냥 뒀다."}}
+      ]
+    },
+    "item_discovery_adrenaline_shot": {
+      "id": "item_discovery_adrenaline_shot",
+      "name": "아드레날린 주사기 발견",
+      "description": "깨진 유리 진열장 안에 아드레날린 주사기가 놓여 있다.",
+      "image": "discovery_adrenaline_shot.png",
+      "category": "item", "weight": 15, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "위급할 때 쓸 수 있겠다. 주사기를 챙겼다.", "itemsGained": ["adrenaline_shot"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "위험해 보여서 건드리지 않았다."}}
+      ]
+    },
+    "item_discovery_antidote": {
+      "id": "item_discovery_antidote",
+      "name": "해독제 발견",
+      "description": "연구원의 흰 가운 주머니에서 작은 병에 든 해독제를 발견했다.",
+      "image": "discovery_antidote.png",
+      "category": "item", "weight": 25, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "혹시 모를 상황에 대비해 해독제를 챙겼다.", "itemsGained": ["antidote"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "굳이 필요 없어 보여 그냥 뒀다."}}
+      ]
+    },
+    "item_discovery_sleeping_pills": {
+      "id": "item_discovery_sleeping_pills",
+      "name": "수면제 발견",
+      "description": "침대 옆 탁자 위에 수면제 약통이 놓여 있다.",
+      "image": "discovery_sleeping_pills.png",
+      "category": "item", "weight": 20, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "강제로 휴식을 취할 때 유용하겠다.", "itemsGained": ["sleeping_pills"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "약물에 의존하고 싶지 않아 그냥 뒀다."}}
+      ]
+    },
+    "item_discovery_herbal_tea": {
+      "id": "item_discovery_herbal_tea",
+      "name": "허브차 발견",
+      "description": "휴게실 탁자 위에 향긋한 냄새가 나는 허브차 티백이 놓여있다.",
+      "image": "discovery_herbal_tea.png",
+      "category": "item", "weight": 35, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "따뜻한 차 한잔이 위안이 될 것 같다.", "itemsGained": ["herbal_tea"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "별로 마시고 싶지 않다."}}
+      ]
+    },
+    "item_discovery_combat_ration": {
+      "id": "item_discovery_combat_ration",
+      "name": "전투식량 발견",
+      "description": "잠긴 사물함 안에 전투식량(MRE)이 들어있다.",
+      "image": "discovery_combat_ration.png",
+      "category": "item", "weight": 25, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "든든한 식량을 얻었다.", "statChanges": { "SAN": 5 }, "itemsGained": ["combat_ration"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "가방이 무거워서 그냥 뒀다."}}
+      ]
+    },
+    "item_discovery_energy_bar": {
+      "id": "item_discovery_energy_bar",
+      "name": "에너지바 발견",
+      "description": "자판기 반환구에 에너지바 하나가 걸려있다.",
+      "image": "discovery_energy_bar.png",
+      "category": "item", "weight": 40, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "빠르게 에너지를 보충할 수 있겠다.", "itemsGained": ["energy_bar"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "단 것은 별로 좋아하지 않는다."}}
+      ]
+    },
+    "item_discovery_flask_of_coffee": {
+      "id": "item_discovery_flask_of_coffee",
+      "name": "커피 보온병 발견",
+      "description": "책상 위에 아직 온기가 남아있는 보온병이 있다. 커피 냄새가 난다.",
+      "image": "discovery_flask_of_coffee.png",
+      "category": "item", "weight": 30, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "정신을 차리는 데 도움이 될 것 같다.", "itemsGained": ["flask_of_coffee"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "카페인은 별로다. 그냥 뒀다."}}
+      ]
+    },
+    "item_discovery_moldy_bread": {
+      "id": "item_discovery_moldy_bread",
+      "name": "곰팡이 핀 빵 발견",
+      "description": "식당 구석에 푸른 곰팡이가 핀 빵 한 조각이 떨어져 있다.",
+      "image": "discovery_moldy_bread.png",
+      "category": "item", "weight": 45, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "이거라도 먹어야 살 수 있을지 모른다.", "statChanges": { "SAN": -2 }, "itemsGained": ["moldy_bread"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "저걸 먹느니 차라리 굶겠다."}}
+      ]
+    },
+    "item_discovery_flask_of_whiskey": {
+      "id": "item_discovery_flask_of_whiskey",
+      "name": "위스키 플라스크 발견",
+      "description": "버려진 코트 안주머니에서 묵직한 위스키 플라스크를 발견했다.",
+      "image": "discovery_flask_of_whiskey.png",
+      "category": "item", "weight": 20, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "용기가 필요할 때 마시면 좋겠다.", "itemsGained": ["flask_of_whiskey"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "술은 지금 상황에 도움이 안 된다."}}
+      ]
+    },
+    "item_discovery_canned_tuna": {
+      "id": "item_discovery_canned_tuna",
+      "name": "참치 통조림 발견",
+      "description": "부엌 선반 위에 먼지 쌓인 참치 통조림이 놓여있다.",
+      "image": "discovery_canned_tuna.png",
+      "category": "item", "weight": 35, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "훌륭한 단백질 공급원이다.", "itemsGained": ["canned_tuna"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "따개가 없으면 무용지물이다."}}
+      ]
+    },
+    "item_discovery_pure_water_bottle": {
+      "id": "item_discovery_pure_water_bottle",
+      "name": "깨끗한 물병 발견",
+      "description": "정수기 옆에 개봉하지 않은 깨끗한 물병이 놓여있다.",
+      "image": "discovery_pure_water_bottle.png",
+      "category": "item", "weight": 50, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "무엇보다 소중한 깨끗한 물이다.", "statChanges": { "SAN": 3 }, "itemsGained": ["pure_water_bottle"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "이미 마실 것이 충분하다."}}
+      ]
+    },
+    "item_discovery_mystery_jerky": {
+      "id": "item_discovery_mystery_jerky",
+      "name": "정체불명 육포 발견",
+      "description": "천장에 매달린 자루에서 정체를 알 수 없는 검붉은 육포를 발견했다.",
+      "image": "discovery_mystery_jerky.png",
+      "category": "item", "weight": 15, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "일단 챙겨두고 보자. 무슨 고기인지는 생각하지 말자.", "statChanges": { "SAN": -3 }, "itemsGained": ["mystery_jerky"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "도저히 손이 가질 않는다."}}
+      ]
+    },
+    "item_discovery_flashlight": {
+      "id": "item_discovery_flashlight",
+      "name": "손전등 발견",
+      "description": "경비원의 책상 위에서 묵직한 손전등을 발견했다.",
+      "image": "discovery_flashlight.png",
+      "category": "item", "weight": 30, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "어둠 속에서 한 줄기 빛이 되어줄 것이다.", "itemsGained": ["flashlight"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "배터리가 없을지도 모른다."}}
+      ]
+    },
+    "item_discovery_sturdy_boots": {
+      "id": "item_discovery_sturdy_boots",
+      "name": "튼튼한 등산화 발견",
+      "description": "신발장 안에 발에 딱 맞는 튼튼한 등산화가 있다.",
+      "image": "discovery_sturdy_boots.png",
+      "category": "item", "weight": 25, "persistence": "oneTime",
+      "choices": [
+        {"text": "신는다", "successEffects": {"description": "발이 편안해지니 더 멀리 갈 수 있을 것 같다.", "itemsGained": ["sturdy_boots"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "지금 신발도 나쁘지 않다."}}
+      ]
+    },
+    "item_discovery_compass": {
+      "id": "item_discovery_compass",
+      "name": "나침반 발견",
+      "description": "지도실 책상 위에 놋쇠로 된 낡은 나침반이 놓여 있다.",
+      "image": "discovery_compass.png",
+      "category": "item", "weight": 20, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "방향을 알려주는 고마운 물건이다.", "itemsGained": ["compass"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "여기서 방향 감각은 무의미하다."}}
+      ]
+    },
+    "item_discovery_rope": {
+      "id": "item_discovery_rope",
+      "name": "밧줄 발견",
+      "description": "창고 벽에 잘 감겨있는 튼튼한 밧줄이 걸려있다.",
+      "image": "discovery_rope.png",
+      "category": "item", "weight": 30, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "언젠가 유용하게 쓰일 것이다.", "itemsGained": ["rope"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "너무 무거워서 그냥 뒀다."}}
+      ]
+    },
+    "item_discovery_gas_mask": {
+      "id": "item_discovery_gas_mask",
+      "name": "방독면 발견",
+      "description": "화학 실험실 캐비닛 안에 낡은 방독면이 들어있다.",
+      "image": "discovery_gas_mask.png",
+      "category": "item", "weight": 15, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "이상한 가스로부터 나를 지켜줄 것이다.", "itemsGained": ["gas_mask"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "정화통이 작동할지 의문이다."}}
+      ]
+    },
+    "item_discovery_sharpening_stone": {
+      "id": "item_discovery_sharpening_stone",
+      "name": "숫돌 발견",
+      "description": "작업대 위에 잘 사용된 흔적이 있는 숫돌이 놓여 있다.",
+      "image": "discovery_sharpening_stone.png",
+      "category": "item", "weight": 25, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "무기를 손질할 때 유용하겠다.", "itemsGained": ["sharpening_stone"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "지금은 필요 없어 보인다."}}
+      ]
+    },
+    "item_discovery_multitool": {
+      "id": "item_discovery_multitool",
+      "name": "멀티툴 발견",
+      "description": "공구함 속에서 작고 유용한 멀티툴을 발견했다.",
+      "image": "discovery_multitool.png",
+      "category": "item", "weight": 25, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "만능 도구를 얻었다. 마음이 든든하다.", "itemsGained": ["multitool"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "그냥 지나쳤다."}}
+      ]
+    },
+    "item_discovery_lucky_coin": {
+      "id": "item_discovery_lucky_coin",
+      "name": "행운의 동전 발견",
+      "description": "바닥의 틈새에서 무언가 희미하게 반짝인다. 행운의 동전인 것 같다.",
+      "image": "discovery_lucky_coin.png",
+      "category": "item", "weight": 10, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "행운이 따르기를. 동전을 주머니에 넣었다.", "itemsGained": ["lucky_coin"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "미신 따위는 믿지 않는다."}}
+      ]
+    },
+    "item_discovery_creepy_doll": {
+      "id": "item_discovery_creepy_doll",
+      "name": "섬뜩한 인형 발견",
+      "description": "어두운 방구석에 헝클어진 머리카락의 인형이 앉아있다. 그 눈이 나를 보는 것 같다.",
+      "image": "discovery_creepy_doll.png",
+      "category": "item", "weight": 10, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "왜인지 모르게 이 인형을 버려두고 갈 수 없었다.", "statChanges": { "SAN": -5 }, "itemsGained": ["creepy_doll"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "불길한 기운에 서둘러 자리를 떴다."}}
+      ]
+    },
+    "item_discovery_old_diary": {
+      "id": "item_discovery_old_diary",
+      "name": "오래된 일기장 발견",
+      "description": "침대 밑에서 먼지 쌓인 오래된 일기장을 발견했다. 누군가의 기록이 담겨있다.",
+      "image": "discovery_old_diary.png",
+      "category": "item", "weight": 5, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "탈출의 실마리가 될지도 모른다.", "itemsGained": ["old_diary"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "남의 일기를 훔쳐보는 것은 좋지 않다."}}
+      ]
+    },
+    "item_discovery_maze_map_fragment": {
+      "id": "item_discovery_maze_map_fragment",
+      "name": "미로 지도 조각 발견",
+      "description": "벽에 핀으로 고정된, 미로의 일부가 그려진 양피지 조각을 발견했다.",
+      "image": "discovery_maze_map_fragment.png",
+      "category": "item", "weight": 10, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "희망이 보인다. 지도 조각을 소중히 챙겼다.", "statChanges": { "SAN": 5 }, "itemsGained": ["maze_map_fragment"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "이 작은 조각은 별 도움이 안 될 것이다."}}
+      ]
+    },
+    "item_discovery_glowing_crystal": {
+      "id": "item_discovery_glowing_crystal",
+      "name": "빛나는 수정 발견",
+      "description": "제단처럼 보이는 돌 위에 기묘한 빛을 내뿜는 수정이 놓여 있다.",
+      "image": "discovery_glowing_crystal.png",
+      "category": "item", "weight": 8, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "손에 쥐자 이상한 기운이 온몸에 퍼진다.", "itemsGained": ["glowing_crystal"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "정체 모를 물건은 건드리지 않는 것이 상책이다."}}
+      ]
+    },
+    "item_discovery_family_photo": {
+      "id": "item_discovery_family_photo",
+      "name": "가족사진 발견",
+      "description": "바닥에 떨어진 낡은 지갑 안에, 빛바랜 가족사진이 들어있다.",
+      "image": "discovery_family_photo.png",
+      "category": "item", "weight": 10, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "사진을 보니 돌아가야 할 이유가 선명해진다.", "statChanges": { "SAN": 10 }, "itemsGained": ["family_photo"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "추억에 잠길 때가 아니다."}}
+      ]
+    },
+    "item_discovery_severed_hand_talisman": {
+      "id": "item_discovery_severed_hand_talisman",
+      "name": "잘린 손 부적 발견",
+      "description": "천장에 매달린, 미라처럼 말라붙은 손을 발견했다. 기괴하지만 강력한 힘이 느껴진다.",
+      "image": "discovery_severed_hand_talisman.png",
+      "category": "item", "weight": 5, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "두려움을 애써 누르며 부적을 챙겼다.", "statChanges": { "SAN": -8 }, "itemsGained": ["severed_hand_talisman"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "저주받을 것만 같다. 서둘러 자리를 피했다."}}
+      ]
+    },
+    "item_discovery_a_childs_drawing": {
+      "id": "item_discovery_a_childs_drawing",
+      "name": "아이의 그림 발견",
+      "description": "테이블 위에 크레용으로 그린 아이의 그림이 놓여 있다. 해와 웃는 얼굴이 그려져 있다.",
+      "image": "discovery_a_childs_drawing.png",
+      "category": "item", "weight": 15, "persistence": "oneTime",
+      "choices": [
+        {"text": "챙긴다", "successEffects": {"description": "순수한 그림이 잠시나마 마음을 따뜻하게 해준다.", "statChanges": { "SAN": 8 }, "itemsGained": ["a_childs_drawing"]}},
+        {"text": "그냥 둔다", "successEffects": {"description": "그림을 잠시 바라보다가, 가던 길을 갔다."}}
+      ]
+    }
+  }
+}

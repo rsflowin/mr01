@@ -1,0 +1,53 @@
+{
+  "endingSequence": {
+    "id": "victory_ending",
+    "title": "Victory",
+    "music": "victory_theme.mp3",
+    "scenes": [
+      {
+        "id": "victory_scene_01",
+        "type": "narrative",
+        "background": "maze_exit.jpg",
+        "text": "축하합니다! 당신은 미로를 성공적으로 탈출했습니다!",
+        "textStyle": {
+          "color": "gold",
+          "size": "xlarge",
+          "animation": "fadeIn"
+        }
+      },
+      {
+        "id": "victory_scene_02",
+        "type": "narrative", 
+        "background": "freedom_light.jpg",
+        "text": "어둠 속에서 길을 잃었던 당신이지만, 포기하지 않고 끝까지 나아갔습니다.",
+        "textStyle": {
+          "color": "white",
+          "size": "large",
+          "animation": "typewriter"
+        }
+      },
+      {
+        "id": "victory_scene_03",
+        "type": "character_achievement",
+        "background": "victory_stats.jpg",
+        "text": "미로의 복잡한 길들을 헤쳐나가며 당신은 진정한 용기와 지혜를 보여주었습니다.",
+        "textStyle": {
+          "color": "yellow",
+          "size": "large",
+          "animation": "fadeIn"
+        }
+      },
+      {
+        "id": "victory_scene_04",
+        "type": "final_message",
+        "background": "new_horizon.jpg",
+        "text": "이제 새로운 세상이 당신을 기다리고 있습니다. 앞으로도 용기를 잃지 마세요!",
+        "textStyle": {
+          "color": "white",
+          "size": "large",
+          "animation": "typewriter"
+        }
+      }
+    ]
+  }
+}

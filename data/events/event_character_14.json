@@ -1,0 +1,295 @@
+{
+  "events": {
+    "character_diego_latches_on_01": {
+      "id": "character_diego_latches_on_01",
+      "npcId": "diego",
+      "name": "당신에게 매달리는 디에고",
+      "description": "디에고 실바가 당신을 발견하자마자 거의 울상이 되어 달려온다. \"오, 신이시여! 사람이군요! 제발, 저를 혼자 두지 마세요! 이 미로는 꼭 아마존 정글에서 길을 잃었을 때 같다고요! 그때는 원숭이라도 있었지...\"",
+      "image": "character_diego_latches_on.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "일단 진정시킨다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 당신의 말에 조금 진정하더니, 주머니에서 구겨진 미로 지도 조각을 꺼낸다. \"이건 제 이전 여행 그룹 손님이 떨어뜨린 거예요. 전 무서워서 보지도 못했어요. 당신이 가지세요!\"",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["maze_map_fragment"]
+          }
+        },
+        {
+          "text": "시끄럽다고 소리친다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신의 고함에 그가 겁을 먹고 딸꾹질을 시작한다. 그 딸꾹질 소리가 몬스터의 주의를 끌었다.",
+            "statChanges": { "HP": -10, "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_diego_tour_guide_mode_01": {
+      "id": "character_diego_tour_guide_mode_01",
+      "npcId": "diego",
+      "name": "여행 가이드 모드인 디에고",
+      "description": "디에고가 공포에 질렸음에도 불구하고, 직업병처럼 주변을 설명하기 시작한다. \"자, 여러분, 이 벽을 보십시오! 전형적인 후기-미궁-고딕 양식입니다. 만지지 마세요, 손때 묻습니다. 플래시도 터뜨리지 마시고요!\"",
+      "image": "character_diego_tour_guide.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그의 투어에 참여한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그의 엉뚱한 설명을 듣고 있자니 공포가 조금 가시는 것 같다. 그는 투어의 마지막에 기념품이라며 '행운의 동전'을 건네준다. \"팁은 안 받습니다!\"",
+            "statChanges": { "SAN": 15 },
+            "itemsGained": ["lucky_coin"]
+          }
+        },
+        {
+          "text": "손전등을 터뜨린다.",
+          "requirements": { "items": ["flashlight"], "stats": null },
+          "successEffects": {
+            "description": "당신이 손전등을 터뜨리자 그가 기겁한다. \"맙소사! 유물이 손상된다고요!\" 그는 당신을 예의 없는 관광객 취급하며 떠나버린다.",
+            "statChanges": { "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "character_diego_misinterpreting_danger_01": {
+      "id": "character_diego_misinterpreting_danger_01",
+      "npcId": "diego",
+      "name": "위험을 오해하는 디에고",
+      "description": "멀리서 으르렁거리는 소리가 들려온다. 디에고의 얼굴이 하얗게 질린다. \"들었어요? 저건 배고픈 재규어가 내는 소리예요! 나무 위로 올라가야 해요!\"",
+      "image": "character_diego_misinterpreting.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "주변에 나무가 없다고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"뭐라고요? 나무가 없다고요? 아아, 우린 다 죽었어!\" 그는 패닉에 빠져 아무 데나 내달리기 시작했고, 그만 함정 구덩이에 빠져버렸다.",
+            "statChanges": { "SAN": -10 }
+          }
+        },
+        {
+          "text": "그의 말을 무시하고 소리의 근원지를 살핀다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "소리의 근원지는 재규어가 아니라, 배탈이 난 다른 생존자였다. 당신이 그에게 다가가자, 그는 고맙다며 진통제를 건넨다.",
+            "statChanges": { "SAN": 5 },
+            "itemsGained": ["painkillers"]
+          }
+        }
+      ]
+    },
+    "character_diego_bartering_useless_item_01": {
+      "id": "character_diego_bartering_useless_item_01",
+      "npcId": "diego",
+      "name": "쓸모없는 물건을 교환하려는 디에고",
+      "description": "디에고가 당신에게 자신의 낡은 등산화를 보여준다. \"이거, 유명 브랜드 제품입니다. 거의 새것과 같죠. 당신의 그 전투식량과 바꾸지 않겠습니까? 최고의 거래라고요!\"",
+      "image": "character_diego_bartering.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "바꾼다.",
+          "requirements": { "items": ["combat_ration"], "stats": null },
+          "successEffects": {
+            "description": "당신이 식량을 건네자, 그는 신발을 던져주고 음식을 허겁지겁 먹는다. 신발을 신어보니, 밑창이 바로 떨어져 버렸다. 완벽하게 속았다.",
+            "statChanges": { "SAN": -10 },
+            "itemsLost": ["combat_ration"]
+          }
+        },
+        {
+          "text": "사기 치지 말라고 쏘아붙인다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"이런, 들켰나요?\" 그는 머쓱하게 웃으며 신발을 다시 신는다. \"하지만 제 말솜씨는 인정해야 할 겁니다. 그렇죠?\" 그의 뻔뻔함에 헛웃음이 나온다.",
+            "statChanges": { "SAN": 5 }
+          }
+        }
+      ]
+    },
+    "character_diego_unintentional_discovery_01": {
+      "id": "character_diego_unintentional_discovery_01",
+      "npcId": "diego",
+      "name": "의도치 않은 발견을 한 디에고",
+      "description": "디에고가 몬스터를 보고 비명을 지르며 도망치다 벽에 세게 부딪혔다. 그러자 벽의 일부가 무너지며 비밀 통로가 드러났다!",
+      "image": "character_diego_discovery.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그를 칭찬한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"네? 제가요? 일부러 그런 게 아닌데...\" 그는 어리둥절해하지만, 당신의 칭찬에 우쭐해한다. 통로 안에는 깨끗한 물병이 있었다.",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["pure_water_bottle"]
+          }
+        },
+        {
+          "text": "먼저 통로로 들어간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 먼저 들어가 물병을 챙기자, 그가 울상을 짓는다. \"저기요, 그건 제가 찾은 건데요...\" 하지만 그는 당신에게 따질 용기는 없다."
+          }
+        }
+      ]
+    },
+    "character_diego_needs_story_01": {
+      "id": "character_diego_needs_story_01",
+      "npcId": "diego",
+      "name": "이야기를 들려달라는 디에고",
+      "description": "디에고가 모닥불 앞에 웅크리고 있다. \"너무 조용해요... 조용하면 온갖 무서운 생각이 다 든다고요. 뭐라도 좋으니, 제발 재미있는 이야기 좀 해주세요.\"",
+      "image": "character_diego_story.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "재미있는 이야기를 해준다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 60 } } },
+          "successEffects": {
+            "description": "당신의 이야기에 그는 공포를 잊고 아이처럼 웃었다. 그는 고맙다며 자신이 몰래 숨겨두었던 위스키 플라스크를 나눠준다.",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["flask_of_whiskey"]
+          },
+          "failureEffects": {
+            "description": "당신의 이야기는 너무 지루했다. 그는 이야기를 듣다 그만 잠들어버렸다."
+          }
+        },
+        {
+          "text": "무서운 이야기를 해준다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 무서운 이야기를 하자 그가 비명을 지르며 당신에게서 멀어진다. \"으악! 왜 그런 얘기를 하는 거예요!\" 그는 당신을 원망스러운 눈으로 본다.",
+            "statChanges": { "SAN": -15 }
+          }
+        }
+      ]
+    },
+    "character_diego_offering_protection_01": {
+      "id": "character_diego_offering_protection_01",
+      "npcId": "diego",
+      "name": "보호해주겠다고 나서는 디에고",
+      "description": "당신이 부상을 입고 비틀거리자, 디에고가 용기를 내어 당신 앞을 막아선다. \"걱정 마세요! 이 몸은 리우 카니발의 인파 속에서도 살아남은 몸! 제가 당신을 지켜드리죠!\" 그는 덜덜 떨리는 다리로 서 있다.",
+      "image": "character_diego_protection.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "고맙다고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 당신의 말에 힘을 얻어 가슴을 편다. 그의 용기가 당신에게도 전해져, 고통이 조금 가시는 것 같다.",
+            "statChanges": { "SAN": 15 },
+            "removeStatus": ["fatigue"]
+          }
+        },
+        {
+          "text": "비키라고 말한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신의 말에 그가 상처받은 표정을 짓는다. \"네... 알겠습니다... 전 역시 짐만 되는군요...\" 그의 자신감이 바닥으로 떨어진다.",
+            "statChanges": { "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_diego_leading_to_trap_01": {
+      "id": "character_diego_leading_to_trap_01",
+      "npcId": "diego",
+      "name": "함정으로 이끄는 디에고",
+      "description": "디에고가 당신을 이끈다. \"이쪽이에요! 제가 안전한 길을 알아요! 여행 가이드의 감을 믿으시라고요!\" 그는 자신만만하게 앞장선다.",
+      "image": "character_diego_leading.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "따라간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그가 이끈 곳은 막다른 길이었고, 바닥에는 끈끈이 함정이 있었다. 그는 당신에게 미안하다며 울먹인다.",
+            "statChanges": { "SAN": -10 },
+            "applyStatus": ["fatigue"]
+          }
+        },
+        {
+          "text": "가지 않는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 따라오지 않자, 그는 혼자 가다가 함정에 빠졌다. 잠시 후 그의 비명소리가 들려온다. \"역시 혼자는 무리였어!\""
+          }
+        }
+      ]
+    },
+    "character_diego_sharing_bad_food_01": {
+      "id": "character_diego_sharing_bad_food_01",
+      "npcId": "diego",
+      "name": "상한 음식을 나누는 디에고",
+      "description": "디에고가 정체불명의 육포를 건넨다. \"이거 드실래요? 냄새가 좀 이상하긴 한데... 혼자 먹기 무서워서요.\"",
+      "image": "character_diego_sharing_food.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "함께 먹는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "둘 다 사이좋게 배탈이 났다. 그는 고통 속에서도 말한다. \"그래도... 혼자가 아니라 다행이에요...\"",
+            "statChanges": { "SAN": 5 },
+            "applyStatus": ["stomach_ache"]
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 거절하자 그는 울상이 되어 육포를 버린다. \"역시 버리는 게 낫겠죠?\""
+          }
+        }
+      ]
+    },
+    "character_diego_final_goodbye_01": {
+      "id": "character_diego_final_goodbye_01",
+      "npcId": "diego",
+      "name": "마지막 작별인사를 하는 디에고",
+      "description": "디에고가 출구 앞에서 멈춰 서서 당신을 본다. \"여기까지 와주셔서 감사합니다, 손님. 저의 마지막 투어는... 꽤 괜찮았어요. 부디, 팁은 두고 가지 마십시오.\" 그는 눈물을 흘리며 웃는다.",
+      "image": "character_diego_goodbye.png",
+      "category": "character",
+      "weight": 3,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그를 안아준다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 그를 안아주자, 그는 아이처럼 소리 내어 운다. 그는 당신의 주머니에 몰래 자신이 가장 아끼던 '가족사진'을 넣어주고는, 출구 너머로 사라졌다.",
+            "statChanges": { "SAN": 20 },
+            "itemsGained": ["family_photo"]
+          }
+        },
+        {
+          "text": "먼저 가라고 손짓한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 고개를 끄덕이고, 마지막으로 당신에게 손을 흔들어 보인 뒤 떠났다. 그의 수다스러운 목소리가 사라지자, 미로는 더 춥고 외롭게 느껴진다.",
+            "statChanges": { "SAN": -10 }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "events": {
+    "character_alexei_scouting_01": {
+      "id": "character_alexei_scouting_01",
+      "npcId": "alexei",
+      "name": "정찰 중인 알렉세이",
+      "description": "알렉세이 볼코프가 한쪽 무릎을 꿇고 바닥의 흔적을 살피고 있다. 그의 모든 움직임에는 군더더기가 없다. 그는 당신을 힐끗 보더니, 고갯짓으로 앞을 가리킨다.",
+      "image": "character_alexei_scouting.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그가 가리킨 곳을 본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그가 가리킨 곳에는 교묘하게 숨겨진 압력 발판이 있었다. 그는 말없이 당신의 목숨을 구해주고는, 그림자 속으로 사라졌다.",
+            "statChanges": { "SAN": 15 }
+          }
+        },
+        {
+          "text": "말을 건다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 대답 없이 당신을 쳐다보기만 하다가, 이내 흥미를 잃은 듯 다른 길로 가버린다."
+          }
+        }
+      ]
+    },
+    "character_alexei_injured_01": {
+      "id": "character_alexei_injured_01",
+      "npcId": "alexei",
+      "name": "부상당한 알렉세이",
+      "description": "알렉세이가 벽에 기댄 채 앉아있다. 그의 옆구리에서 피가 흐르고 있지만, 그는 신음 소리 하나 내지 않는다. 그는 당신을 보고 짧게 말한다. \"붕대...\"",
+      "image": "character_alexei_injured.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "구급상자를 사용해 치료해준다.",
+          "requirements": { "items": ["first_aid_kit"], "stats": null },
+          "successEffects": {
+            "description": "당신이 상처를 치료하는 동안 그는 묵묵히 지켜본다. 치료가 끝나자, 그는 말없이 자신의 전투식량을 당신에게 건넨다. 빚은 반드시 갚는다는 의미다.",
+            "statChanges": { "SAN": 10 },
+            "itemsLost": ["first_aid_kit"],
+            "itemsGained": ["combat_ration"]
+          }
+        },
+        {
+          "text": "더러운 붕대를 건넨다.",
+          "requirements": { "items": ["dirty_bandage"], "stats": null },
+          "successConditions": { "stats": { "HP": { "operator": "<", "value": 50 } } },
+          "successEffects": {
+            "description": "그는 붕대의 상태를 보더니 잠시 망설였지만, 이내 받아 상처를 감싼다. 그는 고개를 한번 끄덕여 감사를 표했다.",
+            "itemsLost": ["dirty_bandage"]
+          },
+          "failureEffects": {
+            "description": "그는 붕대를 보더니 고개를 젓는다. 감염의 위험을 감수하느니 그냥 두는 게 낫다는 판단이다."
+          }
+        },
+        {
+          "text": "지나친다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 당신을 경멸하는 눈빛으로 쳐다볼 뿐, 더는 아무 말도 하지 않았다.",
+            "statChanges": { "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_alexei_making_trap_01": {
+      "id": "character_alexei_making_trap_01",
+      "npcId": "alexei",
+      "name": "함정을 만드는 알렉세이",
+      "description": "알렉세이가 통로에 능숙하게 함정을 설치하고 있다. 그는 당신을 보고 동작을 멈추더니, 손가락으로 자신과 당신, 그리고 함정을 차례로 가리킨다.",
+      "image": "character_alexei_making_trap.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "협력해서 함정을 완성한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "당신의 도움으로 함정이 더 빨리 완성되었다. 그는 만족한 듯, 보상으로 숫돌을 던져준다.",
+            "statChanges": { "FITNESS": 5, "HUNGER": -3 },
+            "itemsGained": ["sharpening_stone"]
+          },
+          "failureEffects": {
+            "description": "당신의 서툰 움직임이 오히려 방해가 되었다. 그는 한심하다는 듯 혀를 차고는 혼자 작업을 계속한다.",
+            "statChanges": { "SAN": -5 }
+          }
+        },
+        {
+          "text": "밧줄을 건네준다.",
+          "requirements": { "items": ["rope"], "stats": null },
+          "successEffects": {
+            "description": "그는 당신이 건넨 밧줄을 보더니, 고개를 끄덕이고는 함정을 더 견고하게 만든다. 그는 답례로 자신의 물병을 건넸다.",
+            "itemsLost": ["rope"],
+            "itemsGained": ["pure_water_bottle"]
+          }
+        }
+      ]
+    },
+    "character_alexei_silent_meal_01": {
+      "id": "character_alexei_silent_meal_01",
+      "npcId": "alexei",
+      "name": "식사 중인 알렉세이",
+      "description": "알렉세이가 정체불명의 육포를 말없이 씹고 있다. 그는 당신을 보더니, 육포 한 조각을 건넨다.",
+      "image": "character_alexei_eating.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "받아먹는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "맛은 없지만, 영양가는 풍부한 것 같다. 그는 당신이 먹는 모습을 보고는, 동료로 인정하는 듯 고개를 끄덕인다.",
+            "statChanges": { "HUNGER": 30, "HP": 5 },
+            "applyStatus": ["well_rested"]
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 고개를 젓자, 그는 말없이 육포를 다시 자신의 주머니에 넣는다. 신뢰를 얻을 기회를 놓친 것 같다.",
+            "statChanges": { "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "character_alexei_offering_training_01": {
+      "id": "character_alexei_offering_training_01",
+      "npcId": "alexei",
+      "name": "훈련을 제안하는 알렉세이",
+      "description": "알렉세이가 당신을 막아선다. 그는 당신의 자세를 지적하더니, 맨손 격투 자세를 취한다. 훈련을 통해 더 강해질 기회다.",
+      "image": "character_alexei_training.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "훈련을 받는다. (HUNGER -15)",
+          "requirements": { "stats": { "HUNGER": { "operator": ">", "value": 15 } } },
+          "successEffects": {
+            "description": "혹독한 훈련이었다. 온몸이 쑤시지만, 생존에 필요한 움직임을 배웠다.",
+            "statChanges": { "HUNGER": -15, "FITNESS": 15, "HP": -5 }
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 말없이 자세를 푼다. 나약한 자에게 시간을 낭비할 수 없다는 표정이다."
+          }
+        }
+      ]
+    },
+    "character_alexei_mercy_kill_01": {
+      "id": "character_alexei_mercy_kill_01",
+      "npcId": "alexei",
+      "name": "자비를 베푸는 알렉세이",
+      "description": "치명상을 입은 몬스터가 고통스럽게 신음하고 있다. 알렉세이가 그 앞을 막아서서, 당신을 보고 고갯짓한다. 그가 처리할지, 당신이 처리할지 묻는 것이다.",
+      "image": "character_alexei_mercy.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그에게 맡긴다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 한 치의 망설임 없이 몬스터의 숨을 끊었다. 그의 냉혹함에 소름이 돋았지만, 그것이 이 미로의 방식일지도 모른다.",
+            "statChanges": { "SAN": -8 }
+          }
+        },
+        {
+          "text": "내가 처리한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 40 } } },
+          "successEffects": {
+            "description": "당신은 고통을 끝내주기 위해 직접 나섰다. 알렉세이는 당신의 결단력을 인정하는 눈빛으로 바라본다.",
+            "statChanges": { "SAN": 5 },
+            "applyStatus": ["determination"]
+          },
+          "failureEffects": {
+            "description": "망설이는 당신의 모습을 본 알렉세이가 대신 몬스터를 처리했다. 그는 당신을 더 이상 쳐다보지도 않고 떠났다.",
+            "statChanges": { "SAN": -15 }
+          }
+        }
+      ]
+    },
+    "character_alexei_barter_01": {
+      "id": "character_alexei_barter_01",
+      "npcId": "alexei",
+      "name": "물물교환하는 알렉세이",
+      "description": "알렉세이가 자신의 배낭에서 아드레날린 주사기를 꺼내 보여준다. 그리고는 당신의 식량을 가리킨다. 말이 없는 교환 제의다.",
+      "image": "character_alexei_barter.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "전투식량과 교환한다.",
+          "requirements": { "items": ["combat_ration"], "stats": null },
+          "successEffects": {
+            "description": "그는 만족스럽게 전투식량을 받아들고, 아드레날린 주사기를 당신에게 던져준다.",
+            "itemsLost": ["combat_ration"],
+            "itemsGained": ["adrenaline_shot"]
+          }
+        },
+        {
+          "text": "참치 통조림과 교환한다.",
+          "requirements": { "items": ["canned_tuna"], "stats": null },
+          "successEffects": {
+            "description": "그는 만족스럽게 참치 통조림을 받아들고, 아드레날린 주사기를 당신에게 던져준다.",
+            "itemsLost": ["canned_tuna"],
+            "itemsGained": ["adrenaline_shot"]
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 말없이 주사기를 다시 집어넣고는 당신에게 등을 돌린다."
+          }
+        }
+      ]
+    },
+    "character_alexei_escaping_monster_01": {
+      "id": "character_alexei_escaping_monster_01",
+      "npcId": "alexei",
+      "name": "몬스터로부터 후퇴하는 알렉세이",
+      "description": "알렉세이가 거대한 몬스터에게 쫓기고 있다! 그는 당신을 발견하고 소리친다. \"도와라!\" 그가 소리치는 것은 처음 본다.",
+      "image": "character_alexei_escaping.png",
+      "category": "character",
+      "weight": 5,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "함께 싸운다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신과 알렉세이의 협공으로 몬스터를 겨우 물리쳤다. 그는 숨을 고르며 말한다. \"...빚, 졌다.\" 그는 자신의 튼튼한 등산화를 벗어준다.",
+            "statChanges": { "HP": -25, "SAN": 10, "FITNESS": 10 },
+            "itemsGained": ["sturdy_boots"]
+          }
+        },
+        {
+          "text": "도망간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "혼자서는 감당할 수 없다. 당신은 그를 버리고 도망쳤다. 등 뒤에서 들려오는 그의 비명소리가 뇌리에서 떠나지 않는다.",
+            "statChanges": { "SAN": -25 },
+            "applyStatus": ["hallucination"]
+          }
+        }
+      ]
+    },
+    "character_alexei_pointing_shortcut_01": {
+      "id": "character_alexei_pointing_shortcut_01",
+      "npcId": "alexei",
+      "name": "지름길을 알려주는 알렉세이",
+      "description": "알렉세이가 당신을 보더니, 손가락으로 약해 보이는 벽의 한 부분을 가리킨다.",
+      "image": "character_alexei_pointing.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "벽을 부순다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 60 } } },
+          "successEffects": {
+            "description": "벽을 부수자 숨겨진 지름길이 나타났다! 그 안에는 누군가 숨겨둔 듯한 깨끗한 물병이 있었다.",
+            "statChanges": { "FITNESS": -5, "HUNGER": -2 },
+            "itemsGained": ["pure_water_bottle"]
+          },
+          "failureEffects": {
+            "description": "벽은 생각보다 단단했다. 괜한 힘만 뺐다.",
+            "statChanges": { "FITNESS": -10, "HUNGER": -3 }
+          }
+        },
+        {
+          "text": "의심한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그의 의도를 알 수 없어 그냥 지나쳤다. 그는 어깨를 으쓱할 뿐이었다."
+          }
+        }
+      ]
+    },
+    "character_alexei_final_farewell_01": {
+      "id": "character_alexei_final_farewell_01",
+      "npcId": "alexei",
+      "name": "작별 인사를 하는 알렉세이",
+      "description": "알렉세이가 당신을 찾아왔다. 그는 말없이 당신에게 잘 벼려진 단검을 건넨다. 그리고는 다른 방향을 가리킨다. \"...행운을 빈다.\" 그의 처음이자 마지막 긴 문장이었다.",
+      "image": "character_alexei_farewell.png",
+      "category": "character",
+      "weight": 3,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "단검을 받는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신은 그의 마지막 선물을 받았다. 그는 당신에게 등을 돌리고, 미로의 더 깊은 곳으로 망설임 없이 걸어 들어갔다.",
+            "statChanges": { "SAN": 20 },
+            "itemsGained": ["sharpening_stone"],
+            "applyStatus": ["determination"]
+          }
+        }
+      ]
+    }
+  }
+}
