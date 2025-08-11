@@ -15,9 +15,9 @@ class PlayerStats {
   });
 
   PlayerStats.initial()
-      : hp = 100,
-        san = 100,
-        fit = 70,
+      : hp = 80,
+        san = 80,
+        fit = 80,
         hunger = 80;
 
   void updateStat(String statName, int change) {
@@ -179,16 +179,9 @@ class PlayerInventory {
   int get availableSlots => maxSlots - items.length;
 
   bool addItem(InventoryItem item) {
+    // All items are non-stackable: each acquisition occupies a new slot
     if (isFull) return false;
-    
-    // Check if item already exists and can stack
-    final existingIndex = items.indexWhere((i) => i.id == item.id);
-    if (existingIndex != -1) {
-      items[existingIndex].quantity += item.quantity;
-    } else {
-      items.add(item);
-    }
-    
+    items.add(item);
     return true;
   }
 

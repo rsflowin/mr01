@@ -301,6 +301,247 @@
           }
         }
       ]
+    },
+    "character_shadow_data_analysis_test_01": {
+      "id": "character_shadow_data_analysis_test_01",
+      "npcId": "shadow",
+      "name": "데이터의 시험",
+      "description": "그림자가 이수진의 형상을 하고 있다. 그녀는 눈빛이 날카롭고, 손에는 복잡한 그래프가 그려진 종이를 들고 있다. \"패턴을 읽을 수 있나? 틀리면, 네 정신이 무너질 것이다.\"",
+      "image": "character_shadow_analysis.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "패턴의 정답을 말한다.",
+          "requirements": { "stats": { "SAN": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "수진은 조용히 미소 짓는다. \"네 눈은 아직 살아있군.\" 그녀가 건넨 데이터 속에서 미로의 숨겨진 경로를 찾았다.",
+            "statChanges": { "SAN": 15 },
+            "itemsGained": ["hidden_path_map"]
+          },
+          "failureEffects": {
+            "description": "잘못된 답을 말하자, 종이 위의 그래프가 일그러지며 네 머릿속을 찌른다.",
+            "statChanges": { "SAN": -20, "HP": -10 }
+          }
+        },
+        {
+          "text": "답하지 않는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "\"침묵은 때로 안전한 선택이지.\" 그녀는 종이를 불태우고 사라진다. 그러나 기회를 놓친 기분이 든다.",
+            "statChanges": { "SAN": 5 }
+          }
+        }
+      ]
+    },
+    "character_shadow_stress_breakdown_01": {
+      "id": "character_shadow_stress_breakdown_01",
+      "npcId": "shadow",
+      "name": "스트레스 붕괴",
+      "description": "수진의 모습이 나타난다. 그녀의 손은 떨리고, 눈 밑엔 깊은 다크서클이 드리워져 있다. \"이 미로의 노이즈는… 너무 많아.\"",
+      "image": "character_shadow_stress.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그녀를 진정시킨다.",
+          "requirements": { "items": ["water_bottle"] },
+          "successEffects": {
+            "description": "물을 건네자, 그녀는 한숨을 내쉰다. \"…고맙군.\" 그녀의 머릿속 일부 패턴이 너에게 전해진다.",
+            "statChanges": { "SAN": 10 },
+            "itemsLost": ["water_bottle"],
+            "applyStatus": ["focus"]
+          }
+        },
+        {
+          "text": "그녀를 무시하고 지나간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그녀는 혼잣말을 중얼거리며 어둠 속에 사라진다. 불길한 기운이 남아 당신을 따라온다.",
+            "statChanges": { "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "character_shadow_cold_trade_01": {
+      "id": "character_shadow_cold_trade_01",
+      "npcId": "shadow",
+      "name": "냉철한 거래",
+      "description": "수진은 차가운 표정으로 다가온다. \"데이터는 자원이지. 내가 가진 분석 결과와 네 생존 도구를 교환하자.\"",
+      "image": "character_shadow_trade.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "거래에 응한다. (bandage → escape_hint)",
+          "requirements": { "items": ["bandage"] },
+          "successEffects": {
+            "description": "수진이 건넨 분석 결과 속엔 미로의 탈출 힌트가 있었다. 하지만 그녀는 미소 한 번 짓지 않았다.",
+            "statChanges": { "SAN": 5 },
+            "itemsLost": ["bandage"],
+            "itemsGained": ["escape_hint"]
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "수진은 눈길도 주지 않고 돌아선다. \"그 선택의 가치는 나중에 알게 되겠지.\""
+          }
+        }
+      ]
+    },
+    "character_shadow_code_fragment_01": {
+      "id": "character_shadow_code_fragment_01",
+      "npcId": "shadow",
+      "name": "코드의 조각",
+      "description": "수진은 빛바랜 노트북 화면을 보여준다. 코드의 일부가 깨져 있으며, 이상한 기호들이 섞여 있다. \"이 조각이 미로의 구조를 풀 열쇠야.\"",
+      "image": "character_shadow_code.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "코드를 해석한다.",
+          "requirements": { "stats": { "INT": { "operator": ">", "value": 60 } } },
+          "successEffects": {
+            "description": "당신은 기호 속에서 좌표 패턴을 찾아냈다. 수진이 고개를 끄덕인다.",
+            "statChanges": { "SAN": 10 },
+            "itemsGained": ["coordinate_key"]
+          },
+          "failureEffects": {
+            "description": "코드를 잘못 해석하자, 화면이 깜빡이며 귀를 찢는 듯한 잡음이 울린다.",
+            "statChanges": { "SAN": -15 }
+          }
+        },
+        {
+          "text": "관심 없는 척한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "수진은 실망한 듯 화면을 닫는다. 기회는 사라졌다."
+          }
+        }
+      ]
+    },
+    "character_shadow_memory_test_01": {
+      "id": "character_shadow_memory_test_01",
+      "npcId": "shadow",
+      "name": "기억의 시험",
+      "description": "수진은 갑자기 빠르게 여러 숫자와 기호를 읊조린다. \"다시 말해봐.\"",
+      "image": "character_shadow_memory.png",
+      "category": "character",
+      "weight": 5,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "기억한 내용을 그대로 말한다.",
+          "requirements": { "stats": { "MEM": { "operator": ">", "value": 55 } } },
+          "successEffects": {
+            "description": "\"좋아, 아직 뇌가 녹진 않았군.\" 수진이 종이에 무언가를 적어 건넨다.",
+            "itemsGained": ["cipher_note"]
+          },
+          "failureEffects": {
+            "description": "중간에 틀린 숫자를 말하자, 수진의 표정이 굳는다. \"틀린 데이터는 곧 죽음이다.\"",
+            "statChanges": { "SAN": -10 }
+          }
+        },
+        {
+          "text": "모른다고 인정한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "수진은 한숨을 쉰다. \"정직함이 살릴 때도 있지.\""
+          }
+        }
+      ]
+    },
+    "character_shadow_risk_calculation_01": {
+      "id": "character_shadow_risk_calculation_01",
+      "npcId": "shadow",
+      "name": "위험 계산",
+      "description": "수진은 두 개의 경로를 가리킨다. 하나는 밝지만 먼 길, 다른 하나는 어둡고 짧은 길이다. \"확률은 네 선택을 가르쳐줄까?\"",
+      "image": "character_shadow_risk.png",
+      "category": "character",
+      "weight": 5,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "밝고 먼 길을 선택한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "시간은 더 걸렸지만 안전했다. 수진이 고개를 끄덕인다.",
+            "statChanges": { "HP": 5 }
+          }
+        },
+        {
+          "text": "어둡고 짧은 길을 선택한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "빠르게 진행했지만 그림자가 당신을 스쳤다.",
+            "statChanges": { "SAN": -5, "HP": -5 }
+          }
+        }
+      ]
+    },
+    "character_shadow_log_transfer_01": {
+      "id": "character_shadow_log_transfer_01",
+      "npcId": "shadow",
+      "name": "로그 전송",
+      "description": "수진이 USB를 내민다. \"여기엔 네가 모르는 기록이 있어.\"",
+      "image": "character_shadow_usb.png",
+      "category": "character",
+      "weight": 4,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "USB를 받는다.",
+          "requirements": { "items": ["laptop"] },
+          "successEffects": {
+            "description": "USB 속에는 미로의 일부 구조도가 들어 있었다.",
+            "itemsGained": ["maze_fragment_map"]
+          },
+          "failureEffects": {
+            "description": "USB를 꽂자마자 노트북 화면이 꺼지고, 데이터가 사라졌다.",
+            "statChanges": { "SAN": -10 }
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "수진은 아무 말 없이 USB를 주머니에 넣는다."
+          }
+        }
+      ]
+    },
+    "character_shadow_last_signal_01": {
+      "id": "character_shadow_last_signal_01",
+      "npcId": "shadow",
+      "name": "마지막 신호",
+      "description": "수진의 목소리가 통신기에서 들린다. \"…이게 마지막일지도 몰라.\"",
+      "image": "character_shadow_signal.png",
+      "category": "character",
+      "weight": 3,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "신호를 따라간다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "신호의 끝에는 수진이 남긴 도구 상자가 있었다.",
+            "itemsGained": ["emergency_kit"]
+          }
+        },
+        {
+          "text": "신호를 무시한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "신호가 끊겼다. 어쩐지 다시는 들리지 않을 것 같다."
+          }
+        }
+      ]
     }
   }
 }

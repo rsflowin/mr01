@@ -315,6 +315,282 @@
           }
         }
       ]
+    },
+    "character_alexei_signalling_silence_01": {
+      "id": "character_alexei_signalling_silence_01",
+      "npcId": "alexei",
+      "name": "침묵을 신호하는 알렉세이",
+      "description": "어둠 속에서 알렉세이가 당신을 보며 입술 앞에 손가락을 댄다. 곧, 먼 곳에서 발소리가 들려온다.",
+      "image": "character_alexei_silence.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그와 함께 숨는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신은 그와 함께 그림자 속에 숨었다. 발소리가 사라지자 그는 조용히 고개를 끄덕였다.",
+            "statChanges": { "SAN": 5 }
+          }
+        },
+        {
+          "text": "소리를 낸다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신이 발소리를 향해 소리를 지르자, 알렉세이의 눈빛이 날카롭게 변했다. 무언가가 급히 달려오는 소리가 들렸다.",
+            "statChanges": { "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_alexei_sharing_map_01": {
+      "id": "character_alexei_sharing_map_01",
+      "npcId": "alexei",
+      "name": "지도 일부를 건네는 알렉세이",
+      "description": "알렉세이가 낡은 종이를 꺼내 반으로 찢더니, 그 중 절반을 당신에게 건넨다.",
+      "image": "character_alexei_map.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "종이를 받는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "종이에는 미로의 일부 경로가 그려져 있었다. 숨겨진 보급소 위치가 표시되어 있다.",
+            "itemsGained": ["map_fragment"]
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 아무 말 없이 종이를 다시 접어 넣는다. 신뢰의 기회를 잃은 듯하다.",
+            "statChanges": { "SAN": -3 }
+          }
+        }
+      ]
+    },
+    "character_alexei_repairing_weapon_01": {
+      "id": "character_alexei_repairing_weapon_01",
+      "npcId": "alexei",
+      "name": "무기를 수리하는 알렉세이",
+      "description": "알렉세이가 날이 무뎌진 칼을 숫돌로 갈고 있다. 그는 당신의 무기를 가리킨다.",
+      "image": "character_alexei_repair.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "무기를 건넨다.",
+          "requirements": { "items": ["rusty_blade"], "stats": null },
+          "successEffects": {
+            "description": "그는 숙련된 손놀림으로 칼을 날카롭게 갈아준다.",
+            "itemsLost": ["rusty_blade"],
+            "itemsGained": ["sharp_blade"]
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 어깨를 으쓱하며 다시 자신의 작업에 집중한다."
+          }
+        }
+      ]
+    },
+    "character_alexei_sharing_fire_01": {
+      "id": "character_alexei_sharing_fire_01",
+      "npcId": "alexei",
+      "name": "불을 나누는 알렉세이",
+      "description": "알렉세이가 작게 피운 모닥불 앞에서 손을 녹이고 있다. 그는 옆자리를 가리킨다.",
+      "image": "character_alexei_fire.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "불 옆에 앉는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "따뜻함이 스며들며 체력이 회복된다.",
+            "statChanges": { "HP": 10, "SAN": 5 }
+          }
+        },
+        {
+          "text": "지나친다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "추위를 견디며 걸음을 재촉했다.",
+            "statChanges": { "HP": -5 }
+          }
+        }
+      ]
+    },
+    "character_alexei_warning_trap_01": {
+      "id": "character_alexei_warning_trap_01",
+      "npcId": "alexei",
+      "name": "함정을 경고하는 알렉세이",
+      "description": "알렉세이가 발걸음을 멈추더니, 당신 앞길에 있는 숨겨진 함정을 가리킨다.",
+      "image": "character_alexei_warning.png",
+      "category": "character",
+      "weight": 10,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그의 지시를 따른다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신은 함정을 피해 안전하게 지나갔다.",
+            "statChanges": { "SAN": 10 }
+          }
+        },
+        {
+          "text": "무시한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "발판을 밟자마자 함정이 발동했다.",
+            "statChanges": { "HP": -20, "SAN": -10 }
+          }
+        }
+      ]
+    },
+    "character_alexei_sharing_rumor_01": {
+      "id": "character_alexei_sharing_rumor_01",
+      "npcId": "alexei",
+      "name": "소문을 전하는 알렉세이",
+      "description": "알렉세이가 드물게 말을 꺼낸다. \"...동쪽 통로. 위험.\"",
+      "image": "character_alexei_rumor.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "감사 인사를 한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 고개를 끄덕인다. 당신의 신뢰도가 상승했다.",
+            "statChanges": { "SAN": 5 }
+          }
+        },
+        {
+          "text": "무시한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 조용히 입을 다물었다."
+          }
+        }
+      ]
+    },
+    "character_alexei_hunting_together_01": {
+      "id": "character_alexei_hunting_together_01",
+      "npcId": "alexei",
+      "name": "함께 사냥하는 알렉세이",
+      "description": "알렉세이가 활을 들고 당신을 바라본다. 먹잇감을 함께 노리자는 뜻이다.",
+      "image": "character_alexei_hunting.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "함께 사냥한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "둘이서 협력해 먹잇감을 잡았다. 식량이 확보되었다.",
+            "itemsGained": ["raw_meat"],
+            "statChanges": { "HUNGER": 20 }
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 홀로 사라졌다."
+          }
+        }
+      ]
+    },
+    "character_alexei_helping_cross_river_01": {
+      "id": "character_alexei_helping_cross_river_01",
+      "npcId": "alexei",
+      "name": "강을 건너게 돕는 알렉세이",
+      "description": "급류가 흐르는 강 앞에서 알렉세이가 손을 내민다.",
+      "image": "character_alexei_river.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그의 손을 잡는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "무사히 강을 건넜다.",
+            "statChanges": { "SAN": 5 }
+          }
+        },
+        {
+          "text": "스스로 건넌다.",
+          "requirements": null,
+          "successConditions": { "stats": { "FITNESS": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "힘겹게 건넜지만, 자존심은 지켰다.",
+            "statChanges": { "FITNESS": 2 }
+          },
+          "failureEffects": {
+            "description": "발을 헛디뎌 물에 빠졌다.",
+            "statChanges": { "HP": -15, "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "character_alexei_sharing_compass_01": {
+      "id": "character_alexei_sharing_compass_01",
+      "npcId": "alexei",
+      "name": "나침반을 건네는 알렉세이",
+      "description": "알렉세이가 자신의 목에 걸린 나침반을 풀어 건넨다.",
+      "image": "character_alexei_compass.png",
+      "category": "character",
+      "weight": 5,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "받는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "방향 감각이 한층 좋아졌다.",
+            "itemsGained": ["compass"]
+          }
+        }
+      ]
+    },
+    "character_alexei_observing_you_01": {
+      "id": "character_alexei_observing_you_01",
+      "npcId": "alexei",
+      "name": "당신을 관찰하는 알렉세이",
+      "description": "알렉세이가 무표정하게 당신을 관찰하고 있다. 아무 말도 하지 않는다.",
+      "image": "character_alexei_observe.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "그를 똑바로 본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 잠시 후 고개를 끄덕인다. 당신의 의지를 시험한 듯하다.",
+            "statChanges": { "SAN": 5 }
+          }
+        },
+        {
+          "text": "시선을 피한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 표정 없이 시선을 거둔다.",
+            "statChanges": { "SAN": -3 }
+          }
+        }
+      ]
     }
   }
 }
