@@ -34,6 +34,9 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  google_fonts: ^6.1.0
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_test:
@@ -45,6 +48,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  test: ^1.25.15
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -61,6 +65,17 @@ flutter:
   assets:
     - data/
     - data/maze/
+    - data/events/
+    - assets/images/
+    - assets/images/events/
+    - assets/images/events/characters/
+    - assets/images/events/monsters/
+    - assets/images/events/traps/
+    - assets/images/events/items/
+    - assets/images/rooms/
+    - assets/images/rooms/general/
+    - assets/images/ui/
+    - assets/images/ui/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

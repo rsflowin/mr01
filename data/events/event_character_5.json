@@ -298,6 +298,270 @@
           }
         }
       ]
+    },
+    "character_marcus_timepiece_offer_01": {
+      "id": "character_marcus_timepiece_offer_01",
+      "npcId": "marcus",
+      "name": "시계를 건네는 마커스",
+      "description": "마커스가 반짝이는 금빛 회중시계를 꺼내 보여준다. \"이건 시간을 잠시 멈출 수 있는 시계라네. 단, 가격은... 조금 특별하지.\"",
+      "image": "character_marcus_timepiece.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "시계를 받는다. (아이템 1개 랜덤 상실)",
+          "requirements": null,
+          "successEffects": {
+            "description": "시계를 받자 그는 미소 짓더니 당신의 가방에서 무언가를 빼갔다. 시계는 작동하지 않았다.",
+            "itemsLostRandom": 1
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 시계를 애써 닦으며 돌아선다. '다른 사람에겐 비싸게 팔리겠군'이라는 그의 혼잣말이 들린다."
+          }
+        }
+      ]
+    },
+
+    "character_marcus_secret_map_01": {
+      "id": "character_marcus_secret_map_01",
+      "npcId": "marcus",
+      "name": "비밀 지도를 파는 마커스",
+      "description": "마커스가 구겨진 종이 조각을 꺼낸다. \"이 미로의 진짜 출구로 가는 길이지. 단, 해독할 줄 아는 사람만 가치가 있네.\"",
+      "image": "character_marcus_map.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "지도 구입. (SAN -15)",
+          "requirements": { "stats": { "SAN": { "operator": ">", "value": 15 } } },
+          "successEffects": {
+            "description": "지도는 복잡한 암호로 뒤덮여 있었다. 아무리 봐도 읽을 수 없었다.",
+            "statChanges": { "SAN": -15 }
+          }
+        },
+        {
+          "text": "무시한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 종이를 접어 넣으며 한쪽 눈을 찡긋한다. '손해 보는 건 당신이야'라는 표정이다."
+          }
+        }
+      ]
+    },
+
+    "character_marcus_reverse_rescue_01": {
+      "id": "character_marcus_reverse_rescue_01",
+      "npcId": "marcus",
+      "name": "거꾸로 구조하는 마커스",
+      "description": "당신이 구멍에 빠지자 마커스가 웃으며 밧줄을 던진다. \"도와줄까 말까?\"",
+      "image": "character_marcus_rescue.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "도움을 청한다. (아이템 1개 지불)",
+          "requirements": { "items": ["any"] },
+          "successEffects": {
+            "description": "그가 당신을 끌어올리며 아이템을 빼앗았다. '거래 완료'라는 듯이 웃는다.",
+            "itemsLostRandom": 1
+          }
+        },
+        {
+          "text": "혼자 기어오른다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "힘겹게 올라오자 그는 시시하다는 듯 고개를 저으며 떠난다."
+          }
+        }
+      ]
+    },
+
+    "character_marcus_memory_game_01": {
+      "id": "character_marcus_memory_game_01",
+      "npcId": "marcus",
+      "name": "기억력 게임을 제안하는 마커스",
+      "description": "\"간단한 게임이야. 내가 보여주는 걸 기억하면 보상을 주지. 틀리면... 재미없어질 걸세.\"",
+      "image": "character_marcus_memory.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "게임에 응한다. (SAN -5, 성공 시 아이템 획득)",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 40 } } },
+          "successEffects": {
+            "description": "당신이 완벽하게 기억해내자 그는 기분 나쁜 웃음을 지으며 '정체불명의 열쇠'를 건넸다.",
+            "statChanges": { "SAN": -5 },
+            "itemsGained": ["mysterious_key"]
+          },
+          "failureEffects": {
+            "description": "틀리자 그는 손뼉을 치며 웃었다. \"다음엔 더 잘하길.\"",
+            "statChanges": { "SAN": -10 }
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 시큰둥하게 어깨를 으쓱한다."
+          }
+        }
+      ]
+    },
+
+    "character_marcus_fake_auction_01": {
+      "id": "character_marcus_fake_auction_01",
+      "npcId": "marcus",
+      "name": "가짜 경매를 여는 마커스",
+      "description": "마커스가 작은 상자를 들고 주변에 외친다. \"귀중한 보물 경매 시작!\"",
+      "image": "character_marcus_auction.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "참가한다. (HP -10)",
+          "requirements": { "stats": { "HP": { "operator": ">", "value": 10 } } },
+          "successEffects": {
+            "description": "상자 안에는 돌멩이뿐이었다. 마커스는 이미 사라졌다.",
+            "statChanges": { "HP": -10 }
+          }
+        },
+        {
+          "text": "관망한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "다른 이들이 속는 걸 보며, 당신은 조용히 자리를 떴다."
+          }
+        }
+      ]
+    },
+
+    "character_marcus_coin_flip_01": {
+      "id": "character_marcus_coin_flip_01",
+      "npcId": "marcus",
+      "name": "동전 던지기를 제안하는 마커스",
+      "description": "\"맞히면 내가 아이템을 주고, 틀리면 네가 하나 내놔. 어때?\"",
+      "image": "character_marcus_coin.png",
+      "category": "character",
+      "weight": 5,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "참여한다.",
+          "requirements": null,
+          "successConditions": { "stats": { "SAN": { "operator": ">", "value": 50 } } },
+          "successEffects": {
+            "description": "당신이 맞히자 그는 약간 아쉬운 듯 '낡은 손목시계'를 건넸다.",
+            "itemsGained": ["old_wristwatch"]
+          },
+          "failureEffects": {
+            "description": "틀리자 그는 손을 벌렸다. 당신은 마지못해 아이템 하나를 내주었다.",
+            "itemsLostRandom": 1
+          }
+        },
+        {
+          "text": "거절한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 동전을 손가락 사이에서 굴리며 사라진다."
+          }
+        }
+      ]
+    },
+
+    "character_marcus_food_switch_01": {
+      "id": "character_marcus_food_switch_01",
+      "npcId": "marcus",
+      "name": "음식을 바꿔치기하는 마커스",
+      "description": "당신이 잠시 자리를 비운 사이, 돌아오니 마커스가 앉아 있다. \"네 음식, 더 나은 걸로 바꿔줬네.\"",
+      "image": "character_marcus_food.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "확인한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "당신의 에너지바는 곰팡이 핀 빵으로 바뀌어 있었다.",
+            "itemsLost": ["energy_bar"],
+            "itemsGained": ["moldy_bread"]
+          }
+        },
+        {
+          "text": "그를 쫓아낸다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 뻔뻔하게 웃으며 자리를 떠났다."
+          }
+        }
+      ]
+    },
+
+    "character_marcus_phantom_debt_01": {
+      "id": "character_marcus_phantom_debt_01",
+      "npcId": "marcus",
+      "name": "가짜 빚을 청구하는 마커스",
+      "description": "\"전에 내가 네 목숨을 구해줬지. 갚을 시간일세.\"",
+      "image": "character_marcus_debt.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "갚는다. (SAN -10, 아이템 1개 상실)",
+          "requirements": { "stats": { "SAN": { "operator": ">", "value": 10 } } },
+          "successEffects": {
+            "description": "그는 흡족한 표정으로 물러났다. 당신은 그가 구해준 적이 없다는 걸 깨달았다.",
+            "statChanges": { "SAN": -10 },
+            "itemsLostRandom": 1
+          }
+        },
+        {
+          "text": "부정한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 씩 웃으며 '기억이 선택적이군'이라고 중얼거린다."
+          }
+        }
+      ]
+    },
+
+    "character_marcus_empty_promise_01": {
+      "id": "character_marcus_empty_promise_01",
+      "npcId": "marcus",
+      "name": "공허한 약속을 하는 마커스",
+      "description": "마커스가 당신의 어깨를 두드리며 말한다. \"이 미로를 나가면, 내가 네게 엄청난 보상을 주지.\"",
+      "image": "character_marcus_promise.png",
+      "category": "character",
+      "weight": 5,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "믿는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "희망이 생겨 SAN이 조금 회복됐다. 하지만 약속이 지켜질 가능성은 없다.",
+            "statChanges": { "SAN": 5 }
+          }
+        },
+        {
+          "text": "비웃는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "그는 어깨를 으쓱하며 '손해 보는 건 자네'라고 말한다."
+          }
+        }
+      ]
     }
   }
 }

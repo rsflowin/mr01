@@ -298,6 +298,263 @@
           }
         }
       ]
+    },
+    "character_samira_inspecting_ceiling_01": {
+      "id": "character_samira_inspecting_ceiling_01",
+      "npcId": "samira",
+      "name": "천장을 조사하는 사미라",
+      "description": "사미라가 목을 한껏 젖혀 천장을 바라보고 있다. 미세한 금빛 문양이 그녀의 눈에 반짝인다. \"이 무늬… 태양 주기의 9번째 날에만 완성되는 형태야.\"",
+      "image": "character_samira_ceiling.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "문양을 따라 손가락으로 그려본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "손끝에서 은은한 진동이 전해졌다. 사미라가 흥분한 목소리로 외친다. \"맞아! 이제 이 벽의 연동 장치가 풀렸어!\" 숨겨진 서랍에서 작은 청동 상자가 튀어나왔다.",
+            "itemsGained": ["bronze_box"],
+            "statChanges": { "SAN": 8 }
+          }
+        },
+        {
+          "text": "천장을 무시한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "사미라가 실망한 듯 고개를 저으며 혼잣말을 계속했다. 당신은 아무것도 얻지 못했다."
+          }
+        }
+      ]
+    },
+    "character_samira_listening_walls_01": {
+      "id": "character_samira_listening_walls_01",
+      "npcId": "samira",
+      "name": "벽에 귀를 기울이는 사미라",
+      "description": "사미라가 벽에 귀를 대고 숨을 죽이고 있다. \"들려? 이 벽은 살아 있어… 숨을 쉬고 있어.\"",
+      "image": "character_samira_listening.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "같이 들어본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "정말로, 아주 미세한 박동 같은 소리가 들렸다. 사미라가 메모를 꺼내 무언가를 적는다. \"이건 경로 변화를 예측하는 단서야. 덕분에 시간을 벌었어.\"",
+            "statChanges": { "SAN": 5, "FITNESS": 3 }
+          }
+        },
+        {
+          "text": "농담으로 겁을 준다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "사미라가 짧게 웃더니, 무표정으로 당신을 쳐다본다. \"유적에 대한 불경은 돌려받게 돼.\" 왠지 등골이 서늘하다.",
+            "statChanges": { "SAN": -6 }
+          }
+        }
+      ]
+    },
+    "character_samira_ink_rubbing_01": {
+      "id": "character_samira_ink_rubbing_01",
+      "npcId": "samira",
+      "name": "먹물 탁본을 뜨는 사미라",
+      "description": "사미라가 바닥에 천을 깔고, 먹물을 발라 문양을 종이에 옮기고 있다. \"이 무늬… 전설 속 잃어버린 왕조와 관련이 있어.\"",
+      "image": "character_samira_rubbing.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "먹물 작업을 도와준다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "사미라가 만족스럽게 웃는다. \"정확한 선을 유지하는 건 쉽지 않지.\" 그녀가 완성된 탁본 일부를 건넨다. 숨겨진 상징이 새겨져 있다.",
+            "itemsGained": ["partial_symbol_scroll"],
+            "statChanges": { "SAN": 7 }
+          }
+        },
+        {
+          "text": "종이에 손을 대본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "먹물이 번져 문양이 망가졌다. 사미라가 깊은 한숨을 내쉰다. \"역사엔 되돌리기 버튼이 없어.\"",
+            "statChanges": { "SAN": -8 }
+          }
+        }
+      ]
+    },
+    "character_samira_shard_puzzle_01": {
+      "id": "character_samira_shard_puzzle_01",
+      "npcId": "samira",
+      "name": "도기 파편을 맞추는 사미라",
+      "description": "사미라가 수십 개의 도기 파편을 맞추고 있다. \"이건 단순한 장식이 아니야. 해독문이야.\"",
+      "image": "character_samira_shards.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "파편을 하나 건네준다.",
+          "requirements": { "items": ["ceramic_shard"], "stats": null },
+          "successEffects": {
+            "description": "사미라가 기뻐하며 파편을 받아 맞춘다. \"완성됐어! 이 문양은 ‘길의 심장’을 가리키고 있어.\"",
+            "itemsLost": ["ceramic_shard"],
+            "statChanges": { "SAN": 12 }
+          }
+        },
+        {
+          "text": "대충 맞춰본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "엉성한 맞춤에 사미라가 고개를 젓는다. \"역사는 정밀함 위에 서 있어.\"",
+            "statChanges": { "SAN": -5 }
+          }
+        }
+      ]
+    },
+    "character_samira_hidden_script_01": {
+      "id": "character_samira_hidden_script_01",
+      "npcId": "samira",
+      "name": "숨겨진 글자를 찾은 사미라",
+      "description": "사미라가 횃불 빛을 벽에 비추자, 평범해 보이던 벽에서 흐릿한 문자가 드러났다.",
+      "image": "character_samira_script.png",
+      "category": "character",
+      "weight": 9,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "문자를 필사한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "사미라가 고개를 끄덕인다. \"정확한 기록이야. 덕분에 번역할 수 있겠어.\"",
+            "itemsGained": ["ancient_script_copy"],
+            "statChanges": { "SAN": 6 }
+          }
+        },
+        {
+          "text": "손으로 문자를 더듬는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "갑자기 벽이 미세하게 움직였다. 사미라가 놀란 표정으로 당신을 본다. \"네가 뭘 건드린 거지…?\"",
+            "statChanges": { "SAN": -3, "FITNESS": 2 }
+          }
+        }
+      ]
+    },
+    "character_samira_sand_compass_01": {
+      "id": "character_samira_sand_compass_01",
+      "npcId": "samira",
+      "name": "모래 나침반을 만드는 사미라",
+      "description": "사미라가 작은 접시 위에 모래를 부어 나침반을 만들고 있다. \"자성 대신, 바람의 방향을 읽는 거지.\"",
+      "image": "character_samira_sandcompass.png",
+      "category": "character",
+      "weight": 7,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "관찰한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "모래가 미묘하게 움직이며 한쪽을 가리켰다. 사미라가 조용히 말한다. \"그쪽이 안전로야.\"",
+            "statChanges": { "SAN": 4 }
+          }
+        },
+        {
+          "text": "모래 위에 손을 얹는다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "손의 열기로 모래가 패턴을 흐트러뜨렸다. 사미라가 무표정하게 당신을 쳐다본다.",
+            "statChanges": { "SAN": -4 }
+          }
+        }
+      ]
+    },
+    "character_samira_time_capsule_01": {
+      "id": "character_samira_time_capsule_01",
+      "npcId": "samira",
+      "name": "시간 캡슐을 발견한 사미라",
+      "description": "벽 틈에서 녹슨 금속 함을 꺼낸 사미라가 숨을 삼킨다. \"이건… 500년 전의 봉인 방식이야.\"",
+      "image": "character_samira_capsule.png",
+      "category": "character",
+      "weight": 6,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "함을 열어본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "안에는 말라붙은 꽃잎과 작은 돌이 들어 있었다. 사미라가 속삭인다. \"이건 장례의 부적이야. 건드린 걸 후회하게 될지도 몰라.\"",
+            "statChanges": { "SAN": -5 }
+          }
+        },
+        {
+          "text": "열지 않고 보관한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "사미라가 안도의 미소를 짓는다. \"그 결정을 존중해.\" 그녀가 당신에게 작은 부적을 건넨다.",
+            "itemsGained": ["protective_charm"],
+            "statChanges": { "SAN": 6 }
+          }
+        }
+      ]
+    },
+    "character_samira_lens_refraction_01": {
+      "id": "character_samira_lens_refraction_01",
+      "npcId": "samira",
+      "name": "빛을 굴절시키는 사미라",
+      "description": "사미라가 유리 조각을 들고 빛을 굴절시켜 벽에 비추고 있다. 문양이 부드럽게 드러난다.",
+      "image": "character_samira_lens.png",
+      "category": "character",
+      "weight": 8,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "빛의 각도를 바꿔본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "각도가 맞자, 문양 속에 또 다른 문양이 나타났다. 사미라가 놀란 표정을 짓는다.",
+            "statChanges": { "SAN": 9 }
+          }
+        },
+        {
+          "text": "유리를 만져본다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "날카로운 모서리에 손이 베였다. 피가 유리에 묻어 빛이 붉게 변했다.",
+            "statChanges": { "HP": -5 }
+          }
+        }
+      ]
+    },
+    "character_samira_coded_song_01": {
+      "id": "character_samira_coded_song_01",
+      "npcId": "samira",
+      "name": "부적을 노래로 푸는 사미라",
+      "description": "사미라가 낮게 허밍을 하고 있다. \"이 음계는, 벽의 패턴과 대화하는 방법이지.\"",
+      "image": "character_samira_song.png",
+      "category": "character",
+      "weight": 5,
+      "persistence": "oneTime",
+      "choices": [
+        {
+          "text": "함께 따라 부른다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "두 사람의 음이 완벽히 맞자, 벽이 서서히 열리며 작은 방이 드러났다.",
+            "itemsGained": ["ancient_coin"],
+            "statChanges": { "SAN": 10 }
+          }
+        },
+        {
+          "text": "노래를 멈추게 한다.",
+          "requirements": null,
+          "successEffects": {
+            "description": "사미라가 노래를 끊고 한숨을 쉰다. \"이제, 그 문은 닫힌 채로 남겠군.\"",
+            "statChanges": { "SAN": -7 }
+          }
+        }
+      ]
     }
   }
 }
